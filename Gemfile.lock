@@ -188,6 +188,14 @@ GIT
     decidim-verifications (0.19.0.dev)
       decidim-core (= 0.19.0.dev)
 
+PATH
+  remote: ../modules/decidim-erc-crm_login
+  specs:
+    decidim-erc-crm_login (1.0.0)
+      civicrm
+      decidim-core (>= 0.17.0)
+      rails (>= 5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -297,6 +305,11 @@ GEM
     childprocess (1.0.1)
       rake (< 13.0)
     chronic (0.10.2)
+    civicrm (1.2.0)
+      activemodel
+      activesupport
+      nokogiri
+      rest-client (~> 2.0)
     coderay (1.1.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -752,6 +765,7 @@ DEPENDENCIES
   daemons
   decidim!
   decidim-dev!
+  decidim-erc-crm_login!
   delayed_job_active_record
   faker (~> 1.8.4)
   figaro (>= 1.1.1)

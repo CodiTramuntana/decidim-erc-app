@@ -17,6 +17,7 @@ gem 'figaro', '>= 1.1.1'
 gem 'openssl'
 
 gem 'decidim', DECIDIM_VERSION
+gem 'decidim-erc-crm_login', path: '../modules/decidim-erc-crm_login'
 
 group :development, :test do
   gem 'better_errors'
