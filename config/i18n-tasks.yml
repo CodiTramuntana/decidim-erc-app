@@ -1,0 +1,11 @@
+# i18n-tasks finds and manages missing and unused translations: https://github.com/glebm/i18n-tasks
+
+# The "main" locale.
+base_locale: ca
+locales: [ca, es]
+ignore_missing:
+
+ignore_unused:
+  - "decidim.amendments.*"
+  - "decidim.wizard_step_form.*"
+  - "decidim.components.proposals.settings.*"
