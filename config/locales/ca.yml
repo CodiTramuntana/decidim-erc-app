@@ -16,13 +16,23 @@ ca:
         discard: Descarta aquest esborrany
         discard_confirmation: Estàs segur de que vols descartar aquest esborrany d'esmena?
         phone_number: Telèfon de contacte
-        phone_number_help: Siusplau, revisa el teu telèfon de contacte per tal
-          que la organització es pugui posar en contacte amb tu.
+        phone_number_help: Siusplau, revisa el teu telèfon de contacte per tal que
+          la organització es pugui posar en contacte amb tu.
         send: Vista prèvia
         title: Completa l'esborrany d'esmena
+      emendation:
+        announcement:
+          accepted: Aquesta esmena de la %{amendable_type} %{proposal_link} ha estat
+            acceptada a <strong>%{date}</strong>.
+          evaluating: Aquesta esmena de la %{amendable_type} %{proposal_link} está
+            essent avaluada.
+          rejected: Aquesta esmena de la %{amendable_type} %{proposal_link} ha estat
+            rebutjada el <strong>%{date}</strong>.
+          withdrawn: Aquesta esmena de la %{amendable_type} %{proposal_link} ha estat
+            retirada per l'autora.
       new:
-        title: Crea esborrany d'esmena
         send: Crear
+        title: Crea esborrany d'esmena
       preview_draft:
         modify: Modificar
         publish: Publicar
@@ -33,12 +43,6 @@ ca:
       update_draft:
         error: S'ha produït un error en actualitzar el borrador d'esmena.
         success: El borrador d'esmena s'ha actualitzat correctament.
-      wizard_step_form:
-        steps:
-          '1': Crea la teva esmena
-          '2': Compara la teva esmena
-          '3': Completa la teva esmena
-          '4': Publica la teva esmena
       visibility_options:
         all: Tots els participants poden veure totes les esmenes
         participants: Els participants poden veure només les seves esmenes
@@ -56,13 +60,18 @@ ca:
             amendments_wizard_help_text: Text d'ajuda al crear una nova esmena
           step:
             amendment_creation_enabled: Creació d'esmenes habilitada
-            amendment_creation_enabled_help: Els participants poden crear esmenes a propostes.
+            amendment_creation_enabled_help: Els participants poden crear esmenes
+              a propostes.
             amendment_promotion_enabled: Promoció d'esmenes rebutjades habilitada
-            amendment_promotion_enabled_help: Autors d'esmenes rebutjades podran promoure-les a propostes independents.
+            amendment_promotion_enabled_help: Autors d'esmenes rebutjades podran promoure-les
+              a propostes independents.
             amendment_reaction_enabled: Reacció a esmenes habilitada
-            amendment_reaction_enabled_help: Autors de propostes podran acceptar o rebutjar esmenes.
+            amendment_reaction_enabled_help: Autors de propostes podran acceptar o
+              rebutjar esmenes.
             amendments_visibility: Visibilitat d'esmenes
-            amendments_visibility_help: Els participants hauran d'estar connectats per a poder veure les esmenes si la visibilitat està restringida (opcions 2 y 3).
+            amendments_visibility_help: Els participants hauran d'estar connectats
+              per a poder veure les esmenes si la visibilitat està restringida (opcions
+              2 y 3).
     wizard_step_form:
       wizard_aside:
         back: Enrere
