@@ -1,0 +1,8 @@
+---
+en:
+  decidim:
+    amendments:
+      edit_draft:
+        phone_number: Contact phone number
+        phone_number_help: Please, review your phone number so the organization
+          can contact you.
