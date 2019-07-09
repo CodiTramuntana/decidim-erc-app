@@ -2,9 +2,11 @@
 <div class="row collapse buttons__row">
   <% if endorsements_enabled? %>
     <% if @proposal.emendation? && manageable_user_groups.empty? %>
-      <div class="column collapse small-6 emendation-endorsements-count" id="endorsements-count-only">
+      <!-- This is to avoid the nested div.button-group -->
+      <div class="column collapse small-6" id="endorsements-count-only">
         <%= render_endorsements_count_card_part(@proposal, fully_endorsed, endorsements_count_only_classes) %>
       </div>
+      <!-- /This is to avoid the nested div.button-group -->
     <% else %>
       <div class="column collapse small-9">
         <div class="button-group button-group--collapse button--nomargin small">
