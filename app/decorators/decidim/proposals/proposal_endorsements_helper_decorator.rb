@@ -2,11 +2,9 @@
 
 Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
   # Add guard clause for emendations: don't show the endorsement button if
-  # there's no user or the user is not a manager of a grup or has a different scope than the proposal.
+  # the user is not a manager of a grup or has a different scope than the proposal.
   def render_endorsements_button_card_part(proposal, fully_endorsed, html_class = nil)
-    return if proposal.emendation? && !current_user ||
-              proposal.emendation? && manageable_user_groups.empty? ||
-              proposal.scope != current_user.scope
+    return if proposal.emendation? && manageable_user_groups.empty? || proposal.scope != current_user.scope
 
     endorse_translated = t("decidim.proposals.proposal_endorsements_helper.render_endorsements_button_card_part.endorse")
     html_class = "card__button button" if html_class.blank?
@@ -51,14 +49,12 @@ Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
     @manageable_user_groups ||= Decidim::UserGroups::ManageableUserGroups.for(current_user).verified
   end
 
-  # Handles the size of the div that wraps the button
-  def endorsement_buttons_column_size
-    return "small-6" if @proposal.emendation? && manageable_user_groups.empty?
-
-    "small-9"
+  # Returns the CSS classes used for showing only the endorsements count in the proposal show page
+  def endorsements_count_only_classes
+    "button small compact light button--sc button--shadow expanded"
   end
 
-  # Handles the size of the div that wraps the button
+  # Handles the size of the div that wraps the comment button in the proposal show page
   def comment_button_column_size
     return "small-6" if @proposal.emendation? && manageable_user_groups.empty?
 

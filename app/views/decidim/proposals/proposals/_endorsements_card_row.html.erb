@@ -1,20 +1,23 @@
 <% fully_endorsed= fully_endorsed?(@proposal, current_user) %>
 <div class="row collapse buttons__row">
   <% if endorsements_enabled? %>
-    <!-- Overwriting this view to add custom classes -->
-    <div class="column collapse <%= endorsement_buttons_column_size %>">
-    <!-- /Overwriting this view to add custom classes -->
-      <div class="button-group button-group--collapse button--nomargin small">
-        <%= render_endorsements_count_card_part(@proposal, fully_endorsed) %>
-        <%= render_endorsements_button_card_part(@proposal, fully_endorsed) %>
+    <% if @proposal.emendation? && manageable_user_groups.empty? %>
+      <div class="column collapse small-6 emendation-endorsements-count" id="endorsements-count-only">
+        <%= render_endorsements_count_card_part(@proposal, fully_endorsed, endorsements_count_only_classes) %>
       </div>
-    </div>
+    <% else %>
+      <div class="column collapse small-9">
+        <div class="button-group button-group--collapse button--nomargin small">
+          <%= render_endorsements_count_card_part(@proposal, fully_endorsed) %>
+          <%= render_endorsements_button_card_part(@proposal, fully_endorsed) %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-  <!-- Overwriting this view to add custom classes -->
   <div class="column collapse <%= comment_button_column_size %>">
-  <!-- /Overwriting this view to add custom classes -->
     <%= link_to "#comments", class: "button small compact hollow secondary button--nomargin expanded" do %>
-        <%= icon "comment-square", class: "icon--small", aria_label: t(".comments"), role: "img" %> <%= @proposal.comments.count %>
+      <%= icon "comment-square", class: "icon--small", aria_label: t(".comments"), role: "img" %>
+      <%= @proposal.comments.count %>
     <% end %>
   </div>
 </div>
