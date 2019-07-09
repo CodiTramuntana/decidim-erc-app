@@ -2,12 +2,11 @@
 
 require "rails_helper"
 
-describe "Amend Proposal", versioning: true, type: :system do
+describe "Endorse Amendment", versioning: true, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
   let!(:scope) { create(:scope, organization: organization) }
   let!(:other_scope) { create(:scope, organization: organization) }
   let!(:user) { create :user, :confirmed, organization: organization, extended_data: { "member_of": scope.id, "phone": "666-666-666" } }
-  let!(:user) { create(:user, :confirmed, organization: organization) }
   let!(:user_group) { create(:user_group, :confirmed, :verified, organization: organization) }
   let!(:component) { create(:proposal_component, organization: organization) }
   let!(:proposal) { create(:proposal, component: component) }
