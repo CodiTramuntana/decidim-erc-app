@@ -6,11 +6,13 @@ module Decidim
   module Proposals
     describe EndorseProposal do
       let!(:component) { create(:proposal_component) }
+      let!(:scope) { create(:scope, organization: component.organization) }
+      let!(:other_scope) { create(:scope, organization: component.organization) }
+      let!(:user) { create(:user, :confirmed, organization: component.organization) }
+      let!(:user_group) { create(:user_group, :confirmed, :verified, organization: component.organization, users: [user]) }
       let!(:proposal) { create(:proposal, component: component) }
       let!(:emendation) { create(:proposal, component: component) }
       let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
-      let!(:user) { create(:user, :confirmed, organization: component.organization) }
-      let!(:user_group) { create(:user_group, :confirmed, :verified, organization: component.organization, users: [user]) }
 
       let(:command) { described_class.new(resource, user, user_group_id) }
 
@@ -51,6 +53,28 @@ module Decidim
 
             it "broadcasts ok" do
               expect { command.call }.to broadcast(:ok)
+            end
+
+            context "and the proposal scope is different from the user scope" do
+              before do
+                emendation.update(scope: other_scope)
+                user.update(extended_data: { "member_of": scope.id })
+              end
+
+              it "broadcasts invalid" do
+                expect { command.call }.to broadcast(:invalid)
+              end
+            end
+
+            context "and the proposal scope is the same as the user scope" do
+              before do
+                emendation.update(scope: scope)
+                user.update(extended_data: { "member_of": scope.id })
+              end
+
+              it "broadcasts ok" do
+                expect { command.call }.to broadcast(:ok)
+              end
             end
           end
         end

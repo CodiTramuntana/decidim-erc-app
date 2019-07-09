@@ -4,12 +4,13 @@ require "rails_helper"
 
 describe "Amend Proposal", versioning: true, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
+  let!(:scope) { create(:scope, organization: organization) }
+  let!(:other_scope) { create(:scope, organization: organization) }
+  let!(:user) { create :user, :confirmed, organization: organization, extended_data: { "member_of": scope.id, "phone": "666-666-666" } }
   let!(:user) { create(:user, :confirmed, organization: organization) }
   let!(:user_group) { create(:user_group, :confirmed, :verified, organization: organization) }
   let!(:component) { create(:proposal_component, organization: organization) }
   let!(:proposal) { create(:proposal, component: component) }
-  let!(:emendation) { create(:proposal, component: component) }
-  let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
 
   let(:active_step_id) { component.participatory_space.active_step.id }
   let(:proposal_path) { Decidim::ResourceLocatorPresenter.new(proposal).path }
@@ -27,7 +28,10 @@ describe "Amend Proposal", versioning: true, type: :system do
     context "and IS a manager of user group" do
       let!(:manager_membership) { create(:user_group_membership, user: user, user_group: user_group, role: :admin) }
 
-      context "and visits and amendment to proposal" do
+      context "and visits an amendment of the same scope" do
+        let!(:emendation) { create(:proposal, scope: scope, component: component) }
+        let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
+
         before do
           visit emendation_path
         end
@@ -46,13 +50,30 @@ describe "Amend Proposal", versioning: true, type: :system do
             within "#user-identities" do
               expect(page).to have_content(user_group.name)
               expect(page).not_to have_content(user.name)
-              find('li').click
+              find("li").click
             end
 
             within "#proposal-#{emendation.id}-endorsements-count" do
               expect(page).to have_content("1")
             end
           end
+        end
+      end
+
+      context "and visits an amendment of a different scope" do
+        let!(:emendation) { create(:proposal, scope: other_scope, component: component) }
+        let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
+
+        before do
+          visit emendation_path
+        end
+
+        it "doesn't show the endorse proposal button" do
+          expect(page).to have_no_button("Endorse")
+        end
+
+        it "shows the endorsements count" do
+          expect(page).to have_css("#proposal-#{emendation.id}-endorsements-count")
         end
       end
 
@@ -75,7 +96,7 @@ describe "Amend Proposal", versioning: true, type: :system do
             within "#user-identities" do
               expect(page).to have_content(user_group.name)
               expect(page).to have_content(user.name)
-              all('li').first.click
+              all("li").first.click
             end
 
             within "#proposal-#{proposal.id}-endorsements-count" do
@@ -89,7 +110,27 @@ describe "Amend Proposal", versioning: true, type: :system do
     context "and is NOT a manager of user group" do
       let!(:member_membership) { create(:user_group_membership, user: user, user_group: user_group, role: :member) }
 
-      context "and visits and amendment to proposal" do
+      context "and visits an amendment of the same scope" do
+        let!(:emendation) { create(:proposal, scope: scope, component: component) }
+        let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
+
+        before do
+          visit emendation_path
+        end
+
+        it "doesn't show the endorse proposal button" do
+          expect(page).to have_no_button("Endorse")
+        end
+
+        it "shows the endorsements count" do
+          expect(page).to have_css("#proposal-#{emendation.id}-endorsements-count")
+        end
+      end
+
+      context "and visits an amendment of a different scope" do
+        let!(:emendation) { create(:proposal, scope: other_scope, component: component) }
+        let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
+
         before do
           visit emendation_path
         end

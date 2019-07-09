@@ -61,7 +61,6 @@ describe "Amendment Wizard", type: :system do
               expect(page).not_to have_content(emendation_other_scope.title)
               expect(page).not_to have_content(amendment_other_scope.amender.name)
             end
-
           end
         end
       end

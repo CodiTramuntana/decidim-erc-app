@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
+  # Add guard clause for emendations: don't show the endorsement button if
+  # there's no user or the user is not a manager of a grup or has a different scope than the proposal.
   def render_endorsements_button_card_part(proposal, fully_endorsed, html_class = nil)
     return if proposal.emendation? && !current_user ||
-      proposal.emendation? && manageable_user_groups.empty?
+              proposal.emendation? && manageable_user_groups.empty? ||
+              proposal.scope != current_user.scope
 
     endorse_translated = t("decidim.proposals.proposal_endorsements_helper.render_endorsements_button_card_part.endorse")
     html_class = "card__button button" if html_class.blank?
@@ -20,6 +23,7 @@ Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
     end
   end
 
+  # Add guard clause for emendations: only show the identity partial for Decidim::UserGroup
   def render_endorsement_identity(proposal, user, user_group = nil)
     return if proposal.emendation? && user_group.nil?
 
@@ -30,28 +34,31 @@ Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
       authenticity_token: form_authenticity_token
     )
     presenter = if user_group
-      Decidim::UserGroupPresenter.new(user_group)
-    else
-      Decidim::UserPresenter.new(user)
-    end
+                  Decidim::UserGroupPresenter.new(user_group)
+                else
+                  Decidim::UserPresenter.new(user)
+                end
     selected = proposal.endorsed_by?(user, user_group)
     http_method = selected ? :delete : :post
     render partial: "decidim/proposals/proposal_endorsements/identity", locals:
       { identity: presenter, selected: selected, current_endorsement_url: current_endorsement_url, http_method: http_method }
   end
 
+  # Caches the result of the Rectify::Query
   def manageable_user_groups
     return [] unless current_user
 
     @manageable_user_groups ||= Decidim::UserGroups::ManageableUserGroups.for(current_user).verified
   end
 
+  # Handles the size of the div that wraps the button
   def endorsement_buttons_column_size
     return "small-6" if @proposal.emendation? && manageable_user_groups.empty?
 
     "small-9"
   end
 
+  # Handles the size of the div that wraps the button
   def comment_button_column_size
     return "small-6" if @proposal.emendation? && manageable_user_groups.empty?
 
