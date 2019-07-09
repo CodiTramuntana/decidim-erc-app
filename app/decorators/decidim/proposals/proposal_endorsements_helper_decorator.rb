@@ -4,7 +4,7 @@ Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
   # Add guard clause for emendations: don't show the endorsement button if
   # the user is not a manager of a grup or has a different scope than the proposal.
   def render_endorsements_button_card_part(proposal, fully_endorsed, html_class = nil)
-    return if proposal.emendation? && manageable_user_groups.empty? || proposal.scope != current_user.scope
+    return if proposal.emendation? && (manageable_user_groups.empty? || proposal.scope != current_user.scope)
 
     endorse_translated = t("decidim.proposals.proposal_endorsements_helper.render_endorsements_button_card_part.endorse")
     html_class = "card__button button" if html_class.blank?
