@@ -24,7 +24,7 @@ ca:
         announcement:
           accepted: Aquesta esmena de la %{amendable_type} %{proposal_link} ha estat
             acceptada a <strong>%{date}</strong>.
-          evaluating: Aquesta esmena de la %{amendable_type} %{proposal_link} está
+          evaluating: Aquesta esmena de la %{amendable_type} %{proposal_link} està
             essent avaluada.
           rejected: Aquesta esmena de la %{amendable_type} %{proposal_link} ha estat
             rebutjada el <strong>%{date}</strong>.
