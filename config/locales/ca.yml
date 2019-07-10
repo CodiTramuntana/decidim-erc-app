@@ -49,10 +49,10 @@ ca:
         scope: Els participants poden veure només les esmenes del seu àmbit
       wizard_step_form:
         steps:
-          '1': Crea tu enmienda
-          '2': Compara tu enmienda
-          '3': Completa tu enmienda
-          '4': Publica tu enmienda
+          '1': Crea la teva esmena
+          '2': Compara la teva esmena
+          '3': Completa la teva esmena
+          '4': Publica la teva esmena
     components:
       proposals:
         settings:
