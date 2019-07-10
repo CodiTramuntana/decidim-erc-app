@@ -16,7 +16,7 @@ ca:
         discard: Descarta aquest esborrany
         discard_confirmation: Estàs segur de que vols descartar aquest esborrany d'esmena?
         phone_number: Telèfon de contacte
-        phone_number_help: Siusplau, revisa el teu telèfon de contacte per tal que
+        phone_number_help: Siusplau, indica el teu telèfon de contacte per tal que
           la organització es pugui posar en contacte amb tu.
         send: Vista prèvia
         title: Completa l'esborrany d'esmena
