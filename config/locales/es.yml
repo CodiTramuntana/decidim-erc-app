@@ -17,7 +17,7 @@ es:
         discard_confirmation: "¿Estás seguro que quieres descartar este borrador de
           enmienda"
         phone_number: Teléfono de contacto
-        phone_number_help: Porfavor, revisa tu teléfono de contacto para que la organización
+        phone_number_help: Por favor, revisa tu teléfono de contacto para que la organización
           pueda ponerse en contacto contigo.
         send: Vista previa
         title: Completa borrador de enmienda
