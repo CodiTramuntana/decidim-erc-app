@@ -1,8 +1,17 @@
 # frozen_string_literal: true
 
+# This decorator:
+# Overwrites existing methods
+#   #map_model(model)
+# Adds new methods
+#   #proposal_note
+#   #phone_number_value
+# Adds new form attributes
+#   :phone_number
 Decidim::Amendable::EditForm.class_eval do
   attribute :phone_number, String
 
+  # Assigns the :phone_number attribute value from the amender.
   def map_model(model)
     self.emendation_params = model.emendation.attributes.slice(*amendable_fields_as_string)
     self.phone_number = model.amender.phone_number

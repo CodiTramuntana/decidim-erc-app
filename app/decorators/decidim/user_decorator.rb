@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# This decorator:
+# Adds new methods
+#   #scope
+#   #phone_number
 Decidim::User.class_eval do
   # Syntactic sugar to access the scope assigned in the registration process of Decidim::Erc::CrmLogin.
   def scope

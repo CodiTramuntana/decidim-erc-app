@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
+# This decorator:
+# Overwrites existing methods
+#   ::render_endorsements_button_card_part(proposal, fully_endorsed, html_class = nil)
+#   ::render_endorsement_identity(proposal, user, user_group = nil)
+# Adds new methods
+#   ::manageable_user_groups
+#   ::endorsements_count_only_classes
+#   ::comment_button_column_size
 Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
   # Add guard clause for emendations: don't show the endorsement button if
   # the user is not a manager of a grup or has a different scope than the proposal.

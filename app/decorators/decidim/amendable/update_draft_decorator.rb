@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
+# This decorator:
+# Overwrites existing methods
+#   #call
+# Adds new methods
+#   #handle_proposal_note
 Decidim::Amendable::UpdateDraft.class_eval do
+  # Modifies transaction block to include new method
   def call
     return broadcast(:invalid) unless form.valid? && amendment.draft? && amender == current_user
 
