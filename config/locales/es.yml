@@ -70,7 +70,7 @@ es:
               o rechazar enmiendas.
             amendments_visibility: Visibilidad de enmiendas
             amendments_visibility_help: Los participantes deberán estar conectados
-              para poder ver las enmiendas si la visibilidat está restringida (opciones
+              para poder ver las enmiendas si la visibilidad está restringida (opciones
               2 y 3).
     wizard_step_form:
       wizard_aside:
