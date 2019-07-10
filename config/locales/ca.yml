@@ -71,7 +71,7 @@ ca:
             amendments_visibility: Visibilitat d'esmenes
             amendments_visibility_help: Els participants hauran d'estar connectats
               per a poder veure les esmenes si la visibilitat està restringida (opcions
-              2 y 3).
+              2 i 3).
     wizard_step_form:
       wizard_aside:
         back: Enrere
