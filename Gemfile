@@ -5,7 +5,8 @@ source 'https://rubygems.org'
 ruby RUBY_VERSION
 
 # We are pointing to master, because we some new features are required
-DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git"}
+# DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git"}
+DECIDIM_VERSION = {path: "../decidim"}
 
 gem 'daemons'
 gem 'delayed_job_active_record'
@@ -17,7 +18,7 @@ gem 'figaro', '>= 1.1.1'
 gem 'openssl'
 
 gem 'decidim', DECIDIM_VERSION
-gem 'decidim-erc-crm_login', path: '../modules/decidim-erc-crm_login'
+gem 'decidim-erc-crm_authenticable', path: '../modules/decidim-erc-crm_authenticable'
 
 group :development, :test do
   gem 'better_errors'
