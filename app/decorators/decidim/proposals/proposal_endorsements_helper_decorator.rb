@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
-# This decorator:
-# Overwrites existing methods
-#   ::render_endorsements_button_card_part(proposal, fully_endorsed, html_class = nil)
-#   ::render_endorsement_identity(proposal, user, user_group = nil)
-# Adds new methods
-#   ::manageable_user_groups
-#   ::endorsements_count_only_classes
-#   ::comment_button_column_size
+# This decorator adds logic to handle when to show the endorsements button for
+# and which endorsement identities this button can show when clicked.
 Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
+  # Method overrided.
   # Add guard clause for emendations: don't show the endorsement button if
   # the user is not a manager of a grup or has a different scope than the proposal.
   def render_endorsements_button_card_part(proposal, fully_endorsed, html_class = nil)
@@ -29,6 +24,7 @@ Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
     end
   end
 
+  # Method overrided.
   # Add guard clause for emendations: only show the identity partial for Decidim::UserGroup
   def render_endorsement_identity(proposal, user, user_group = nil)
     return if proposal.emendation? && user_group.nil?
@@ -50,6 +46,7 @@ Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
       { identity: presenter, selected: selected, current_endorsement_url: current_endorsement_url, http_method: http_method }
   end
 
+  # Method added.
   # Caches the result of the Rectify::Query
   def manageable_user_groups
     return [] unless current_user
@@ -57,11 +54,13 @@ Decidim::Proposals::ProposalEndorsementsHelper.class_eval do
     @manageable_user_groups ||= Decidim::UserGroups::ManageableUserGroups.for(current_user).verified
   end
 
+  # Method added.
   # Returns the CSS classes used for showing only the endorsements count in the proposal show page
   def endorsements_count_only_classes
     "button small compact light button--sc button--shadow expanded"
   end
 
+  # Method added.
   # Handles the size of the div that wraps the comment button in the proposal show page
   def comment_button_column_size
     return "small-6" if @proposal.emendation? && manageable_user_groups.empty?
