@@ -55,26 +55,6 @@ describe "Amend Proposal", type: :system do
             end
           end
         end
-
-        context "when the user is NOT logged in" do
-          before do
-            visit proposal_path
-          end
-
-          context "and visit an amendable proposal" do
-            it "is shown emendations of different scope in the amendments list" do
-              within ".amendment-list" do
-                expect(page).to have_content(emendation_other_scope.title)
-              end
-            end
-
-            it "is shown authors of emendation of different scope in the amenders list" do
-              within ".amender-list" do
-                expect(page).to have_content(amendment_other_scope.amender.name)
-              end
-            end
-          end
-        end
       end
     end
 
@@ -107,22 +87,6 @@ describe "Amend Proposal", type: :system do
                 expect(page).to have_content(amendment_same_scope.amender.name)
                 expect(page).not_to have_content(amendment_other_scope.amender.name)
               end
-            end
-          end
-        end
-
-        context "when the user is NOT logged in" do
-          before do
-            visit proposal_path
-          end
-
-          context "and visit an amendable proposal" do
-            it "is NOT shown the amendments list" do
-              expect(page).not_to have_css(".amendment-list")
-            end
-
-            it "is NOT shown the amenders list" do
-              expect(page).not_to have_css(".amender-list")
             end
           end
         end

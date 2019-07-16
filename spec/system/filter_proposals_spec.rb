@@ -75,18 +75,6 @@ describe "Filter Proposals", type: :system do
             end
           end
         end
-
-        context "when the user is NOT logged in" do
-          before do
-            visit main_component_path(component)
-          end
-
-          it "cannot be filtered by type" do
-            within "form.new_filter" do
-              expect(page).to have_no_content(/Type/i)
-            end
-          end
-        end
       end
     end
 
@@ -144,18 +132,6 @@ describe "Filter Proposals", type: :system do
               within "form.new_filter" do
                 expect(page).to have_content(/Type/i)
               end
-            end
-          end
-        end
-
-        context "when the user is NOT logged in" do
-          before do
-            visit main_component_path(component)
-          end
-
-          it "can be filtered by type" do
-            within "form.new_filter" do
-              expect(page).to have_content(/Type/i)
             end
           end
         end
