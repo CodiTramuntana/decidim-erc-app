@@ -18,7 +18,7 @@ module DecidimCleanApp
 
     # Default app time zone
     # config.time_zone = 'Madrid'
-    
+
     # initializer 'add named route overrides' do |app|
     #   app.routes_reloader.paths << File.expand_path('../named_routes_overrides.rb',__FILE__)
     #   # this seems to cause these extra routes to be loaded last, so they will define named routes last.
@@ -26,5 +26,12 @@ module DecidimCleanApp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # Make decorators available
+    config.to_prepare do
+      Dir.glob(Rails.root + 'app/decorators/**/*_decorator*.rb').each do |c|
+        require_dependency(c)
+      end
+    end
   end
 end

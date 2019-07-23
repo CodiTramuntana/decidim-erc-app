@@ -1,0 +1,80 @@
+---
+es:
+  decidim:
+    amendments:
+      compare_draft:
+        continue: Continua
+        no_similars_found: No se han encontrado enmiendas similares.
+        title: Enmiendas similares
+      created:
+        error: Se ha producido un error al crear el borrador de enmienda.
+        success: El borrador de enmienda se ha creado correctamente.
+      destroy_draft:
+        error: Se ha producido un error al eliminar el borrador de enmienda.
+        success: El borrador de enmienda se ha eliminado correctamente.
+      edit_draft:
+        discard: Descartar este borrador
+        discard_confirmation: "¿Estás seguro que quieres descartar este borrador de
+          enmienda"
+        phone_number: Teléfono de contacto
+        phone_number_help: Por favor, revisa tu teléfono de contacto para que la organización
+          pueda ponerse en contacto contigo.
+        send: Vista previa
+        title: Completa borrador de enmienda
+      emendation:
+        announcement:
+          accepted: Esta enmienda de la %{amendable_type} %{proposal_link} ha sido
+            aceptada el <strong>%{date}</strong>.
+          evaluating: Esta enmienda de la %{amendable_type} %{proposal_link} está
+            siendo evaluada.
+          rejected: Esta enmienda de la %{amendable_type} %{proposal_link} ha sido
+            rechazada el <strong>%{date}</strong>.
+          withdrawn: Esta enmienda de la %{amendable_type} %{proposal_link} ha sido
+            retirada por su autora.
+      new:
+        send: Crear
+        title: Crea borrador de enmienda
+      preview_draft:
+        modify: Modificar
+        publish: Publicar
+        title: Publica borrador de enmienda
+      publish_draft:
+        error: Se ha producido un error al publicar el borrador de enmienda.
+        success: El borrador de enmienda se ha publicado correctamente.
+      update_draft:
+        error: Se ha producido un error al actualizar el borrador de enmienda.
+        success: El borrador de enmienda se ha actualizado correctamente.
+      visibility_options:
+        all: Todos los participantes pueden ver todas las enmiendas
+        participants: Los participantes solo pueden ver sus propias enmiendas
+        scope: Los participantes solo pueden ver las enmiendas de su ámbito
+      wizard_step_form:
+        steps:
+          '1': Crea tu enmienda
+          '2': Compara tu enmienda
+          '3': Completa tu enmienda
+          '4': Publica tu enmienda
+    components:
+      proposals:
+        settings:
+          global:
+            amendments_wizard_help_text: Texto de ayuda al crear una nueva enmienda
+          step:
+            amendment_creation_enabled: Creación de enmiendas habilitada
+            amendment_creation_enabled_help: Participantes pueden crear enmiendas
+            amendment_promotion_enabled: Promoción de enmiendas rechazadas habilitada
+            amendment_promotion_enabled_help: Autores de enmiendas rechazadas podrán
+              promoverlas a propuestas independientes.
+            amendment_reaction_enabled: Reacción a enmiendas habilitada
+            amendment_reaction_enabled_help: Autores de propuestas podrán aceptar
+              o rechazar enmiendas.
+            amendments_visibility: Visibilidad de enmiendas
+            amendments_visibility_help: Los participantes deberán estar conectados
+              para poder ver las enmiendas si la visibilidad está restringida (opciones
+              2 y 3).
+    wizard_step_form:
+      wizard_aside:
+        back: Volver
+      wizard_header:
+        see_steps: ver los pasos
+        step_of: Paso %{current_step} de %{total_steps}
