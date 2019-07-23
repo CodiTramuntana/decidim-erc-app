@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = 'Decidim Clean APP'
+  config.application_name = 'Decidim ERC APP'
 
   config.mailer_sender = 'decidim@decideix.com'
 

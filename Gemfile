@@ -17,6 +17,7 @@ gem 'figaro', '>= 1.1.1'
 gem 'openssl'
 
 gem 'decidim', DECIDIM_VERSION
+gem 'decidim-erc-crm_authenticable', git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", branch: 'apply_register_to_civi_crm'
 
 group :development, :test do
   gem 'better_errors'

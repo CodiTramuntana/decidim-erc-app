@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git
+  revision: a2f988ad50b50332ff37d828e30d09c3a38c6313
+  branch: apply_register_to_civi_crm
+  specs:
+    decidim-erc-crm_authenticable (1.0.0)
+      decidim-core (>= 0.18.0)
+      decidim-verifications (>= 0.18.0)
+      rails (>= 5.2)
+      virtus-multiparams
+
+GIT
   remote: https://github.com/decidim/decidim.git
   revision: a3a493442dcff6a61e6b027e3c2288ff9354c573
   specs:
@@ -724,6 +735,8 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    virtus-multiparams (0.1.1)
+      virtus (~> 1.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -756,6 +769,7 @@ DEPENDENCIES
   daemons
   decidim!
   decidim-dev!
+  decidim-erc-crm_authenticable!
   delayed_job_active_record
   faker (~> 1.8.4)
   figaro (>= 1.1.1)
