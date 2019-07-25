@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-# We are pointing to master, because we some new features are required
+# We are pointing to master, because some new features are required.
 DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git"}
 
 gem 'daemons'
@@ -17,7 +17,10 @@ gem 'figaro', '>= 1.1.1'
 gem 'openssl'
 
 gem 'decidim', DECIDIM_VERSION
+# For integration environment use:
 gem 'decidim-erc-crm_authenticable', git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", branch: 'apply_register_to_civi_crm'
+# For local development use:
+# gem 'decidim-erc-crm_authenticable', path: '../decidim-erc-crm_authenticable'
 
 group :development, :test do
   gem 'better_errors'
