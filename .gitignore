@@ -31,3 +31,6 @@ public/uploads
 # Ignore test app
 spec/decidim_dummy_app/
 .rspec-failures
+
+# CiviCRM Contacts
+config/civi_crm/
