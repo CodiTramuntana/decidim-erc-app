@@ -9,7 +9,7 @@ Decidim::Amendable::EditForm.class_eval do
   # Assigns the :phone_number attribute value from the amender.
   def map_model(model)
     self.emendation_params = model.emendation.attributes.slice(*amendable_fields_as_string)
-    self.phone_number = model.amender.phone_number
+    self.phone_number = Base64.decode64(model.amender.extened_data[:phone_number])
   end
 
   # Method added.
