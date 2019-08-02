@@ -4,9 +4,7 @@ require "rails_helper"
 
 describe "Endorse Amendment", versioning: true, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
-  let!(:scope) { create(:scope, organization: organization) }
-  let!(:other_scope) { create(:scope, organization: organization) }
-  let!(:user) { create :user, :confirmed, organization: organization, extended_data: { "member_of": scope.id, "phone": "666-666-666" } }
+  let!(:user) { create(:user, :confirmed, organization: organization) }
   let!(:user_group) { create(:user_group, :confirmed, :verified, organization: organization) }
   let!(:component) { create(:proposal_component, organization: organization) }
   let!(:proposal) { create(:proposal, component: component) }
@@ -28,7 +26,7 @@ describe "Endorse Amendment", versioning: true, type: :system do
       let!(:manager_membership) { create(:user_group_membership, user: user, user_group: user_group, role: :admin) }
 
       context "and visits an amendment of the same scope" do
-        let!(:emendation) { create(:proposal, scope: scope, component: component) }
+        let!(:emendation) { create(:proposal, scope: user.scope, component: component) }
         let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
 
         before do
@@ -60,7 +58,7 @@ describe "Endorse Amendment", versioning: true, type: :system do
       end
 
       context "and visits an amendment of a different scope" do
-        let!(:emendation) { create(:proposal, scope: other_scope, component: component) }
+        let!(:emendation) { create(:proposal, component: component) }
         let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
 
         before do
@@ -110,7 +108,7 @@ describe "Endorse Amendment", versioning: true, type: :system do
       let!(:member_membership) { create(:user_group_membership, user: user, user_group: user_group, role: :member) }
 
       context "and visits an amendment of the same scope" do
-        let!(:emendation) { create(:proposal, scope: scope, component: component) }
+        let!(:emendation) { create(:proposal, scope: user.scope, component: component) }
         let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
 
         before do
@@ -127,7 +125,7 @@ describe "Endorse Amendment", versioning: true, type: :system do
       end
 
       context "and visits an amendment of a different scope" do
-        let!(:emendation) { create(:proposal, scope: other_scope, component: component) }
+        let!(:emendation) { create(:proposal, component: component) }
         let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
 
         before do
