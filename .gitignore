@@ -33,4 +33,4 @@ spec/decidim_dummy_app/
 .rspec-failures
 
 # CiviCRM Contacts
-config/civi_crm/
+config/civi_crm/*
