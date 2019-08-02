@@ -18,9 +18,11 @@ gem 'openssl'
 
 gem 'decidim', DECIDIM_VERSION
 # For integration environment use:
-# gem 'decidim-erc-crm_authenticable', git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", branch: 'apply_register_to_civi_crm'
+gem 'decidim-erc-crm_authenticable',
+    git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git",
+    branch: 'add/tests' # Branch with latest developments.
 # For local development use:
-gem 'decidim-erc-crm_authenticable', path: '../decidim-erc-crm_authenticable'
+# gem 'decidim-erc-crm_authenticable', path: '../decidim-erc-crm_authenticable'
 
 group :development, :test do
   gem 'better_errors'
