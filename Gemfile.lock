@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git
-  revision: 9bae8bec0c57fff56ce5ea513467df9d3e2327e0
+  revision: a18af723c113624ceea35fe58e544bdf88562b1d
   branch: add/tests
   specs:
     decidim-erc-crm_authenticable (1.0.0)
@@ -506,7 +506,7 @@ GEM
     netrc (0.11.0)
     nio4r (2.4.0)
     nobspw (0.6.1)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     oauth (0.5.4)
     oauth2 (1.4.1)
@@ -584,7 +584,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.1.0)
+    rails-html-sanitizer (1.2.0)
       loofah (~> 2.2, >= 2.2.2)
     rails-i18n (5.1.3)
       i18n (>= 0.7, < 2)
