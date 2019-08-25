@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git
-  revision: a18af723c113624ceea35fe58e544bdf88562b1d
+  revision: 817ecfdbf8c295d2eaebc9407c308af98935d1ff
   branch: add/tests
   specs:
     decidim-erc-crm_authenticable (1.0.0)
@@ -344,10 +344,10 @@ GEM
       delayed_job (>= 3.0, < 5)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (4.6.2)
+    devise (4.7.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 6.0)
+      railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
     devise-i18n (1.8.1)
@@ -411,12 +411,13 @@ GEM
     graphiql-rails (1.7.0)
       railties
       sprockets-rails
-    graphql (1.9.9)
+    graphql (1.9.10)
     hashdiff (1.0.0)
     hashie (3.6.0)
     highline (2.0.2)
     html_tokenizer (0.0.7)
     htmlentities (4.3.4)
+    http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.17.0)
@@ -520,10 +521,10 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (5.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-google-oauth2 (0.7.0)
+    omniauth-google-oauth2 (0.8.0)
       jwt (>= 2.0)
       omniauth (>= 1.1.1)
-      omniauth-oauth2 (>= 1.5)
+      omniauth-oauth2 (>= 1.6)
     omniauth-oauth (1.1.0)
       oauth
       omniauth (~> 1.0)
@@ -619,7 +620,8 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    rest-client (2.0.2)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
