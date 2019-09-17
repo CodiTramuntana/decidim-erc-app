@@ -4,13 +4,10 @@ require "rails_helper"
 
 describe "Amend Proposal", type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
-  let!(:scope) { create(:scope, organization: organization) }
-  let!(:user) { create :user, :confirmed, organization: organization, extended_data: { "member_of": scope.id } }
-
+  let!(:user) { create :user, :confirmed, organization: organization }
   let!(:component) { create(:proposal_component, organization: organization) }
   let!(:active_step_id) { component.participatory_space.active_step.id }
   let!(:proposal) { create(:proposal, component: component) }
-
   let(:proposal_path) { Decidim::ResourceLocatorPresenter.new(proposal).path }
 
   before do
@@ -18,11 +15,10 @@ describe "Amend Proposal", type: :system do
   end
 
   context "with existing amendments" do
-    let!(:emendation_same_scope) { create(:proposal, body: body, scope: scope, component: component) }
+    let!(:emendation_same_scope) { create(:proposal, body: body, scope: user.scope, component: component) }
     let!(:amendment_same_scope) { create(:amendment, amendable: proposal, emendation: emendation_same_scope) }
 
-    let!(:other_scope) { create(:scope, organization: organization) }
-    let!(:emendation_other_scope) { create(:proposal, scope: other_scope, component: component) }
+    let!(:emendation_other_scope) { create(:proposal, component: component) }
     let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
     context "and amendments global setting is NOT enabled" do
