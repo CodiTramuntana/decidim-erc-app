@@ -4,8 +4,16 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-# We are pointing to master, because we some new features are required
-DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git"}
+# We are pointing to master, because some new features are required.
+DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git", branch: "master"}
+# We are pointing to apply_register_to_civi_crm until the PR gets merged.
+DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
+  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git",
+  branch: "apply_register_to_civi_crm"
+}
+
+gem 'decidim', DECIDIM_VERSION
+gem 'decidim-erc-crm_authenticable', DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION
 
 gem 'daemons'
 gem 'delayed_job_active_record'
@@ -15,8 +23,6 @@ gem 'whenever'
 
 gem 'figaro', '>= 1.1.1'
 gem 'openssl'
-
-gem 'decidim', DECIDIM_VERSION
 
 group :development, :test do
   gem 'better_errors'
