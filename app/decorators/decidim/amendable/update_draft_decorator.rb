@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-# This decorator updates the draft with scope of the user and handles the
-# creation of a ProposalNote that contains the `phone_number` String.
+# This decorator handles the creation of a ProposalNote with the phone_number.
 Decidim::Amendable::UpdateDraft.class_eval do
   # Method overrided.
-  # Modifies transaction block to include new method
+  # Modifies the transaction block to include a new method.
   def call
     return broadcast(:invalid) unless form.valid? && amendment.draft? && amender == current_user
 
@@ -17,16 +16,6 @@ Decidim::Amendable::UpdateDraft.class_eval do
   end
 
   private
-
-  # Method added.
-  # Adds the scope of the user to the emendation.
-  def update_draft
-    PaperTrail.request(enabled: false) do
-      emendation.update(form.emendation_params.merge(scope: current_user.scope))
-      emendation.coauthorships.clear
-      emendation.add_coauthor(current_user, user_group: user_group)
-    end
-  end
 
   # Method added.
   # Creates and/or updates or deletes the ProposalNote with the phone number.
