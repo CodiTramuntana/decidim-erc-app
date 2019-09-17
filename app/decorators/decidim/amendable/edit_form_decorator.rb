@@ -6,10 +6,14 @@ Decidim::Amendable::EditForm.class_eval do
   attribute :phone_number, String
 
   # Method overrided.
-  # Assigns the :phone_number attribute value from the amender.
+  # Assigns the :phone_number and :scope attribute value from the amender.
   def map_model(model)
-    self.emendation_params = model.emendation.attributes.slice(*amendable_fields_as_string)
     self.phone_number = Base64.decode64(model.amender.extended_data["phone_number"])
+    self.emendation_params = model
+                             .emendation
+                             .attributes
+                             .slice(*amendable_fields_as_string)
+                             .merge(scope: model.amender.scope)
   end
 
   # Method added.
