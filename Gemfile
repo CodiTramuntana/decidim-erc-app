@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 ruby RUBY_VERSION
 
 # We are pointing to master, because some new features are required.
-DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git"}
+DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git", branch: "master"}
 
 gem 'daemons'
 gem 'delayed_job_active_record'
