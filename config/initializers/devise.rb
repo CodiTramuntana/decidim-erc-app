@@ -55,4 +55,8 @@ Devise.setup do |config|
   # config.cas_client_config_options = {
   #     logger: Rails.logger
   # }
+  config.timeout_in = 2.hours
+
+  # Time window were users can access the website even if their email is not confirmed.
+  config.allow_unconfirmed_access_for = 0.days
 end
