@@ -18,6 +18,7 @@ module AmendableExtension
     # based on the component's amendments settings.
     scope :only_visible_emendations_for, lambda { |user, component|
       return only_emendations unless component.settings.amendments_enabled
+      return only_emendations if user&.admin?
 
       case component.current_settings.amendments_visibility
       when "participants"
@@ -36,6 +37,7 @@ module AmendableExtension
     # that are not visible to the user based on the component's amendments settings.
     scope :amendables_and_visible_emendations_for, lambda { |user, component|
       return all unless component.settings.amendments_enabled
+      return all if user&.admin?
 
       case component.current_settings.amendments_visibility
       when "participants"
@@ -62,6 +64,7 @@ module AmendableExtension
     def visible_emendations_for(user)
       pubslished_emendations = emendations.published
       return pubslished_emendations unless component.settings.amendments_enabled
+      return pubslished_emendations if user&.admin?
 
       case component.current_settings.amendments_visibility
       when "participants"
