@@ -17,7 +17,9 @@ module DecidimCleanApp
     config.load_defaults 5.1
 
     # Default app time zone
-    # config.time_zone = 'Madrid'
+    config.time_zone = 'Madrid'
+    config.active_record.default_timezone = :local
+    config.active_record.time_zone_aware_attributes = false
 
     # initializer 'add named route overrides' do |app|
     #   app.routes_reloader.paths << File.expand_path('../named_routes_overrides.rb',__FILE__)
