@@ -13,7 +13,7 @@ DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
 }
 
 gem 'decidim', DECIDIM_VERSION
-gem 'decidim-erc-crm_authenticable', DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION
+gem 'decidim-erc-crm_authenticable', path: "../decidim-erc-crm_authenticable"
 
 gem 'daemons'
 gem 'delayed_job_active_record'
