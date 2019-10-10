@@ -8,8 +8,7 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git", branch: "master"}
 # We are pointing to apply_register_to_civi_crm until the PR gets merged.
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
-  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git",
-  branch: "apply_register_to_civi_crm"
+  path: "../decidim-erc-crm_authenticable"
 }
 
 gem 'decidim', DECIDIM_VERSION
