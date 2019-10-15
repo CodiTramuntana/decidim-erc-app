@@ -2,6 +2,7 @@
 
 **Upgrade notes:**
 
+- **Changed**: Change: Freeze account data [#5](https://github.com/CodiTramuntana/decidim-erc-app/pull/5)
 - **Added**: Add: amendments customizations [#1](https://github.com/CodiTramuntana/decidim-erc-app/pull/1)
 
 ## Previous changes
