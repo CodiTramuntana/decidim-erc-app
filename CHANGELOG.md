@@ -2,6 +2,7 @@
 
 **Upgrade notes:**
 
+- **Added**: Add: Decidim::TermCustomizer [#6](https://github.com/CodiTramuntana/decidim-erc-app/pull/6)
 - **Added**: Add: amendments customizations [#1](https://github.com/CodiTramuntana/decidim-erc-app/pull/1)
 
 ## Previous changes
