@@ -17,6 +17,7 @@ gem 'figaro', '>= 1.1.1'
 gem 'openssl'
 
 gem 'decidim', DECIDIM_VERSION
+gem 'decidim-term_customizer', git: 'https://github.com/CodiTramuntana/decidim-module-term_customizer.git'
 
 group :development, :test do
   gem 'better_errors'
