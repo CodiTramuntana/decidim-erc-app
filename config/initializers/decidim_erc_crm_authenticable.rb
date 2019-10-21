@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-Decidim::Erc::CrmAuthenticable::CIVICRM_COMARCAL_EXCEPTIONS = [
-  "Baix Llobregat (comarcal)",
-  "Barcelones Nord (comarcal)",
-  "Maresme (comarcal)",
-  "Vallès Occidental (comarcal)",
-  "Vallès Oriental (comarcal)"
-].freeze
+Decidim::Erc::CrmAuthenticable::CIVICRM_COMARCAL_EXCEPTIONS = %w(
+  5723
+  5724
+  5727
+  5729
+  5730
+).freeze
 filepath = Rails.root.join("config", "civi_crm", "decidim_scopes_mapping.yml")
 Decidim::Erc::CrmAuthenticable::SCOPE_CODES = YAML.load_file(filepath).freeze if File.exist?(filepath)
 Decidim::Erc::CrmAuthenticable::VALID_MBSP_STATUS_IDS = %w(1 2).freeze
