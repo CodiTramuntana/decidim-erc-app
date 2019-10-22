@@ -2,6 +2,7 @@
 
 **Upgrade notes:**
 
+- **Added**: Add: decidim-erc-crm_authenticable module [#3](https://github.com/CodiTramuntana/decidim-erc-app/pull/3)
 - **Added**: Add: amendments customizations [#1](https://github.com/CodiTramuntana/decidim-erc-app/pull/1)
 
 ## Previous changes
