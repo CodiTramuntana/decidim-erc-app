@@ -81,11 +81,15 @@ describe "Amendment Wizard", type: :system do
 
       it "show the phone_number field prefilled" do
         within ".edit_amendment" do
-          expect(page).to have_field("Contact phone number", with: "666-666-666")
+          # Data returned from CiviCRM should be readonly and users must be informed.
+          expect(page).to have_field("Contact phone number", with: "666-666-666", readonly: true)
+          within "#amendment_phone_number" do
+            expect(page).to have_tag("p.help-text", text: /administracio@erc.cat/)
+          end
         end
       end
 
-      context "when the user leaves the phone number field prefilled as is" do
+      context "when the user submits the form" do
         before do
           within ".edit_amendment" do
             find("*[type=submit]").click
@@ -95,79 +99,6 @@ describe "Amendment Wizard", type: :system do
         it "creates a proposal note" do
           expect(emendation_draft.proposal_notes_count).to eq(1)
           expect(Decidim::Proposals::ProposalNote.last.body).to eq("666-666-666")
-        end
-      end
-
-      context "when the user fills the phone number field with another value" do
-        before do
-          within ".edit_amendment" do
-            fill_in :amendment_phone_number, with: "999-999-999"
-            find("*[type=submit]").click
-          end
-        end
-
-        it "creates a proposal note" do
-          expect(emendation_draft.proposal_notes_count).to eq(1)
-          expect(Decidim::Proposals::ProposalNote.last.body).to eq("999-999-999")
-        end
-      end
-
-      context "when the user empties the phone number field" do
-        before do
-          within ".edit_amendment" do
-            fill_in :amendment_phone_number, with: ""
-            find("*[type=submit]").click
-          end
-        end
-
-        it "does NOT create a proposal note" do
-          expect(emendation_draft.proposal_notes_count).to eq(0)
-        end
-      end
-    end
-
-    context "and in step_4: Preview your amendment" do
-      before do
-        within ".new_amendment" do
-          fill_in :amendment_emendation_params_title, with: title
-          fill_in :amendment_emendation_params_body, with: body
-          find("*[type=submit]").click
-        end
-        within ".edit_amendment" do
-          find("*[type=submit]").click
-        end
-      end
-
-      context "when the Modify link is clicked" do
-        before do
-          click_link "Modify"
-        end
-
-        context "and the empties the phone number field" do
-          before do
-            within ".edit_amendment" do
-              fill_in :amendment_phone_number, with: ""
-              find("*[type=submit]").click
-            end
-          end
-
-          it "deletes the proposal note" do
-            expect(emendation_draft.reload.proposal_notes_count).to eq(0)
-          end
-        end
-
-        context "and updates the phone number field" do
-          before do
-            within ".edit_amendment" do
-              fill_in :amendment_phone_number, with: "999-999-999"
-              find("*[type=submit]").click
-            end
-          end
-
-          it "updates the proposal note" do
-            expect(emendation_draft.proposal_notes_count).to eq(1)
-            expect(Decidim::Proposals::ProposalNote.last.body).to eq("999-999-999")
-          end
         end
       end
     end

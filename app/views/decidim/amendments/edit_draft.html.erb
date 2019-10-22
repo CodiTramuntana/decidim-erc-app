@@ -20,8 +20,8 @@
             <div class="field">
               <%= form.text_field :phone_number,
                                   label: t(".phone_number"),
-                                  help_text: t(".phone_number_help"),
-                                  value: form.object.phone_number_value %>
+                                  help_text: t(".phone_number_help").html_safe,
+                                  readonly: true %>
             </div>
             <!-- /Overwriting this view to add this field -->
 

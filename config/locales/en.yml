@@ -4,11 +4,5 @@ en:
     amendments:
       edit_draft:
         phone_number: Contact phone number
-        phone_number_help: Please, review your phone number so the organization
-          can contact you.
-    verifications:
-      authorizations:
-        first_login:
-          crm_authenticable_authorization_handler: Check yourself as a member of Esquerra Republicana
-          actions:
-            crm_authenticable_authorization_handler: Get verified as a member of Esquerra Republicana
+        phone_number_help: Please, contact administracio@erc.cat if your data
+            is not up to date.

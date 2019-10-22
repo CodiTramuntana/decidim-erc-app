@@ -4,15 +4,14 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-# We are pointing to master, because some new features are required.
 DECIDIM_VERSION = "0.19.0"
-# We are pointing to apply_register_to_civi_crm until the PR gets merged.
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
   git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git"
 }
 
 gem 'decidim', DECIDIM_VERSION
 gem 'decidim-erc-crm_authenticable', DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION
+gem 'decidim-term_customizer', git: 'https://github.com/CodiTramuntana/decidim-module-term_customizer.git'
 
 gem 'daemons'
 gem 'delayed_job_active_record'

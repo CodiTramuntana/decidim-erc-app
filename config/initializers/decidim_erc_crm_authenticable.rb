@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# https://github.com/CodiTramuntana/decidim-erc-crm_authenticable/blob/master/lib/decidim/erc/crm_authenticable.rb
 Decidim::Erc::CrmAuthenticable::CIVICRM_COMARCAL_EXCEPTIONS = %w(
   5723
   5724
