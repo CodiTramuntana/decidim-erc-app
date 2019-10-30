@@ -4,9 +4,14 @@ require "rails_helper"
 
 describe "Amendment Wizard", type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
-  let!(:scope) { create(:scope, organization: organization) }
-  let!(:user) { create :user, :confirmed, organization: organization, extended_data: { "member_of": scope.id, "phone": "666-666-666" } }
-
+  let!(:user) do
+    create(
+      :user,
+      :confirmed,
+      organization: organization,
+      extended_data: { "phone_number" => Base64.encode64("666-666-666") }
+    )
+  end
   let!(:component) { create(:proposal_component, :with_amendments_enabled, organization: organization) }
   let!(:active_step_id) { component.participatory_space.active_step.id }
   let!(:proposal) { create(:proposal, title: "More roads and less sidewalks", component: component) }
@@ -30,11 +35,10 @@ describe "Amendment Wizard", type: :system do
 
     context "and in step_2: Compare your amendment" do
       context "with similar results" do
-        let!(:other_scope) { create(:scope, organization: organization) }
-        let!(:emendation_other_scope) { create(:proposal, body: body, scope: other_scope, component: component) }
+        let!(:emendation_other_scope) { create(:proposal, body: body, component: component) }
         let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
-        let!(:emendation_same_scope) { create(:proposal, body: body, scope: scope, component: component) }
+        let!(:emendation_same_scope) { create(:proposal, body: body, scope: user.scope, component: component) }
         let!(:amendment_same_scope) { create(:amendment, amendable: proposal, emendation: emendation_same_scope) }
 
         before do

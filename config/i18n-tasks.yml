@@ -6,6 +6,7 @@ locales: [ca, es]
 ignore_missing:
   - "decidim.proposals.proposal_endorsements_helper.render_endorsements_button_card_part.endorse"
   - "decidim.proposals.proposals.endorsements_card_row.comments"
+  - decidim.account.show.*
 
 ignore_unused:
   - "decidim.amendments.*"
