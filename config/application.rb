@@ -11,7 +11,7 @@ require 'resolv-replace'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module DecidimCleanApp
+module DecidimErcApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
@@ -34,6 +34,10 @@ module DecidimCleanApp
       Dir.glob(Rails.root + 'app/decorators/**/*_decorator*.rb').each do |c|
         require_dependency(c)
       end
+    end
+    
+    config.after_initialize do
+      Decidim.find_resource_manifest(:user).searchable = false
     end
   end
 end
