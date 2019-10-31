@@ -79,6 +79,9 @@ ca:
         see_steps: veure els passos
         step_of: Pas %{current_step} de %{total_steps}
   devise:
+    sessions:
+      new:
+        sign_in: Inicia sessió
     mailer:
       confirmation_instructions:
         action: Confirma el registre a la plataforma
