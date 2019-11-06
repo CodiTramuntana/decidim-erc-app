@@ -7,11 +7,11 @@ Decidim.configure do |config|
 
   # Change these lines to set your preferred locales
   config.default_locale = :ca
+  config.available_locales = [:ca]
 
   # Configure available options for Decidim::Amendment::VisibilityStepSetting::options
   config.amendments_visibility_options = %w(all participants scope)
 
-  config.available_locales = %i[ca en es]
 
   config.enable_html_header_snippets = true
   config.track_newsletter_links = true

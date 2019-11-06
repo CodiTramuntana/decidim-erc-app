@@ -5,3 +5,7 @@
     margin-bottom: 0;
   }
 }
+
+.topbar__conversations, a[href^="/conversations"]{
+  display: none;
+}
