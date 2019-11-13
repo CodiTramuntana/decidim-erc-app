@@ -9,3 +9,9 @@
 .topbar__conversations, a[href^="/conversations"]{
   display: none;
 }
+
+.main-footer .footer-nav{
+  a[href="/open-data/download"] {
+    display: none;
+  }
+}
