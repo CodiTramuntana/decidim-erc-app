@@ -93,4 +93,14 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  # We make :en locale available in tests as only :ca is configured.
+  # See: config/initializers/decidim.rb
+  config.before do
+    I18n.available_locales = %i(en ca es)
+    I18n.default_locale = :en
+    I18n.locale = :en
+    Decidim.available_locales = %i(en ca es)
+    Decidim.default_locale = :en
+  end
 end

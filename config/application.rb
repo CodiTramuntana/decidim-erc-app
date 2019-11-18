@@ -38,7 +38,11 @@ module DecidimErcApp
 
     # Update Decidim registries after initialization.
     config.after_initialize do
+      # Stop showing proposals in the participatory process show page.
+      Decidim.view_hooks.send(:hooks).delete_if { |k, _| k == :participatory_space_highlighted_elements }
+      # Stop being able to find user in global search bar.
       Decidim.find_resource_manifest(:user).searchable = false
+      # Remove user interests from user menu.
       Decidim::MenuRegistry.destroy(:user_menu)
       Decidim.menu(:user_menu) do |menu|
         menu.item t("account", scope: "layouts.decidim.user_profile"),
