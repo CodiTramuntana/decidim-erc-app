@@ -38,6 +38,11 @@ module DecidimErcApp
 
     # Update Decidim registries after initialization.
     config.after_initialize do
+      # Adding custom content to the bottom of the user profile sidebar.
+      Decidim.view_hooks.register(:user_profile_bottom, priority: Decidim::ViewHooks::HIGH_PRIORITY) do |view_context|
+        view_context = view_context.controller.view_context
+        view_context.render(partial: "decidim/user_scope")
+      end
       # Stop showing proposals in the participatory process show page.
       Decidim.view_hooks.send(:hooks).delete_if { |k, _| k == :participatory_space_highlighted_elements }
       # Stop being able to find user in global search bar.
