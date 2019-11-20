@@ -42,4 +42,14 @@ describe "Profile", type: :system do
       end
     end
   end
+
+  context "when visiting a user profile" do
+    let(:admin) { false }
+
+    before { visit decidim.profile_path(user.nickname) }
+
+    it "shows the user's scope name" do
+      expect(page).not_to have_link(user.scope.name)
+    end
+  end
 end
