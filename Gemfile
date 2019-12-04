@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.19.0"
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: '0.19-stable' }
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
   git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git"
 }
