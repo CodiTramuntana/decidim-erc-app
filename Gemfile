@@ -4,14 +4,15 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.19.0"
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: '0.19-stable' }
+TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.19-stable'}
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
   git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git"
 }
 
 gem 'decidim', DECIDIM_VERSION
 gem 'decidim-erc-crm_authenticable', DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION
-gem 'decidim-term_customizer', git: 'https://github.com/CodiTramuntana/decidim-module-term_customizer.git'
+gem 'decidim-term_customizer', TERM_CUSTOMIZER_VERSION
 
 gem 'daemons'
 gem 'delayed_job_active_record'
