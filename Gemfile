@@ -16,7 +16,7 @@ gem 'decidim-term_customizer', TERM_CUSTOMIZER_VERSION
 
 gem 'daemons'
 gem 'delayed_job_active_record'
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 gem 'uglifier', '>= 1.3.0'
 gem 'whenever'
 
