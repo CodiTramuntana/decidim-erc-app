@@ -64,6 +64,7 @@ The corresponding rake task is neither scheduled.
 
 This Decidim application completelly relies on [CodiTramuntana/decidim-erc-crm_authenticable](https://github.com/CodiTramuntana/decidim-erc-crm_authenticable) custom module for registration, login and verification.
 
+This module requires an initializer: `config/initializers/decidim_erc_crm_authenticable.rb`.
 
 ## Testing
 
