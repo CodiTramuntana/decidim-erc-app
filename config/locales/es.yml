@@ -1,6 +1,8 @@
 ---
 es:
   decidim:
+    actions:
+      export_amendments: Exportar enmiendas
     amendments:
       compare_draft:
         continue: Continua

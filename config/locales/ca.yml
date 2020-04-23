@@ -1,6 +1,8 @@
 ---
 ca:
   decidim:
+    actions:
+      export_amendments: Exportar esmenes
     amendments:
       compare_draft:
         continue: Continua
