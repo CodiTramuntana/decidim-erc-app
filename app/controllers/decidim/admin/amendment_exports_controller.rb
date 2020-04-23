@@ -6,7 +6,6 @@ module Decidim
       include Decidim::ComponentPathHelper
 
       NAME = "amendments"
-      FORMAT = "Excel"
 
       def export
         proposal_id = Decidim::Proposals::Proposal.find_by(decidim_component_id: params[:component_id]).id
@@ -14,7 +13,7 @@ module Decidim
         serializer = Decidim::AmendmentSerializer
         user = current_user
 
-        export_data = Decidim::Exporters.find_exporter(FORMAT).new(collection, serializer).export do |sheet|
+        export_data = Decidim::Exporters::AmendmentExcel.new(collection, serializer).export do |sheet|
           old_body_format = Spreadsheet::Format.new(
             color: :red
           )

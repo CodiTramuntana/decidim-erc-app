@@ -13,7 +13,7 @@ module Decidim
     #
     # It will maintain types like Integers, Floats & Dates so Excel can deal with
     # them.
-    class Excel < CSV
+    class AmendmentExcel < CSV
       # Public: Exports a file in an Excel readable format.
       #
       # Returns an ExportData instance.
