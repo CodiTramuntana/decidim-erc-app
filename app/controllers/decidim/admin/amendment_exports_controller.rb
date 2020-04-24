@@ -8,12 +8,13 @@ module Decidim
       NAME = "amendments"
 
       def export
-        export_data = Decidim::Exporters::AmendmentExcel.new
+        @export_data = Decidim::Exporters::AmendmentExcel.new
 
-        add_amendments!(export_data)
-        add_users!(export_data)
+        add_amendments_sheet
+        add_users_sheet
+        add_coauthors_sheet
 
-        Decidim::ExportMailer.export(current_user, NAME, export_data.export).deliver_now
+        Decidim::ExportMailer.export(current_user, NAME, @export_data.export).deliver_now
 
         flash[:notice] = t("decidim.admin.exports.notice")
 
@@ -22,12 +23,11 @@ module Decidim
 
       private
 
-      def add_amendments!(export_data)
-        proposal_ids = Decidim::Proposals::Proposal.where(decidim_component_id: params[:component_id]).ids
-        collection = Decidim::Amendment.where(decidim_amendable_id: proposal_ids)
+      def add_amendments_sheet
+        collection = Decidim::Amendment.where(decidim_emendation_id: amendments.ids)
         serializer = Decidim::AmendmentSerializer
 
-        export_data.add_new_sheet!(collection, serializer, :name => "Test") do |sheet|
+        @export_data.add_new_sheet!(collection, serializer, :name => "Test") do |sheet|
           old_body_format = Spreadsheet::Format.new(
             color: :red
           )
@@ -39,8 +39,22 @@ module Decidim
         end
       end
 
-      def add_users!(export_data)
-        export_data.add_new_sheet!(Decidim::User.all, Decidim::AmendmentUserSerializer, name: "Users")
+      def add_users_sheet
+        collection = Decidim::Amendment.where(decidim_emendation_id: amendments.ids).order(:decidim_user_id)
+        serializer = Decidim::AmendmentUserSerializer
+
+        @export_data.add_new_sheet!(collection, serializer, name: "Users")
+      end
+
+      def add_coauthors_sheet
+        collection = coauthorships
+        serializer = Decidim::AmendmentCoauthorshipSerializer
+
+        @export_data.add_new_sheet!(collection, serializer, name: "Authors")
+      end
+
+      def amendments
+        @amendments ||= Decidim::Proposals::Proposal.where(decidim_component_id: params[:component_id]).where.not(amendable: true)
       end
 
       def component
@@ -49,6 +63,10 @@ module Decidim
 
       def current_participatory_space
         @current_participatory_space ||= Decidim::ParticipatoryProcess.find_by(slug: params[:participatory_process_slug])
+      end
+
+      def coauthorships
+        @coauthorships ||= amendments.flat_map { |amendment| amendment.coauthorships }
       end
     end
   end

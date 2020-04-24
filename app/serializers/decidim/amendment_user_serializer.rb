@@ -13,11 +13,15 @@ module Decidim
     # Public: Exports a hash with the serialized data for this result.
     def serialize
       {
-        id: @result.id
+        id: @result.id,
+        name: amendment_user.name
       }
     end
 
     private
 
+    def amendment_user
+      @amendment_user ||= Decidim::User.find(@result.decidim_user_id)
+    end
   end
 end
