@@ -8,12 +8,26 @@ module Decidim
       NAME = "amendments"
 
       def export
-        proposal_id = Decidim::Proposals::Proposal.find_by(decidim_component_id: params[:component_id]).id
-        collection = Decidim::Amendment.where(decidim_amendable_id: proposal_id)
-        serializer = Decidim::AmendmentSerializer
-        user = current_user
+        export_data = Decidim::Exporters::AmendmentExcel.new
 
-        export_data = Decidim::Exporters::AmendmentExcel.new(collection, serializer).export do |sheet|
+        add_amendments!(export_data)
+        add_users!(export_data)
+
+        Decidim::ExportMailer.export(current_user, NAME, export_data.export).deliver_now
+
+        flash[:notice] = t("decidim.admin.exports.notice")
+
+        redirect_back(fallback_location: manage_component_path(component))
+      end
+
+      private
+
+      def add_amendments!(export_data)
+        proposal_ids = Decidim::Proposals::Proposal.where(decidim_component_id: params[:component_id]).ids
+        collection = Decidim::Amendment.where(decidim_amendable_id: proposal_ids)
+        serializer = Decidim::AmendmentSerializer
+
+        export_data.add_new_sheet!(collection, serializer, :name => "Test") do |sheet|
           old_body_format = Spreadsheet::Format.new(
             color: :red
           )
@@ -23,15 +37,11 @@ module Decidim
           sheet.column(2).default_format = old_body_format
           sheet.column(3).default_format = new_body_format
         end
-
-        Decidim::ExportMailer.export(user, NAME, export_data).deliver_now
-
-        flash[:notice] = t("decidim.admin.exports.notice")
-
-        redirect_back(fallback_location: manage_component_path(component))
       end
 
-      private
+      def add_users!(export_data)
+        export_data.add_new_sheet!(Decidim::User.all, Decidim::AmendmentUserSerializer, name: "Users")
+      end
 
       def component
         @component ||= current_participatory_space.components.find(params[:component_id])

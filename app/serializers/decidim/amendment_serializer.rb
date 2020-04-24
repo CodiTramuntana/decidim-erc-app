@@ -14,8 +14,8 @@ module Decidim
     def serialize
       {
         id: @result.id,
-        title: amendment.title,
-        old_body: amendment.body,
+        title: amendable.title,
+        old_body: amendable.body,
         new_body: amendable_type.find(@result.decidim_emendation_id).body,
         user_name: amendment_user&.name,
         scope: amendment_user.try(:scope)&.name
@@ -32,8 +32,8 @@ module Decidim
       @amendment_user ||= Decidim::User.find(@result.decidim_user_id)
     end
 
-    def amendment
-      @amendment ||= amendable_type.find(@result.decidim_amendable_id)
+    def amendable
+      @amendable ||= amendable_type.find(@result.decidim_amendable_id)
     end
   end
 end

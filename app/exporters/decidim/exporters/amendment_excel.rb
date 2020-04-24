@@ -14,13 +14,27 @@ module Decidim
     # It will maintain types like Integers, Floats & Dates so Excel can deal with
     # them.
     class AmendmentExcel < CSV
+      # Override constructor
+      def initialize
+        @book = Spreadsheet::Workbook.new
+      end
       # Public: Exports a file in an Excel readable format.
       #
       # Returns an ExportData instance.
       def export
-        book = Spreadsheet::Workbook.new
-        sheet = book.create_worksheet
-        sheet.name = "Export"
+        output = StringIO.new
+        @book.write output
+
+        ExportData.new(output.string, "xls")
+      end
+
+      def add_new_sheet!(collection, serializer = Serializer, name: "Unnamed")
+        @collection = collection
+        @processed_collection = nil
+        @serializer = serializer
+
+        sheet = @book.create_worksheet
+        sheet.name = name
 
         sheet.row(0).default_format = Spreadsheet::Format.new(
           weight: :bold,
@@ -29,7 +43,7 @@ module Decidim
           horizontal_align: :center
         )
 
-        yield(sheet)
+        yield(sheet) if block_given?
 
         sheet.row(0).replace headers
 
@@ -40,11 +54,6 @@ module Decidim
         processed_collection.each_with_index do |resource, index|
           sheet.row(index + 1).replace(headers.map { |header| resource[header] })
         end
-
-        output = StringIO.new
-        book.write output
-
-        ExportData.new(output.string, "xls")
       end
     end
   end
