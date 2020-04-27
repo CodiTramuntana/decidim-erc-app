@@ -28,12 +28,9 @@ module Decidim
         serializer = Decidim::AmendmentSerializer
 
         @export_data.add_new_sheet!(collection, serializer, :name => "Amendments") do |sheet|
-          old_body_format = Spreadsheet::Format.new(
-            color: :red
-          )
-          new_body_format = Spreadsheet::Format.new(
-            color: :green
-          )
+          old_body_format = Spreadsheet::Format.new(color: :red)
+          new_body_format = Spreadsheet::Format.new(color: :green)
+
           sheet.column(1).default_format = old_body_format
           sheet.column(2).default_format = new_body_format
         end
