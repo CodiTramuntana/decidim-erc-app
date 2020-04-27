@@ -13,10 +13,10 @@ module Decidim
     # Public: Exports a hash with the serialized data for this result.
     def serialize
       {
-        id: @result.id,
-        title: amendable.title,
+        id: emendation.id,
+        title: emendation.title,
         old_body: amendable.body,
-        new_body: amendable_type.find(@result.decidim_emendation_id).body,
+        new_body: emendation.body,
         user_name: amendment_user&.name,
         scope: amendment_user.try(:scope)&.name
       }
@@ -34,6 +34,10 @@ module Decidim
 
     def amendable
       @amendable ||= amendable_type.find(@result.decidim_amendable_id)
+    end
+
+    def emendation
+      @emendation ||= amendable_type.find(@result.decidim_emendation_id)
     end
   end
 end

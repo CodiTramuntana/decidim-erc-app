@@ -14,7 +14,8 @@ module Decidim
     def serialize
       {
         title: amendment.title,
-        user_name: coauthorship_user.name
+        body: amendment.body,
+        author: coauthorship_user.name
       }
     end
 

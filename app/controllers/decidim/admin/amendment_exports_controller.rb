@@ -27,15 +27,15 @@ module Decidim
         collection = Decidim::Amendment.where(decidim_emendation_id: amendments.ids)
         serializer = Decidim::AmendmentSerializer
 
-        @export_data.add_new_sheet!(collection, serializer, :name => "Test") do |sheet|
+        @export_data.add_new_sheet!(collection, serializer, :name => "Amendments") do |sheet|
           old_body_format = Spreadsheet::Format.new(
             color: :red
           )
           new_body_format = Spreadsheet::Format.new(
             color: :green
           )
-          sheet.column(2).default_format = old_body_format
-          sheet.column(3).default_format = new_body_format
+          sheet.column(1).default_format = old_body_format
+          sheet.column(2).default_format = new_body_format
         end
       end
 
@@ -54,7 +54,10 @@ module Decidim
       end
 
       def amendments
-        @amendments ||= Decidim::Proposals::Proposal.where(decidim_component_id: params[:component_id]).where.not(amendable: true)
+        @amendments ||= Decidim::Proposals::Proposal.joins(
+          "INNER JOIN decidim_amendments ON decidim_amendable_type = 'Decidim::Proposals::Proposal'
+          AND decidim_emendation_id = decidim_proposals_proposals.id"
+        )
       end
 
       def component
