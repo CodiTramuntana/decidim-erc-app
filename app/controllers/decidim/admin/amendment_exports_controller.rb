@@ -41,7 +41,7 @@ module Decidim
 
       def add_users_sheet
         collection = Decidim::Amendment.where(decidim_emendation_id: amendments.ids).order(:decidim_user_id)
-        serializer = Decidim::AmendmentUserSerializer
+        serializer = Decidim::AmendmentSerializer
 
         @export_data.add_new_sheet!(collection, serializer, name: "Users")
       end
