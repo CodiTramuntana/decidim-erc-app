@@ -57,7 +57,7 @@ module Decidim
         @amendments ||= Decidim::Proposals::Proposal.joins(
           "INNER JOIN decidim_amendments ON decidim_amendable_type = 'Decidim::Proposals::Proposal'
           AND decidim_emendation_id = decidim_proposals_proposals.id"
-        )
+        ).where("decidim_component_id = ?", params[:component_id])
       end
 
       def component
