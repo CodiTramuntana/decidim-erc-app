@@ -13,7 +13,6 @@ module Decidim
     # Public: Exports a hash with the serialized data for this result.
     def serialize
       {
-        id: emendation.id,
         title: emendation.title,
         old_body: amendable.body,
         new_body: emendation.body,
