@@ -17,7 +17,7 @@ module Decidim
         old_body: amendable.body,
         new_body: emendation.body,
         user_name: amendment_user&.name,
-        scope: amendment_user.try(:scope)&.name
+        scope: amendment_user&.scope&.name
       }
     end
 
