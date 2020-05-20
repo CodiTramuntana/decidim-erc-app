@@ -5,7 +5,7 @@ module Decidim
     class AmendmentExportsController < Decidim::Admin::ApplicationController
       include Decidim::ComponentPathHelper
 
-      FILE_NAME = "amendments"
+      FILENAME = "amendments"
 
       def export
         @export_data = Decidim::Exporters::AmendmentExcel.new
@@ -14,7 +14,7 @@ module Decidim
         add_users_sheet
         add_coauthors_sheet
 
-        Decidim::ExportMailer.export(current_user, FILE_NAME, @export_data.export).deliver_later
+        Decidim::ExportMailer.export(current_user, FILENAME, @export_data.export).deliver_later
 
         flash[:notice] = t("decidim.admin.exports.notice")
 
