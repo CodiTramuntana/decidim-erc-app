@@ -2,6 +2,7 @@
 
 **Upgrade notes:**
 
+- **Added**: Add: amendment exportation features to proposal components [#30](https://github.com/CodiTramuntana/decidim-erc-app/pull/30)
 - **Added**: Add: decidim-erc-crm_authenticable module [#3](https://github.com/CodiTramuntana/decidim-erc-app/pull/3)
 - **Changed**: Change: Freeze amender phone_number [#7](https://github.com/CodiTramuntana/decidim-erc-app/pull/7)
 - **Changed**: Change: Freeze account data [#5](https://github.com/CodiTramuntana/decidim-erc-app/pull/5)
