@@ -5,7 +5,7 @@ module Decidim
     class AmendmentExportsController < Decidim::Admin::ApplicationController
       include Decidim::ComponentPathHelper
 
-      NAME = "amendments"
+      FILE_NAME = "amendments"
 
       def export
         @export_data = Decidim::Exporters::AmendmentExcel.new
@@ -14,7 +14,7 @@ module Decidim
         add_users_sheet
         add_coauthors_sheet
 
-        Decidim::ExportMailer.export(current_user, NAME, @export_data.export).deliver_now
+        Decidim::ExportMailer.export(current_user, FILE_NAME, @export_data.export).deliver_later
 
         flash[:notice] = t("decidim.admin.exports.notice")
 
@@ -27,7 +27,7 @@ module Decidim
         collection = Decidim::Amendment.where(decidim_emendation_id: amendments.ids)
         serializer = Decidim::AmendmentSerializer
 
-        @export_data.add_new_sheet!(collection, serializer, :name => "Amendments") do |sheet|
+        @export_data.add_new_sheet!(collection, serializer, name: "Amendments") do |sheet|
           old_body_format = Spreadsheet::Format.new(color: :red)
           new_body_format = Spreadsheet::Format.new(color: :green)
 
