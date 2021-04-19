@@ -4,10 +4,10 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.21-stable' }
-TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.21-stable'}
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.22-stable' }
+TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.22-stable'}
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
-  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git"
+  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", branch: "upgrade_decidim_to_0.22"
 }
 
 gem 'decidim', DECIDIM_VERSION
