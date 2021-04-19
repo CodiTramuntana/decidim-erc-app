@@ -3,6 +3,10 @@ ca:
   decidim:
     actions:
       export_amendments: Exportar esmenes
+    admin:
+      filters:
+        state_eq:
+          label: Estat
     amendments:
       compare_draft:
         continue: Continua
@@ -55,6 +59,10 @@ ca:
           '2': Compara la teva esmena
           '3': Completa la teva esmena
           '4': Publica la teva esmena
+    authorization_modals:
+      content:
+        ok:
+          title: Autorització correcta
     components:
       proposals:
         settings:
