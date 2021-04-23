@@ -16,11 +16,6 @@ module DecidimErcApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
-    # Default app time zone
-    config.time_zone = "Madrid"
-    config.active_record.default_timezone = :local
-    config.active_record.time_zone_aware_attributes = false
-
     # initializer 'add named route overrides' do |app|
     #   app.routes_reloader.paths << File.expand_path('../named_routes_overrides.rb',__FILE__)
     #   # this seems to cause these extra routes to be loaded last, so they will define named routes last.

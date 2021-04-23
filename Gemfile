@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.20-stable' }
-TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.20-stable'}
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.21-stable' }
+TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.21-stable'}
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
   git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git"
 }
@@ -16,7 +16,7 @@ gem 'decidim-term_customizer', TERM_CUSTOMIZER_VERSION
 
 gem 'daemons'
 gem 'delayed_job_active_record'
-gem 'puma', '~> 3.12'
+gem 'puma', '>= 4.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'whenever'
 gem 'deface'
