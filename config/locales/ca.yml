@@ -6,6 +6,7 @@ ca:
     admin:
       filters:
         state_eq:
+          # Introduced when upgrading v0.21. Remove in later upgrades.
           label: Estat
     amendments:
       compare_draft:
@@ -62,6 +63,7 @@ ca:
     authorization_modals:
       content:
         ok:
+          # Introduced when upgrading v0.21. Remove in later upgrades.
           title: Autorització correcta
     components:
       proposals:

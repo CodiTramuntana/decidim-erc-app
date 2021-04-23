@@ -3,6 +3,11 @@ es:
   decidim:
     actions:
       export_amendments: Exportar enmiendas
+    admin:
+      filters:
+        state_eq:
+          # Introduced when upgrading v0.21. Remove in later upgrades.
+          label: Estado
     amendments:
       compare_draft:
         continue: Continua
@@ -56,6 +61,11 @@ es:
           '2': Compara tu enmienda
           '3': Completa tu enmienda
           '4': Publica tu enmienda
+    authorization_modals:
+      content:
+        ok:
+          # Introduced when upgrading v0.21. Remove in later upgrades.
+          title: Autorización correcta
     components:
       proposals:
         settings:
