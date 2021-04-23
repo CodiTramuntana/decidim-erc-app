@@ -7,7 +7,7 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.21-stable' }
 TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.21-stable'}
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
-  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", branch: 'upgrade_decidim_to_0.21'
+  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git"
 }
 
 gem 'decidim', DECIDIM_VERSION
