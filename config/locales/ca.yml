@@ -81,6 +81,7 @@ ca:
             amendment_reaction_enabled_help: Autors de propostes podran acceptar o
               rebutjar esmenes.
             amendments_visibility: Visibilitat d'esmenes
+            # Introduced when upgrading v0.22. Remove in later upgrades.
             amendments_visibility_choices:
               scope: Àmbit
             amendments_visibility_help: Els participants hauran d'estar connectats

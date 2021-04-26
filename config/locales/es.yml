@@ -81,6 +81,9 @@ es:
             amendment_reaction_enabled_help: Autores de propuestas podrán aceptar
               o rechazar enmiendas.
             amendments_visibility: Visibilidad de enmiendas
+            # Introduced when upgrading v0.22. Remove in later upgrades.
+            amendments_visibility_choices:
+              scope: Ámbito
             amendments_visibility_help: Los participantes deberán estar conectados
               para poder ver las enmiendas si la visibilidad está restringida (opciones
               2 y 3).
