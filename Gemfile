@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-gem 'rails', '~> 5.2.4'
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.22-stable' }
-TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.22-stable'}
+gem 'rails', '< 6'
+DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.23-stable' }
+TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.23-stable'}
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
   git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git"
 }
