@@ -87,6 +87,11 @@ es:
             amendments_visibility_help: Los participantes deberán estar conectados
               para poder ver las enmiendas si la visibilidad está restringida (opciones
               2 y 3).
+    proposals:
+      models:
+        proposal:
+          fields:
+            author: Author
     wizard_step_form:
       wizard_aside:
         back: Volver
