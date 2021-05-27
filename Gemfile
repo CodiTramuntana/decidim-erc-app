@@ -4,25 +4,26 @@ source 'https://rubygems.org'
 
 ruby RUBY_VERSION
 
-# We are pointing to master, because some new features are required.
-DECIDIM_VERSION = {git: "https://github.com/decidim/decidim.git", branch: "master"}
+gem 'rails', '< 6'
+DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.23-stable' }
+TERM_CUSTOMIZER_VERSION = { git: 'https://github.com/mainio/decidim-module-term_customizer', branch: '0.23-stable'}
+DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
+  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git"
+}
+
+gem 'decidim', DECIDIM_VERSION
+gem 'decidim-erc-crm_authenticable', DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION
+gem 'decidim-term_customizer', TERM_CUSTOMIZER_VERSION
 
 gem 'daemons'
 gem 'delayed_job_active_record'
-gem 'puma', '~> 3.0'
+gem 'puma', '>= 4.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'whenever'
+gem 'deface'
 
 gem 'figaro', '>= 1.1.1'
 gem 'openssl'
-
-gem 'decidim', DECIDIM_VERSION
-# For integration environment use:
-gem 'decidim-erc-crm_authenticable',
-    git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git",
-    branch: 'add/tests' # Branch with latest developments.
-# For local development use:
-# gem 'decidim-erc-crm_authenticable', path: '../decidim-erc-crm_authenticable'
 
 group :development, :test do
   gem 'better_errors'

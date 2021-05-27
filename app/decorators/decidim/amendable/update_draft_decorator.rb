@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-# This decorator handles the creation of a ProposalNote containing the phone_number.
+# This decorator handles the creation of a ProposalNote with the phone_number.
 Decidim::Amendable::UpdateDraft.class_eval do
   # Method overrided.
-  # Modifies transaction block to include a new method.
+  # Modifies the transaction block to include a new method.
   def call
     return broadcast(:invalid) unless form.valid? && amendment.draft? && amender == current_user
 
     transaction do
       update_draft
-      handle_proposal_note
+      create_proposal_note
     end
 
     broadcast(:ok, @amendment)
@@ -18,15 +18,12 @@ Decidim::Amendable::UpdateDraft.class_eval do
   private
 
   # Method added.
-  # Creates and/or updates or deletes the ProposalNote with the phone number.
-  def handle_proposal_note
-    proposal_note = Decidim::Proposals::ProposalNote.find_or_initialize_by(proposal: emendation, author: current_user)
-
-    if form.phone_number.present?
-      proposal_note&.update(body: form.phone_number)
-    else
-      proposal_note&.delete
-      Decidim::Proposals::Proposal.reset_counters(emendation.id, :proposal_notes_count)
-    end
+  # Creates a ProposalNote with the phone number.
+  def create_proposal_note
+    Decidim::Proposals::ProposalNote.find_or_create_by(
+      proposal: emendation,
+      author: current_user,
+      body: form.phone_number.to_s
+    )
   end
 end

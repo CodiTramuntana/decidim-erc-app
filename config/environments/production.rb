@@ -93,7 +93,6 @@ Rails.application.configure do
     domain: Rails.application.secrets.smtp_domain,
     enable_starttls_auto: Rails.application.secrets.smtp_starttls_auto,
     openssl_verify_mode: 'none',
-    ssl: true
   }
 
   if Rails.application.secrets.sendgrid

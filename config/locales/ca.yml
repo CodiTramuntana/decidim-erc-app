@@ -1,6 +1,13 @@
 ---
 ca:
   decidim:
+    actions:
+      export_amendments: Exportar esmenes
+    admin:
+      filters:
+        state_eq:
+          # Introduced when upgrading v0.21. Remove in later upgrades.
+          label: Estat
     amendments:
       compare_draft:
         continue: Continua
@@ -16,8 +23,8 @@ ca:
         discard: Descarta aquest esborrany
         discard_confirmation: Estàs segur de que vols descartar aquest esborrany d'esmena?
         phone_number: Telèfon de contacte
-        phone_number_help: Siusplau, indica el teu telèfon de contacte per tal que
-          la organització es pugui posar en contacte amb tu.
+        phone_number_help: Si aquest no és el teu telèfon de contacte, siusplau, posa't
+          en contacte amb <strong>administracio@esquerra.cat</strong>.
         send: Vista prèvia
         title: Completa l'esborrany d'esmena
       emendation:
@@ -53,6 +60,11 @@ ca:
           '2': Compara la teva esmena
           '3': Completa la teva esmena
           '4': Publica la teva esmena
+    authorization_modals:
+      content:
+        ok:
+          # Introduced when upgrading v0.21. Remove in later upgrades.
+          title: Autorització correcta
     components:
       proposals:
         settings:
@@ -69,12 +81,34 @@ ca:
             amendment_reaction_enabled_help: Autors de propostes podran acceptar o
               rebutjar esmenes.
             amendments_visibility: Visibilitat d'esmenes
+            # Introduced when upgrading v0.22. Remove in later upgrades.
+            amendments_visibility_choices:
+              scope: Àmbit
             amendments_visibility_help: Els participants hauran d'estar connectats
               per a poder veure les esmenes si la visibilitat està restringida (opcions
               2 i 3).
+    proposals:
+      models:
+        proposal:
+          fields:
+            author: Autor
     wizard_step_form:
       wizard_aside:
         back: Enrere
       wizard_header:
         see_steps: veure els passos
         step_of: Pas %{current_step} de %{total_steps}
+  devise:
+    mailer:
+      confirmation_instructions:
+        action: Confirma el registre a la plataforma
+        goodbye: Cordialment,
+        greeting: Benvolgut, benvolguda %{recipient}
+        information: Recorda que el teu Àlies són les teves inicials.
+        instruction: 'Per confirmar el teu registre a la plataforma Decidim Esquerra
+          Republicana per a fer esmenes al Plenari del 28è Congrés Nacional d’Esquerra
+          Republicana, fes clic al següent enllaç: '
+        subject: Instruccions de confirmació
+    sessions:
+      new:
+        sign_in: Inicia sessió

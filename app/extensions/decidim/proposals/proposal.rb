@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
-# Reopen the class to include a concern that overrides the another concern.
+# Reopen the class to include a concern that overrides another concern.
 require Decidim::Proposals::Engine.root.join("app/models/decidim/proposals/proposal.rb").to_s
 
 # The following methods have been modified to handle an additional component
 # step setting amendments_visibility option:
-#
-# - ::only_visible_emendations_for(user, component)
-# - ::amendables_and_visible_emendations_for(user, component)
-# - #visible_emendations_for(user)
+# -	::only_visible_emendations_for(user, component)
+# -	::amendables_and_visible_emendations_for(user, component)
+# -	#visible_emendations_for(user)
 #
 # The new option "scope" allows to filter emendations by the scope of the user.
 module AmendableExtension
@@ -19,6 +18,7 @@ module AmendableExtension
     # based on the component's amendments settings.
     scope :only_visible_emendations_for, lambda { |user, component|
       return only_emendations unless component.settings.amendments_enabled
+      return only_emendations if user&.admin?
 
       case component.current_settings.amendments_visibility
       when "participants"
@@ -37,6 +37,7 @@ module AmendableExtension
     # that are not visible to the user based on the component's amendments settings.
     scope :amendables_and_visible_emendations_for, lambda { |user, component|
       return all unless component.settings.amendments_enabled
+      return all if user&.admin?
 
       case component.current_settings.amendments_visibility
       when "participants"
@@ -61,19 +62,21 @@ module AmendableExtension
     # Returns the emendations of an amendable that are visible to the user
     # based on the component's amendments settings.
     def visible_emendations_for(user)
-      return emendations unless component.settings.amendments_enabled
+      pubslished_emendations = emendations.published
+      return pubslished_emendations unless component.settings.amendments_enabled
+      return pubslished_emendations if user&.admin?
 
       case component.current_settings.amendments_visibility
       when "participants"
         return self.class.none unless user
 
-        emendations.where("decidim_amendments.decidim_user_id = ?", user.id)
+        pubslished_emendations.where("decidim_amendments.decidim_user_id = ?", user.id)
       when "scope"
         return self.class.none unless user
 
-        emendations.where(scope: user.scope)
+        pubslished_emendations.where(scope: user.scope)
       else # Assume 'all'
-        emendations
+        pubslished_emendations
       end
     end
   end
