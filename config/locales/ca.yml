@@ -87,6 +87,11 @@ ca:
             amendments_visibility_help: Els participants hauran d'estar connectats
               per a poder veure les esmenes si la visibilitat està restringida (opcions
               2 i 3).
+    proposals:
+      models:
+        proposal:
+          fields:
+            author: Autor
     wizard_step_form:
       wizard_aside:
         back: Enrere
