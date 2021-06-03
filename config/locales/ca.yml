@@ -9,6 +9,8 @@ ca:
           # Introduced when upgrading v0.21. Remove in later upgrades.
           label: Estat
     amendments:
+      amendable:
+        help_text: Milloreu aquest %{model_name} modificant la seva title i body
       compare_draft:
         continue: Continua
         no_similars_found: No s'han trobat esmenes similars.
@@ -47,6 +49,11 @@ ca:
       publish_draft:
         error: S'ha produït un error en publicar el borrador d'esmena.
         success: El borrador d'esmena s'ha publicat correctament.
+      type: Tipus d'esmena
+      types:
+        add: Addició
+        modify: Modificació
+        remove: Supressió
       update_draft:
         error: S'ha produït un error en actualitzar el borrador d'esmena.
         success: El borrador d'esmena s'ha actualitzat correctament.

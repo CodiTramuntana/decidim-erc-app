@@ -2,7 +2,14 @@
 en:
   decidim:
     amendments:
+      amendable:
+        help_text: Improve this %{model_name} by modifying its title and body
       edit_draft:
         phone_number: Contact phone number
         phone_number_help: Please, contact administracio@erc.cat if your data is not
           up to date.
+      type: Amendment type
+      types:
+        add: Addition
+        modify: Modification
+        remove: Elimination
