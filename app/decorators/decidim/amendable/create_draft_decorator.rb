@@ -2,20 +2,6 @@
 
 Decidim::Amendable::CreateDraft.class_eval do
   # Method overrided.
-  # Set amendment_type in original proposal
-  def call
-    set_amendment_type
-    return broadcast(:invalid) if form.invalid?
-
-    transaction do
-      create_emendation!
-      create_amendment!
-    end
-
-    broadcast(:ok, @amendment)
-  end
-
-  # Method overrided.
   # Add amendment_type to an emendation
   def create_emendation!
     PaperTrail.request(enabled: false) do
@@ -35,11 +21,5 @@ Decidim::Amendable::CreateDraft.class_eval do
         emendation
       end
     end
-  end
-
-  private
-
-  def set_amendment_type
-    amendable.amendment_type = "original"
   end
 end

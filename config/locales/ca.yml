@@ -9,8 +9,6 @@ ca:
           # Introduced when upgrading v0.21. Remove in later upgrades.
           label: Estat
     amendments:
-      amendable:
-        help_text: Milloreu aquest %{model_name} modificant la seva title i body
       compare_draft:
         continue: Continua
         no_similars_found: No s'han trobat esmenes similars.

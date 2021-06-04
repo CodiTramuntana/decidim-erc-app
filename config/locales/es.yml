@@ -9,8 +9,6 @@ es:
           # Introduced when upgrading v0.21. Remove in later upgrades.
           label: Estado
     amendments:
-      amendable:
-        help_text: Mejora este %{model_name} modificando su title y body
       compare_draft:
         continue: Continua
         no_similars_found: No se han encontrado enmiendas similares.

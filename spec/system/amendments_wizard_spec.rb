@@ -21,6 +21,7 @@ describe "Amendment Wizard", type: :system do
 
   let(:title) { "More sidewalks and less roads" }
   let(:body) { "Cities need more people, not more cars" }
+  let(:amendment_type) { "add" }
 
   before do
     switch_to_host(organization.host)
@@ -46,6 +47,7 @@ describe "Amendment Wizard", type: :system do
           within ".new_amendment" do
             fill_in :amendment_emendation_params_title, with: title
             fill_in :amendment_emendation_params_body, with: body
+            find('#amendment_amendment_type').find(:xpath, 'option[1]').select_option
             find("*[type=submit]").click
           end
         end
@@ -75,6 +77,7 @@ describe "Amendment Wizard", type: :system do
         within ".new_amendment" do
           fill_in :amendment_emendation_params_title, with: title
           fill_in :amendment_emendation_params_body, with: body
+          find('#amendment_amendment_type').find(:xpath, 'option[1]').select_option
           find("*[type=submit]").click
         end
       end
