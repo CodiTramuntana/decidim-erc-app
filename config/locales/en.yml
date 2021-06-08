@@ -6,3 +6,8 @@ en:
         phone_number: Contact phone number
         phone_number_help: Please, contact administracio@erc.cat if your data is not
           up to date.
+      type: Amendment type
+      types:
+        add: Addition
+        modify: Modification
+        remove: Elimination

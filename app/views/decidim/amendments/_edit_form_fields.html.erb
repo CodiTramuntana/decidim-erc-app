@@ -1,0 +1,27 @@
+<%= form.fields_for :emendation_params, form.object.emendation_params do |emendation_form| %>
+  <%= form_required_explanation %>
+
+  <% amendable.attributes.each do |key, value| %>
+    <% key = key.to_sym %>
+    <% if amendable.amendable_fields.include?(key) %>
+
+      <div class="field hashtags__container">
+        <%= amendments_form_field_for(key, emendation_form, original) %>
+      </div>
+
+      <% form.object.errors.full_messages_for(key).each do |message| %>
+        <small class="form-error is-visible"><%= message %></small>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% values = [
+      { name: t("decidim.amendments.types.add"), key: "add" },
+      { name: t("decidim.amendments.types.remove"), key: "remove" },
+      { name: t("decidim.amendments.types.modify"), key: "modify" }
+    ]
+  %>
+  <%= form.select(:amendment_type,
+                  values.map { |g| [g[:name], g[:key]] },
+                  label: t("decidim.amendments.type")) %>
+<% end %>

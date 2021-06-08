@@ -48,6 +48,11 @@ es:
       publish_draft:
         error: Se ha producido un error al publicar el borrador de enmienda.
         success: El borrador de enmienda se ha publicado correctamente.
+      type: Tipo de enmienda
+      types:
+        add: Adición
+        modify: Modificación
+        remove: Eliminación
       update_draft:
         error: Se ha producido un error al actualizar el borrador de enmienda.
         success: El borrador de enmienda se ha actualizado correctamente.
