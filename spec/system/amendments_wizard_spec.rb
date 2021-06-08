@@ -52,6 +52,10 @@ describe "Amendment Wizard", type: :system do
           end
         end
 
+        it "emendation draft has amendment_type" do
+          expect(emendation_draft.amendment_type).to eq("add")
+        end
+
         it "shows similar emendations only of the same scope" do
           within ".section-heading" do
             expect(page).to have_content("SIMILAR EMENDATIONS (1)")
@@ -61,11 +65,11 @@ describe "Amendment Wizard", type: :system do
             expect(page).to have_css(".card--proposal", count: 1)
 
             within ".card--proposal" do
-              expect(page).to have_content(amendment_same_scope.amender.name)
+              expect(page).to have_content(amendment_same_scope.amender.nickname)
               expect(page).to have_content(emendation_same_scope.title)
 
               expect(page).not_to have_content(emendation_other_scope.title)
-              expect(page).not_to have_content(amendment_other_scope.amender.name)
+              expect(page).not_to have_content(amendment_other_scope.amender.nickname)
             end
           end
         end
@@ -82,12 +86,16 @@ describe "Amendment Wizard", type: :system do
         end
       end
 
+      it "emendation draft has amendment_type" do
+        expect(emendation_draft.amendment_type).to eq("add")
+      end
+
       it "show the phone_number field prefilled" do
         within ".edit_amendment" do
           # Data returned from CiviCRM should be readonly and users must be informed.
           expect(page).to have_field("Contact phone number", with: "666-666-666", readonly: true)
           within "#amendment_phone_number" do
-            expect(page).to have_tag("p.help-text", text: /administracio@erc.cat/)
+            expect(page).to have_tag("span.help-text", text: /administracio@erc.cat/)
           end
         end
       end
@@ -97,6 +105,10 @@ describe "Amendment Wizard", type: :system do
           within ".edit_amendment" do
             find("*[type=submit]").click
           end
+        end
+
+        it "last proposal has amendment_type" do
+          expect(Decidim::Proposals::Proposal.last.amendment_type).to eq("add")
         end
 
         it "creates a proposal note" do

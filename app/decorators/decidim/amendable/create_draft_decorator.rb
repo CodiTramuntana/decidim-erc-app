@@ -14,7 +14,7 @@ Decidim::Amendable::CreateDraft.class_eval do
         emendation = amendable.class.new(form.emendation_params)
         emendation.title = { I18n.locale => form.emendation_params.with_indifferent_access[:title] }
         emendation.body = { I18n.locale => form.emendation_params.with_indifferent_access[:body] }
-        emendation.amendment_type = form.emendation_params.with_indifferent_access[:amendment_type]
+        emendation.amendment_type = form.amendment_type
         emendation.component = amendable.component
         emendation.add_author(current_user, user_group)
         emendation.save!
