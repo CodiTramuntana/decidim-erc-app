@@ -23,5 +23,6 @@
   %>
   <%= form.select(:amendment_type,
                   values.map { |g| [g[:name], g[:key]] },
+                  selected: emendation&.amendment_type,
                   label: t("decidim.amendments.type")) %>
 <% end %>
