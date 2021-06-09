@@ -58,11 +58,8 @@ module Decidim
           AND decidim_emendation_id = decidim_proposals_proposals.id"
         ).where("decidim_component_id = ?", params[:component_id])
 
-        @amendments = if params[:scope_id].present?
-                        @amendments.where(scope: params[:scope_id])
-                      else
-                        @amendments
-                      end
+        @amendments = @amendments.where(scope: params[:scope_id]) if params[:scope_id].present?
+        @amendments
       end
 
       def component

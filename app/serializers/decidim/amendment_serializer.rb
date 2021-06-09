@@ -18,7 +18,8 @@ module Decidim
         new_body: emendation.body,
         user_name: amendment_user&.name,
         scope: amendment_user&.scope&.name,
-        amendment_type: amendment_type
+        amendment_type: amendment_type,
+        diff: amendment_diff
       }
     end
 
@@ -42,6 +43,14 @@ module Decidim
 
     def amendment_type
       I18n.t("decidim.amendments.types.#{emendation.amendment_type}")
+    end
+
+    def amendment_diff
+      Diffy::Diff.new(
+        "#{amendable.body.values.first}\n",
+        "#{emendation.body.values.first}\n",
+        allow_empty_diff: false,
+      ).to_s(:text)
     end
   end
 end
