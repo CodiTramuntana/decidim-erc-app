@@ -53,6 +53,7 @@ module Decidim
 
         processed_collection.each_with_index do |resource, index|
           sheet.row(index + 1).replace(headers.map { |header| resource[header] })
+          sheet.row(index + 1).height = 40
         end
       end
     end

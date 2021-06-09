@@ -14,7 +14,9 @@ module Decidim
         add_users_sheet
         add_coauthors_sheet
 
-        Decidim::ExportMailer.export(current_user, FILENAME, @export_data.export).deliver_later
+        # deliver_later not work with this export_data type because is not compatible.
+        # export_data is calculate inside a job
+        Decidim::ExportMailer.export(current_user, FILENAME, @export_data.export).deliver_now
 
         flash[:notice] = t("decidim.admin.exports.notice")
 
@@ -55,6 +57,9 @@ module Decidim
           "INNER JOIN decidim_amendments ON decidim_amendable_type = 'Decidim::Proposals::Proposal'
           AND decidim_emendation_id = decidim_proposals_proposals.id"
         ).where("decidim_component_id = ?", params[:component_id])
+
+        @amendments = @amendments.where(scope: params[:scope_id]) if params[:scope_id].present?
+        @amendments
       end
 
       def component

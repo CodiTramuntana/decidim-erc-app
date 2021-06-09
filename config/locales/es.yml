@@ -2,7 +2,9 @@
 es:
   decidim:
     actions:
-      export_amendments: Exportar enmiendas
+      all_scopes: Todas
+      scopes: Enmiendas de %{scope_name}
+      title: Exportar enmiendas
     admin:
       filters:
         state_eq:
