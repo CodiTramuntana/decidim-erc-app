@@ -17,7 +17,8 @@ module Decidim
         old_body: amendable.body,
         new_body: emendation.body,
         user_name: amendment_user&.name,
-        scope: amendment_user&.scope&.name
+        scope: amendment_user&.scope&.name,
+        amendment_type: amendment_type
       }
     end
 
@@ -37,6 +38,10 @@ module Decidim
 
     def emendation
       @emendation ||= amendable_type.find(@result.decidim_emendation_id)
+    end
+
+    def amendment_type
+      I18n.t("decidim.amendments.types.#{emendation.amendment_type}")
     end
   end
 end
