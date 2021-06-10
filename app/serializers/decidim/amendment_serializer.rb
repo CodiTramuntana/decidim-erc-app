@@ -17,7 +17,9 @@ module Decidim
         old_body: amendable.body,
         new_body: emendation.body,
         user_name: amendment_user&.name,
-        scope: amendment_user&.scope&.name
+        scope: amendment_user&.scope&.name,
+        amendment_type: emendation.amendment_type,
+        diff: amendment_diff
       }
     end
 
@@ -37,6 +39,14 @@ module Decidim
 
     def emendation
       @emendation ||= amendable_type.find(@result.decidim_emendation_id)
+    end
+
+    def amendment_diff
+      Diffy::Diff.new(
+        "#{amendable.body.values.first}\n",
+        "#{emendation.body.values.first}\n",
+        allow_empty_diff: false,
+      ).to_s(:text)
     end
   end
 end

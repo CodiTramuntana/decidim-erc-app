@@ -2,7 +2,10 @@
 ca:
   decidim:
     actions:
-      export_amendments: Exportar esmenes
+      export_amendments:
+        all_scopes: Totes
+        scopes: Esmenes de %{scope_name}
+        title: Exportar esmenes
     admin:
       filters:
         state_eq:
