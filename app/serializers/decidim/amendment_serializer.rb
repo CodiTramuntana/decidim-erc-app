@@ -30,7 +30,7 @@ module Decidim
     end
 
     def amendment_user
-      @amendment_user ||= Decidim::User.find(@result.decidim_user_id)
+      @amendment_user ||= Decidim::User.find_by(id: @result.decidim_user_id)
     end
 
     def amendable
