@@ -18,6 +18,7 @@ module Decidim
       def initialize
         @book = Spreadsheet::Workbook.new
       end
+
       # Public: Exports a file in an Excel readable format.
       #
       # Returns an ExportData instance.

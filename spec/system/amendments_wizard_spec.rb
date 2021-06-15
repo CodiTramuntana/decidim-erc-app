@@ -47,7 +47,7 @@ describe "Amendment Wizard", type: :system do
           within ".new_amendment" do
             fill_in :amendment_emendation_params_title, with: title
             fill_in :amendment_emendation_params_body, with: body
-            find('#amendment_amendment_type').find(:xpath, 'option[1]').select_option
+            find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
             find("*[type=submit]").click
           end
         end
@@ -81,7 +81,7 @@ describe "Amendment Wizard", type: :system do
         within ".new_amendment" do
           fill_in :amendment_emendation_params_title, with: title
           fill_in :amendment_emendation_params_body, with: body
-          find('#amendment_amendment_type').find(:xpath, 'option[1]').select_option
+          find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
           find("*[type=submit]").click
         end
       end
