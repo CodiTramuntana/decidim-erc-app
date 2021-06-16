@@ -40,15 +40,15 @@ describe "Amend Proposal", type: :system do
 
         it "is shown emendations of different scope in the amendments list" do
           within ".amendment-list" do
-            expect(page).to have_content(emendation_same_scope.title)
-            expect(page).to have_content(emendation_other_scope.title)
+            expect(page).to have_content(translated(emendation_same_scope.title))
+            expect(page).to have_content(translated(emendation_other_scope.title))
           end
         end
 
         it "is shown authors of emendation of different scope in the amenders list" do
           within ".amender-list" do
-            expect(page).to have_content(amendment_same_scope.amender.name)
-            expect(page).to have_content(amendment_other_scope.amender.name)
+            expect(page).to have_content(amendment_same_scope.amender.nickname)
+            expect(page).to have_content(amendment_other_scope.amender.nickname)
           end
         end
       end
@@ -73,15 +73,15 @@ describe "Amend Proposal", type: :system do
 
         it "is shown ONLY emendations of the same scope as the user in the amendments list" do
           within ".amendment-list" do
-            expect(page).to have_content(emendation_same_scope.title)
-            expect(page).not_to have_content(emendation_other_scope.title)
+            expect(page).to have_content(translated(emendation_same_scope.title))
+            expect(page).not_to have_content(translated(emendation_other_scope.title))
           end
         end
 
         it "is shown authors of emendation of the same scope as the user in the amenders list" do
           within ".amender-list" do
-            expect(page).to have_content(amendment_same_scope.amender.name)
-            expect(page).not_to have_content(amendment_other_scope.amender.name)
+            expect(page).to have_content(amendment_same_scope.amender.nickname)
+            expect(page).not_to have_content(amendment_other_scope.amender.nickname)
           end
         end
 
@@ -90,15 +90,14 @@ describe "Amend Proposal", type: :system do
 
           it "is shown emendations of different scope in the amendments list" do
             within ".amendment-list" do
-              expect(page).to have_content(emendation_same_scope.title)
-              expect(page).to have_content(emendation_other_scope.title)
+              expect(page).to have_content(translated(emendation_other_scope.title))
             end
           end
 
           it "is shown authors of emendation of different scope in the amenders list" do
             within ".amender-list" do
-              expect(page).to have_content(amendment_same_scope.amender.name)
-              expect(page).to have_content(amendment_other_scope.amender.name)
+              expect(page).to have_content(amendment_same_scope.amender.nickname)
+              expect(page).to have_content(amendment_other_scope.amender.nickname)
             end
           end
         end

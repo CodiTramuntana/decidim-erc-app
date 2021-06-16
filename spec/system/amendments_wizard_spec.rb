@@ -66,7 +66,7 @@ describe "Amendment Wizard", type: :system do
 
             within ".card--proposal" do
               expect(page).to have_content(amendment_same_scope.amender.nickname)
-              expect(page).to have_content(emendation_same_scope.title)
+              expect(page).to have_content(translated(emendation_same_scope.title))
 
               expect(page).not_to have_content(emendation_other_scope.title)
               expect(page).not_to have_content(amendment_other_scope.amender.nickname)
