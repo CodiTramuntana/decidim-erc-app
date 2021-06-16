@@ -6,6 +6,9 @@ en:
         all_scopes: All
         scopes: Amendments of %{scope_name}
         title: Export amendments
+    admin:
+      export:
+        notice: Your export is currently in progress. You'll receive an email when it's complete.
     amendments:
       edit_draft:
         phone_number: Contact phone number
@@ -16,3 +19,5 @@ en:
         add: Addition
         modify: Modification
         remove: Elimination
+    endorsable:
+      endorsements_count: Endorsements count
