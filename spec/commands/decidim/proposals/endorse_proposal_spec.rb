@@ -4,7 +4,7 @@ require "rails_helper"
 
 module Decidim
   module Proposals
-    describe EndorseProposal do
+    describe "Endorse Proposal" do
       let!(:component) { create(:proposal_component) }
       let!(:user) { create(:user, :confirmed, organization: component.organization) }
       let!(:user_group) { create(:user_group, :confirmed, :verified, organization: component.organization, users: [user]) }
