@@ -2,14 +2,10 @@
 es:
   decidim:
     actions:
-      all_scopes: Todas
-      scopes: Enmiendas de %{scope_name}
-      title: Exportar enmiendas
-    admin:
-      filters:
-        state_eq:
-          # Introduced when upgrading v0.21. Remove in later upgrades.
-          label: Estado
+      export_amendments:
+        all_scopes: Todas
+        scopes: Enmiendas de %{scope_name}
+        title: Exportar enmiendas
     amendments:
       compare_draft:
         continue: Continua
@@ -68,11 +64,6 @@ es:
           '2': Compara tu enmienda
           '3': Completa tu enmienda
           '4': Publica tu enmienda
-    authorization_modals:
-      content:
-        ok:
-          # Introduced when upgrading v0.21. Remove in later upgrades.
-          title: Autorización correcta
     components:
       proposals:
         settings:
@@ -88,9 +79,6 @@ es:
             amendment_reaction_enabled_help: Autores de propuestas podrán aceptar
               o rechazar enmiendas.
             amendments_visibility: Visibilidad de enmiendas
-            # Introduced when upgrading v0.22. Remove in later upgrades.
-            amendments_visibility_choices:
-              scope: Ámbito
             amendments_visibility_help: Los participantes deberán estar conectados
               para poder ver las enmiendas si la visibilidad está restringida (opciones
               2 y 3).
