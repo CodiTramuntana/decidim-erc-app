@@ -7,10 +7,9 @@ ca:
         scopes: Esmenes de %{scope_name}
         title: Exportar esmenes
     admin:
-      filters:
-        state_eq:
-          # Introduced when upgrading v0.21. Remove in later upgrades.
-          label: Estat
+      exports:
+        notice: La teva exportació està actualment en curs. Rebràs un correu electrònic
+          quan hagi finalitzat.
     amendments:
       compare_draft:
         continue: Continua
@@ -68,11 +67,6 @@ ca:
           '2': Compara la teva esmena
           '3': Completa la teva esmena
           '4': Publica la teva esmena
-    authorization_modals:
-      content:
-        ok:
-          # Introduced when upgrading v0.21. Remove in later upgrades.
-          title: Autorització correcta
     components:
       proposals:
         settings:
@@ -89,12 +83,11 @@ ca:
             amendment_reaction_enabled_help: Autors de propostes podran acceptar o
               rebutjar esmenes.
             amendments_visibility: Visibilitat d'esmenes
-            # Introduced when upgrading v0.22. Remove in later upgrades.
-            amendments_visibility_choices:
-              scope: Àmbit
             amendments_visibility_help: Els participants hauran d'estar connectats
               per a poder veure les esmenes si la visibilitat està restringida (opcions
               2 i 3).
+    endorsable:
+      endorsements_count: Número d'adhesions
     proposals:
       models:
         proposal:
@@ -116,7 +109,6 @@ ca:
         instruction: 'Per confirmar el teu registre a la plataforma Decidim Esquerra
           Republicana per a fer esmenes al Plenari del 28è Congrés Nacional d’Esquerra
           Republicana, fes clic al següent enllaç: '
-        subject: Instruccions de confirmació
     sessions:
       new:
         sign_in: Inicia sessió

@@ -45,7 +45,7 @@ module Decidim
       Diffy::Diff.new(
         "#{amendable.body.values.first}\n",
         "#{emendation.body.values.first}\n",
-        allow_empty_diff: false,
+        allow_empty_diff: false
       ).to_s(:text)
     end
   end

@@ -5,7 +5,7 @@ shared_examples "export amendments" do
 
   it "exports all" do
     find(".exports.dropdown.amendments").click
-    click_link "Totes"
+    click_link "All"
 
     within ".callout.success" do
       expect(page).to have_content("in progress")
@@ -18,7 +18,7 @@ shared_examples "export amendments" do
 
   it "exports only of scope" do
     find(".exports.dropdown.amendments").click
-    click_link "Esmenes de Ohio"
+    click_link "Amendments of #{translated(scope.name)}"
 
     within ".callout.success" do
       expect(page).to have_content("in progress")

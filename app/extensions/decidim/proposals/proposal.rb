@@ -5,9 +5,9 @@ require Decidim::Proposals::Engine.root.join("app/models/decidim/proposals/propo
 
 # The following methods have been modified to handle an additional component
 # step setting amendments_visibility option:
-# -	::only_visible_emendations_for(user, component)
-# -	::amendables_and_visible_emendations_for(user, component)
-# -	#visible_emendations_for(user)
+# -  ::only_visible_emendations_for(user, component)
+# -  ::amendables_and_visible_emendations_for(user, component)
+# -  #visible_emendations_for(user)
 #
 # The new option "scope" allows to filter emendations by the scope of the user.
 module AmendableExtension

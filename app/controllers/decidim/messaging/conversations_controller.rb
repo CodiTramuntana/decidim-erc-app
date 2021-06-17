@@ -6,7 +6,7 @@ module Decidim
   module Messaging
     class ConversationsController < Decidim::ApplicationController
       before_action :redirect_to_not_found
-      
+
       private
 
       def redirect_to_not_found
