@@ -25,6 +25,8 @@ gem "whenever"
 gem "figaro", ">= 1.1.1"
 gem "openssl"
 
+gem "differ"
+
 group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
