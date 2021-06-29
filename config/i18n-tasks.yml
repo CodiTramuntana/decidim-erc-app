@@ -12,3 +12,4 @@ ignore_unused:
   - "decidim.amendments.*"
   - "decidim.wizard_step_form.*"
   - "decidim.components.proposals.settings.*"
+  - "decidim.proposals.models.proposal.fields.author"

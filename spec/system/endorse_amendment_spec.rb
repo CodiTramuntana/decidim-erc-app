@@ -35,7 +35,7 @@ describe "Endorse Amendment", versioning: true, type: :system do
 
         it "shows the endorse button and endorsements count" do
           expect(page).to have_button("Endorse")
-          expect(page).to have_css("#proposal-#{emendation.id}-endorsements-count")
+          expect(page).to have_css("#resource-#{emendation.id}-endorsements-count")
         end
 
         context "when the user clicks the Endorse button" do
@@ -45,12 +45,12 @@ describe "Endorse Amendment", versioning: true, type: :system do
 
           it "is able to endorse only as a user group" do
             within "#user-identities" do
-              expect(page).to have_content(user_group.name)
-              expect(page).not_to have_content(user.name)
+              expect(page).to have_content(user_group.nickname)
+              expect(page).not_to have_content(user.nickname)
               find("li").click
             end
 
-            within "#proposal-#{emendation.id}-endorsements-count" do
+            within "#resource-#{emendation.id}-endorsements-count" do
               expect(page).to have_content("1")
             end
           end
@@ -69,8 +69,8 @@ describe "Endorse Amendment", versioning: true, type: :system do
           expect(page).to have_no_button("Endorse")
         end
 
-        it "shows the endorsements count" do
-          expect(page).to have_css("#proposal-#{emendation.id}-endorsements-count")
+        it "doesn't show the endorsements count" do
+          expect(page).to have_no_css("#resource-#{emendation.id}-endorsements-count")
         end
       end
 
@@ -81,7 +81,7 @@ describe "Endorse Amendment", versioning: true, type: :system do
 
         it "shows the endorse button and endorsements count" do
           expect(page).to have_button("Endorse")
-          expect(page).to have_css("#proposal-#{proposal.id}-endorsements-count")
+          expect(page).to have_css("#resource-#{proposal.id}-endorsements-count")
         end
 
         context "when the user clicks the Endorse button" do
@@ -91,12 +91,12 @@ describe "Endorse Amendment", versioning: true, type: :system do
 
           it "is able to endorse both as user and user group" do
             within "#user-identities" do
-              expect(page).to have_content(user_group.name)
-              expect(page).to have_content(user.name)
+              expect(page).to have_content(user_group.nickname)
+              expect(page).to have_content(user.nickname)
               all("li").first.click
             end
 
-            within "#proposal-#{proposal.id}-endorsements-count" do
+            within "#resource-#{proposal.id}-endorsements-count" do
               expect(page).to have_content("1")
             end
           end
@@ -119,8 +119,8 @@ describe "Endorse Amendment", versioning: true, type: :system do
           expect(page).to have_no_button("Endorse")
         end
 
-        it "shows the endorsements count" do
-          expect(page).to have_css("#proposal-#{emendation.id}-endorsements-count")
+        it "doesn't show the endorsements count" do
+          expect(page).to have_no_css("#resource-#{emendation.id}-endorsements-count")
         end
       end
 
@@ -136,8 +136,8 @@ describe "Endorse Amendment", versioning: true, type: :system do
           expect(page).to have_no_button("Endorse")
         end
 
-        it "shows the endorsements count" do
-          expect(page).to have_css("#proposal-#{emendation.id}-endorsements-count")
+        it "doesn't show the endorsements count" do
+          expect(page).to have_no_css("#resource-#{emendation.id}-endorsements-count")
         end
       end
 
@@ -148,7 +148,7 @@ describe "Endorse Amendment", versioning: true, type: :system do
 
         it "shows the endorse button and endorsements count" do
           expect(page).to have_button("Endorse")
-          expect(page).to have_css("#proposal-#{proposal.id}-endorsements-count")
+          expect(page).to have_css("#resource-#{proposal.id}-endorsements-count")
         end
 
         context "when the user clicks the Endorse button" do
@@ -157,7 +157,7 @@ describe "Endorse Amendment", versioning: true, type: :system do
           end
 
           it "is endorses the proposal as user" do
-            within "#proposal-#{proposal.id}-endorsements-count" do
+            within "#resource-#{proposal.id}-endorsements-count" do
               expect(page).to have_content("1")
             end
           end

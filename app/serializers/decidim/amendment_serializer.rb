@@ -19,7 +19,8 @@ module Decidim
         user_name: amendment_user&.name,
         scope: amendment_user&.scope&.name,
         amendment_type: emendation.amendment_type,
-        diff: amendment_diff
+        diff: amendment_diff,
+        created_at: emendation.created_at.localtime
       }
     end
 
@@ -42,11 +43,7 @@ module Decidim
     end
 
     def amendment_diff
-      Diffy::Diff.new(
-        "#{amendable.body.values.first}\n",
-        "#{emendation.body.values.first}\n",
-        allow_empty_diff: false,
-      ).to_s(:text)
+      Differ.diff_by_word(emendation.body.values.first, amendable.body.values.first).format_as(:ascii)
     end
   end
 end

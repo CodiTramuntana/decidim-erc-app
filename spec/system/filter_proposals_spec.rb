@@ -50,9 +50,8 @@ describe "Filter Proposals", type: :system do
 
               expect(page).to have_css(".card.card--proposal", count: 1)
               expect(page).to have_content("1 PROPOSAL")
-              expect(page).to have_content("AMENDMENT", count: 1)
-              expect(page).to have_content(emendation_same_scope.title)
-              expect(page).to have_no_content(emendation_other_scope.title)
+              expect(page).to have_content(translated(emendation_same_scope.title))
+              expect(page).to have_no_content(translated(emendation_other_scope.title))
             end
           end
 
@@ -110,9 +109,8 @@ describe "Filter Proposals", type: :system do
               end
               expect(page).to have_css(".card.card--proposal", count: 2)
               expect(page).to have_content("2 PROPOSAL")
-              expect(page).to have_content("AMENDMENT", count: 2)
-              expect(page).to have_content(emendation_same_scope.title)
-              expect(page).to have_content(emendation_other_scope.title)
+              expect(page).to have_content(translated(emendation_same_scope.title))
+              expect(page).to have_content(translated(emendation_other_scope.title))
             end
           end
 

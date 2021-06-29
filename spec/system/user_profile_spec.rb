@@ -49,7 +49,7 @@ describe "Profile", type: :system do
     before { visit decidim.profile_path(user.nickname) }
 
     it "shows the user's scope name" do
-      expect(page).to have_content(user.scope.name)
+      expect(page).to have_content(translated(user.scope.name))
     end
   end
 end

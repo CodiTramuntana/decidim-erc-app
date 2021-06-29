@@ -71,7 +71,7 @@ module Decidim
       end
 
       def coauthorships
-        @coauthorships ||= amendments.flat_map { |amendment| amendment.coauthorships }
+        @coauthorships ||= amendments.flat_map(&:coauthorships)
       end
     end
   end

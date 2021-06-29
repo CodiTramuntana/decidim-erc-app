@@ -47,7 +47,7 @@ describe "Amendment Wizard", type: :system do
           within ".new_amendment" do
             fill_in :amendment_emendation_params_title, with: title
             fill_in :amendment_emendation_params_body, with: body
-            find('#amendment_amendment_type').find(:xpath, 'option[1]').select_option
+            find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
             find("*[type=submit]").click
           end
         end
@@ -66,7 +66,7 @@ describe "Amendment Wizard", type: :system do
 
             within ".card--proposal" do
               expect(page).to have_content(amendment_same_scope.amender.nickname)
-              expect(page).to have_content(emendation_same_scope.title)
+              expect(page).to have_content(translated(emendation_same_scope.title))
 
               expect(page).not_to have_content(emendation_other_scope.title)
               expect(page).not_to have_content(amendment_other_scope.amender.nickname)
@@ -81,7 +81,7 @@ describe "Amendment Wizard", type: :system do
         within ".new_amendment" do
           fill_in :amendment_emendation_params_title, with: title
           fill_in :amendment_emendation_params_body, with: body
-          find('#amendment_amendment_type').find(:xpath, 'option[1]').select_option
+          find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
           find("*[type=submit]").click
         end
       end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = 'Decidim ERC APP'
+  config.application_name = "Decidim ERC APP"
 
   config.mailer_sender = Rails.application.secrets.smtp_username
 
@@ -11,7 +11,6 @@ Decidim.configure do |config|
 
   # Configure available options for Decidim::Amendment::VisibilityStepSetting::options
   config.amendments_visibility_options = %w(all participants scope)
-
 
   config.enable_html_header_snippets = true
   config.track_newsletter_links = true

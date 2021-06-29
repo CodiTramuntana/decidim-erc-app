@@ -15,7 +15,7 @@ module Decidim
       {
         title: amendment.title,
         body: amendment.body,
-        author: coauthorship_user.name
+        author: coauthorship_user&.name
       }
     end
 
@@ -26,7 +26,7 @@ module Decidim
     end
 
     def coauthorship_user
-      @coauthorship_user ||= Decidim::User.find(@result.decidim_author_id)
+      @coauthorship_user ||= Decidim::User.find_by(id: @result.decidim_author_id)
     end
 
     def amendment
