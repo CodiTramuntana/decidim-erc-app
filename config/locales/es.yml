@@ -1,7 +1,12 @@
 ---
 es:
   decidim:
+    account:
+      destroy:
+        error_: Ha habido un poblema al eliminar el usuario
+        success_: Usuario eliminado correctamente
     actions:
+      confirm_destroy: "¿Estas seguro que quieres eliminar el usuario?"
       export_amendments:
         all_scopes: Todas
         scopes: Enmiendas de %{scope_name}
@@ -10,6 +15,9 @@ es:
       exports:
         notice: Tu exportación está actualmente en curso. Recibiras un correo electrónico
           cuando haya finalizado.
+      officializations:
+        index:
+          remove_user: Eliminar
     amendments:
       compare_draft:
         continue: Continua

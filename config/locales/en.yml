@@ -2,13 +2,21 @@
 en:
   decidim:
     actions:
+      confirm_destroy: Are you sure you want to delete the user?
       export_amendments:
         all_scopes: All
         scopes: Amendments of %{scope_name}
         title: Export amendments
+    account:
+      destroy:
+        error_: There was a problem removing this user.
+        success_: User successfully removed
     admin:
       export:
         notice: Your export is currently in progress. You'll receive an email when it's complete.
+      officializations:
+        index:
+          remove_user: Remove
     amendments:
       edit_draft:
         phone_number: Contact phone number

@@ -1,7 +1,12 @@
 ---
 ca:
   decidim:
+    account:
+      destroy:
+        error_: Hi ha hagut un problema a l'suprimir l'usuari
+        success_: Usuari eliminat correctament
     actions:
+      confirm_destroy: Segur que vols suprimir aquest usuari?
       export_amendments:
         all_scopes: Totes
         scopes: Esmenes de %{scope_name}
@@ -10,6 +15,9 @@ ca:
       exports:
         notice: La teva exportació està actualment en curs. Rebràs un correu electrònic
           quan hagi finalitzat.
+      officializations:
+        index:
+          remove_user: Suprimeix
     amendments:
       compare_draft:
         continue: Continua
