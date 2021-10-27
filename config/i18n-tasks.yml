@@ -9,7 +9,17 @@ ignore_missing:
   - decidim.account.show.*
 
 ignore_unused:
+  - "decidim.admin.officializations.index.remove_user"
   - "decidim.amendments.*"
   - "decidim.wizard_step_form.*"
   - "decidim.components.proposals.settings.*"
   - "decidim.proposals.models.proposal.fields.author"
+
+# Find translate calls
+search:
+  ## Paths or `File.find` patterns to search in:
+  paths:
+    <% Dir.glob("decidim-*").each do |path| -%>
+    <%= "- #{path}/app\n" %>
+    <%= "- #{path}/lib\n" %>
+    <% end -%>

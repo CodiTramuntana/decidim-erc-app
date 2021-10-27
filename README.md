@@ -68,7 +68,12 @@ This module requires an initializer: `config/initializers/decidim_erc_crm_authen
 
 ## Testing
 
-Run `rake decidim:generate_external_test_app` to generate a dummy application.
+Configure the name of the test DB in you `config/application.yml` file and run:
+
+```
+RAILS_ENV=test bundle exec rails db:create
+RAILS_ENV=test bundle exec rails db:migrate
+```
 
 Require missing factories in `spec/factories.rb`
 
