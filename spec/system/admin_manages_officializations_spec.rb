@@ -246,14 +246,13 @@ describe "Admin manages officializations", type: :system do
   describe "removing the user" do
     let!(:users) { create_list(:user, 3, organization: organization) }
 
-    before do
-      within ".secondary-nav" do
-        click_link "Participants"
-      end
-    end
-
     it "shows confirm remove user and redirects to officializations" do
       users.each do |user|
+        # inside Participants, view the list of participants (expects to be viewing admins)
+        within ".secondary-nav" do
+          click_link "Participants"
+        end
+
         within "tr[data-user-id=\"#{user.id}\"]" do
           click_link "Remove"
         end
@@ -266,6 +265,16 @@ describe "Admin manages officializations", type: :system do
         within "table" do
           expect(page).to have_no_content(user.email)
         end
+
+        # check that it has been correctly registered in the admin log
+        visit decidim_admin.root_path
+
+        within ".logs.table" do
+          expect(page).to have_content("#{admin.name} deleted #{user.name}")
+        end
+
+        # visit the Participants menu option
+        click_link "Participants"
       end
     end
   end
