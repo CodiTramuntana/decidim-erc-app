@@ -2,7 +2,6 @@
 en:
   decidim:
     actions:
-      confirm_destroy: Are you sure you want to delete the user?
       export_amendments:
         all_scopes: All
         scopes: Amendments of %{scope_name}
