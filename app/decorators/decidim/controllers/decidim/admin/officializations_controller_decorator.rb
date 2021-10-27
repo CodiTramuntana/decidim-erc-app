@@ -8,16 +8,17 @@ Decidim::Admin::OfficializationsController.class_eval do
     @form = form(Decidim::DeleteAccountForm).from_params(params)
     user = Decidim::User.find(params[:user_id])
 
-    Decidim.traceability.perform_action!(:delete, user, current_user)
+    Decidim::User.transaction do
+      Decidim::DestroyAccount.call(user, @form) do
+        on(:ok) do
+          flash[:notice] = t("account.destroy.success_", scope: "decidim")
+        end
 
-    Decidim::DestroyAccount.call(user, @form) do
-      on(:ok) do
-        flash[:notice] = t("account.destroy.success_", scope: "decidim")
+        on(:invalid) do
+          flash[:alert] = t("account.destroy.error_", scope: "decidim")
+        end
       end
-
-      on(:invalid) do
-        flash[:alert] = t("account.destroy.error_", scope: "decidim")
-      end
+      Decidim.traceability.perform_action!(:delete, user, current_user)
     end
 
     redirect_to decidim_admin.officializations_path
