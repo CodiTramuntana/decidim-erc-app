@@ -6,7 +6,6 @@ ca:
         error_: Hi ha hagut un problema a l'suprimir l'usuari
         success_: Usuari eliminat correctament
     actions:
-      confirm_destroy: Segur que vols suprimir aquest usuari?
       export_amendments:
         all_scopes: Totes
         scopes: Esmenes de %{scope_name}

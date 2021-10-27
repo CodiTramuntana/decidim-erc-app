@@ -24,7 +24,7 @@ describe "Admin manages officializations", type: :system do
     let!(:not_officialized) { create(:user, organization: organization) }
     let!(:deleted) do
       user = create(:user, organization: organization)
-      result = Decidim::DestroyAccount.call(user, OpenStruct.new(valid?: true, delete_reason: "Testing"), admin)
+      result = Decidim::DestroyAccount.call(user, OpenStruct.new(valid?: true, delete_reason: "Testing"))
       result["ok"]
     end
     let!(:external_not_officialized) { create(:user) }
@@ -252,7 +252,7 @@ describe "Admin manages officializations", type: :system do
       end
     end
 
-    it "show confirm remove user and redirect to officializations" do
+    it "shows confirm remove user and redirects to officializations" do
       users.each do |user|
         within "tr[data-user-id=\"#{user.id}\"]" do
           click_link "Remove"

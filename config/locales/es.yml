@@ -6,7 +6,6 @@ es:
         error_: Ha habido un poblema al eliminar el usuario
         success_: Usuario eliminado correctamente
     actions:
-      confirm_destroy: "¿Estas seguro que quieres eliminar el usuario?"
       export_amendments:
         all_scopes: Todas
         scopes: Enmiendas de %{scope_name}
