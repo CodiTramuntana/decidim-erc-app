@@ -13,7 +13,7 @@ Decidim::Proposals::ProposalsController.class_eval do
                    .includes(:category, :scope)
                    .order(position: :asc)
 
-      Rails.application.config.session_options[:decidim_scope_id] = params[:scope] if params[:scope].present? || params[:scope].nil?
+      Rails.application.config.session_options[:erc_participatory_texts_scope_id] = params[:scope_id] if params.has_key?(:scope_id)
 
       render "decidim/proposals/proposals/participatory_texts/participatory_text"
     else

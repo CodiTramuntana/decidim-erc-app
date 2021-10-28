@@ -11,11 +11,11 @@ Deface::Override.new(virtual_path: +"decidim/proposals/proposals/participatory_t
                           </div>
                           <div id='participatory-text-index' class='reveal large' data-reveal>
                             <div class='p-s'>
-                            <h4>Filtrar por ámbito</h4>
+                            <h4><%= t('decidim.components.proposals.participatory_texts.filter_by_scope') %></h4>
                             <div class='text-muted'>
                             <div class='mb-s'>
                               <p>
-                                <%= link_to proposals_path(scope: nil) do %>
+                                <%= link_to proposals_path do %>
                                   <u><%= t('decidim.components.proposals.participatory_texts.all_scopes') %></u>
                                   <br>
                                 <% end %>
@@ -24,7 +24,7 @@ Deface::Override.new(virtual_path: +"decidim/proposals/proposals/participatory_t
                               <% Decidim::Scope.all.each do |scope| %>
                                 <div class='mb-s'>
                                   <p>
-                                    <%= link_to proposals_path(scope: scope.id) do %>
+                                    <%= link_to proposals_path(scope_id: scope.id) do %>
                                       <u><%= translated_attribute(scope.name) %></u>
                                       <br>
                                     <% end %>

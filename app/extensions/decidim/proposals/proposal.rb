@@ -74,10 +74,10 @@ module AmendableExtension
         return self.class.none unless user
 
         if user&.admin?
-          scope = Rails.application.config.session_options[:decidim_scope_id]
+          scope_id = Rails.application.config.session_options[:erc_participatory_texts_scope_id]
 
-          if scope.present?
-            published_emendations.where(scope: scope)
+          if scope_id.present?
+            published_emendations.where(decidim_scope_id: scope_id)
           else
             published_emendations
           end
