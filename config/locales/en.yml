@@ -28,3 +28,8 @@ en:
         remove: Elimination
     endorsable:
       endorsements_count: Endorsements count
+    components:
+      proposals:
+        participatory_texts:
+          all_scopes: All scopes
+          filter_by_scope: Filter by scope

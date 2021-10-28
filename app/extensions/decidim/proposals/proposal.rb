@@ -62,21 +62,30 @@ module AmendableExtension
     # Returns the emendations of an amendable that are visible to the user
     # based on the component's amendments settings.
     def visible_emendations_for(user)
-      pubslished_emendations = emendations.published
-      return pubslished_emendations unless component.settings.amendments_enabled
-      return pubslished_emendations if user&.admin?
+      published_emendations = emendations.published
+      return published_emendations unless component.settings.amendments_enabled
 
       case component.current_settings.amendments_visibility
       when "participants"
         return self.class.none unless user
 
-        pubslished_emendations.where("decidim_amendments.decidim_user_id = ?", user.id)
+        published_emendations.where("decidim_amendments.decidim_user_id = ?", user.id)
       when "scope"
         return self.class.none unless user
 
-        pubslished_emendations.where(scope: user.scope)
+        if user&.admin?
+          scope = Rails.application.config.session_options[:decidim_scope_id]
+
+          if scope.present?
+            published_emendations.where(scope: scope)
+          else
+            published_emendations
+          end
+        else
+          published_emendations.where(scope: user.scope)
+        end
       else # Assume 'all'
-        pubslished_emendations
+        published_emendations
       end
     end
   end
