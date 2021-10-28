@@ -76,6 +76,9 @@ ca:
           '4': Publica la teva esmena
     components:
       proposals:
+        participatory_texts:
+          all_scopes: Tots els àmbits
+          filter_by_scope: Filtra per àmbit
         settings:
           global:
             amendments_wizard_help_text: Text d'ajuda al crear una nova esmena
@@ -90,6 +93,8 @@ ca:
             amendment_reaction_enabled_help: Autors de propostes podran acceptar o
               rebutjar esmenes.
             amendments_visibility: Visibilitat d'esmenes
+            amendments_visibility_choices:
+              scope: Àmbits
             amendments_visibility_help: Els participants hauran d'estar connectats
               per a poder veure les esmenes si la visibilitat està restringida (opcions
               2 i 3).

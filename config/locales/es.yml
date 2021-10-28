@@ -77,6 +77,9 @@ es:
           '4': Publica tu enmienda
     components:
       proposals:
+        participatory_texts:
+          all_scopes: Todos los ámbitos
+          filter_by_scope: Filtrar por ámbito
         settings:
           global:
             amendments_wizard_help_text: Texto de ayuda al crear una nueva enmienda
@@ -90,6 +93,8 @@ es:
             amendment_reaction_enabled_help: Autores de propuestas podrán aceptar
               o rechazar enmiendas.
             amendments_visibility: Visibilidad de enmiendas
+            amendments_visibility_choices:
+              scope: Àmbito
             amendments_visibility_help: Los participantes deberán estar conectados
               para poder ver las enmiendas si la visibilidad está restringida (opciones
               2 y 3).

@@ -10,6 +10,8 @@ ignore_missing:
 
 ignore_unused:
   - "decidim.admin.officializations.index.remove_user"
+  - "decidim.components.proposals.participatory_texts.all_scopes"
+  -  "decidim.components.proposals.participatory_texts.filter_by_scope"
   - "decidim.amendments.*"
   - "decidim.wizard_step_form.*"
   - "decidim.components.proposals.settings.*"
