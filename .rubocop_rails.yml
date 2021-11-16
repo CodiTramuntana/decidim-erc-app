@@ -76,6 +76,8 @@ Rails/ScopeArgs:
     - decidim-*/app/models/**/*.rb
 
 Rails/SkipsModelValidations:
+  Exclude:
+    - "**/*.rake"
   Enabled: true
 
 Rails/Validation:
