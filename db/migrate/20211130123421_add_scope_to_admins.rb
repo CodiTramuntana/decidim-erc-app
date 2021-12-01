@@ -14,7 +14,7 @@ class AddScopeToAdmins < ActiveRecord::Migration[5.2]
       admins.find_each do |admin|
         unless admin.scope.present?
           admin.scope = scope
-          admin.save
+          admin.save!(validate: false)
         end
       end
     end
