@@ -31,3 +31,5 @@ public/uploads
 # Ignore test app
 spec/decidim_dummy_app/
 .rspec-failures
+
+/docs/*.csv
