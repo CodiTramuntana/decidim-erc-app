@@ -84,6 +84,20 @@ describe "Participatory texts", type: :system do
           end
         end
       end
+
+      context "when admin select an index" do
+        let(:amendments_count) { 1 }
+        let(:disabled_value) { false }
+
+        it "renders index list and select an index" do
+          find("strong", text: "See index").click
+          expect(page).to have_content(translated(proposals.first.title))
+
+          find("u", text: translated(proposals.first.title)).click
+          expect(page).to have_content(translated(proposals.first.title))
+          expect(page).to have_content("Back to list")
+        end
+      end
     end
   end
 end
