@@ -21,24 +21,13 @@ module Decidim
     let(:invited_user) { User.where(organization: organization).last }
 
     context "when a user does not exist for the given email" do
-      it "creates it with scope when user is admin" do
+      it "creates it with scope" do
         expect do
           command.call
         end.to change(User, :count).by(1)
 
         expect(invited_user.email).to eq(form.email)
         expect(Decidim::User.last.scope.code).to eq(scope.code)
-      end
-
-      it "creates it without scope when user is not admin" do
-        form.role = "user_manager"
-
-        expect do
-          command.call
-        end.to change(User, :count).by(1)
-
-        expect(invited_user.email).to eq(form.email)
-        expect(Decidim::User.last.scope).not_to eq(scope)
       end
 
       it "broadcasts ok and the user" do

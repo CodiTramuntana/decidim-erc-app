@@ -12,7 +12,7 @@ Decidim::InviteUser.class_eval do
       organization: form.organization,
       admin: form.role == "admin",
       roles: form.role == "admin" ? [] : [form.role].compact,
-      scope: form.role == "admin" ? Decidim::Scope.find_by(code: "1") : nil
+      scope: Decidim::Scope.find_by(code: "1")
     )
     @user.invite!(
       form.invited_by,
