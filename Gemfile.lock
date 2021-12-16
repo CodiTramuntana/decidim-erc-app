@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git
-  revision: d75fed5a752a7c3bb4ba1d121448bc6ee205f4ba
-  tag: v1.1.1
+  revision: a20cb7343896bab17968e8c945cd074b3208ed25
+  tag: v1.1.3
   specs:
-    decidim-erc-crm_authenticable (1.1.1)
+    decidim-erc-crm_authenticable (1.1.3)
       decidim-core (= 0.23.6)
       decidim-verifications (= 0.23.6)
 
