@@ -20,3 +20,9 @@
     font-weight: bold;
   }
 }
+
+.card__content .edit_proposal {
+  fieldset:first-of-type {
+    display: none;
+  }
+}
