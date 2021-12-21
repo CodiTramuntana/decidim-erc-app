@@ -21,7 +21,6 @@
       { name: t("decidim.amendments.types.modify"), key: "modify" }
     ]
   %>
-  <% sectorial_commissions = t("sectorial_commissions") %>
 
   <%= form.select(:amendment_type,
                   values.map { |g| [g[:name], g[:key]] },
@@ -29,7 +28,8 @@
                   label: t("decidim.amendments.type")) %>
 
   <%= form.select(:sectorial_commission,
-                  sectorial_commissions,
+                 Decidim::Proposals::Proposal.sectorial_commissions.keys.collect { |sectorial_commission|
+                  [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission), sectorial_commission] },
                   selected: emendation&.sectorial_commission,
                   label: t("decidim.amendments.sectorial_commission")) %>
   <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commission") %></p>

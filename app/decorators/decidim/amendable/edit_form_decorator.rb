@@ -5,7 +5,7 @@ Decidim::Amendable::EditForm.class_eval do
   # Attribute added.
   attribute :phone_number, String
   attribute :amendment_type, String
-  attribute :sectorial_commission, String
+  attribute :sectorial_commission, Integer
 
   # Method overrided.
   # Injects the scope of the user into the emendation_params.

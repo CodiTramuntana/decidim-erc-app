@@ -59,7 +59,7 @@ describe "Amendment Wizard", type: :system do
         end
 
         it "emendation draft has sectorial_commission" do
-          expect(emendation_draft.sectorial_commission).to eq("Territorial Congress")
+          expect(emendation_draft.sectorial_commission).to eq("territorial_congress")
         end
 
         it "shows similar emendations only of the same scope" do
@@ -98,7 +98,7 @@ describe "Amendment Wizard", type: :system do
       end
 
       it "emendation draft has sectorial_commission" do
-        expect(emendation_draft.sectorial_commission).to eq("Territorial Congress")
+        expect(emendation_draft.sectorial_commission).to eq("territorial_congress")
       end
 
       it "show the phone_number field prefilled" do
@@ -123,7 +123,7 @@ describe "Amendment Wizard", type: :system do
         end
 
         it "last proposal has sectorial_commission" do
-          expect(Decidim::Proposals::Proposal.last.sectorial_commission).to eq("Territorial Congress")
+          expect(Decidim::Proposals::Proposal.last.sectorial_commission).to eq("territorial_congress")
         end
 
         it "creates a proposal note" do
