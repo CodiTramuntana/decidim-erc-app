@@ -19,6 +19,7 @@ module Decidim
         user_name: amendment_user&.name,
         scope: amendment_user&.scope&.name,
         amendment_type: emendation.amendment_type,
+        sectorial_commission: emendation.sectorial_commission,
         diff: amendment_diff,
         created_at: emendation.created_at.localtime
       }

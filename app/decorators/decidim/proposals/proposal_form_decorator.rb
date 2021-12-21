@@ -2,4 +2,5 @@
 
 Decidim::Proposals::ProposalForm.class_eval do
   attribute :amendment_type, String
+  attribute :sectorial_commission, String
 end

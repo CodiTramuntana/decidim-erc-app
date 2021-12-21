@@ -22,6 +22,7 @@ describe "Amendment Wizard", type: :system do
   let(:title) { "More sidewalks and less roads" }
   let(:body) { "Cities need more people, not more cars" }
   let(:amendment_type) { "add" }
+  let(:sectorial_commission) { "Health" }
 
   before do
     switch_to_host(organization.host)
@@ -48,12 +49,17 @@ describe "Amendment Wizard", type: :system do
             fill_in :amendment_emendation_params_title, with: title
             fill_in :amendment_emendation_params_body, with: body
             find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
+            find("#amendment_sectorial_commission").find(:xpath, "option[1]").select_option
             find("*[type=submit]").click
           end
         end
 
         it "emendation draft has amendment_type" do
           expect(emendation_draft.amendment_type).to eq("add")
+        end
+
+        it "emendation draft has sectorial_commission" do
+          expect(emendation_draft.sectorial_commission).to eq("Territorial Congress")
         end
 
         it "shows similar emendations only of the same scope" do
@@ -82,12 +88,17 @@ describe "Amendment Wizard", type: :system do
           fill_in :amendment_emendation_params_title, with: title
           fill_in :amendment_emendation_params_body, with: body
           find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
+          find("#amendment_sectorial_commission").find(:xpath, "option[1]").select_option
           find("*[type=submit]").click
         end
       end
 
       it "emendation draft has amendment_type" do
         expect(emendation_draft.amendment_type).to eq("add")
+      end
+
+      it "emendation draft has sectorial_commission" do
+        expect(emendation_draft.sectorial_commission).to eq("Territorial Congress")
       end
 
       it "show the phone_number field prefilled" do
@@ -109,6 +120,10 @@ describe "Amendment Wizard", type: :system do
 
         it "last proposal has amendment_type" do
           expect(Decidim::Proposals::Proposal.last.amendment_type).to eq("add")
+        end
+
+        it "last proposal has sectorial_commission" do
+          expect(Decidim::Proposals::Proposal.last.sectorial_commission).to eq("Territorial Congress")
         end
 
         it "creates a proposal note" do
