@@ -27,10 +27,12 @@
                   selected: emendation&.amendment_type,
                   label: t("decidim.amendments.type")) %>
 
-  <%= form.select(:sectorial_commission,
-                 Decidim::Proposals::Proposal.sectorial_commissions.keys.collect { |sectorial_commission|
-                  [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission), sectorial_commission] },
-                  selected: emendation&.sectorial_commission,
-                  label: t("decidim.amendments.sectorial_commission")) %>
-  <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commission") %></p>
+  <% if amendable.component.settings.participatory_texts_enabled? %>
+    <%= form.select(:sectorial_commission,
+                  Decidim::Proposals::Proposal.sectorial_commissions.keys.collect { |sectorial_commission|
+                    [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission), sectorial_commission] },
+                    selected: emendation&.sectorial_commission,
+                    label: t("decidim.amendments.sectorial_commission")) %>
+    <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commission") %></p>
+  <% end %>
 <% end %>
