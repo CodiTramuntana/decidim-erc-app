@@ -77,8 +77,8 @@ ca:
             rebutjada el <strong>%{date}</strong>.
           withdrawn: Aquesta esmena de la %{amendable_type} %{proposal_link} ha estat
             retirada per l'autora.
-      help_sectorial_commission: Òrgan que la debatrà (pots triar una Comissió Sectorial
-        només en cas que en siguis membre)
+      help_sectorial_commissions: Pots triar una Comissió Sectorial només en cas que
+        en siguis membre
       new:
         send: Crear
         title: Crea esborrany d'esmena
@@ -89,7 +89,8 @@ ca:
       publish_draft:
         error: S'ha produït un error en publicar el borrador d'esmena.
         success: El borrador d'esmena s'ha publicat correctament.
-      sectorial_commission: Comissió Sectorial
+      sectorial_commissions: Comissions Sectorials
+      sectorial_commissions_title: Òrgan que la debatrà
       type: Tipus d'esmena
       types:
         add: Addició

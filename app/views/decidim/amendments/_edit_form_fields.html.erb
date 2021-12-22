@@ -15,24 +15,19 @@
     <% end %>
   <% end %>
 
-  <% values = [
-      { name: t("decidim.amendments.types.add"), key: "add" },
-      { name: t("decidim.amendments.types.remove"), key: "remove" },
-      { name: t("decidim.amendments.types.modify"), key: "modify" }
-    ]
-  %>
-
   <% if amendable.component.settings.participatory_texts_enabled? %>
     <%= form.select(:amendment_type,
-                    values.map { |g| [g[:name], g[:key]] },
+                    amendment_types.map { |g| [g[:name], g[:key]] },
                     selected: emendation&.amendment_type,
                     label: t("decidim.amendments.type")) %>
   <% end %>
 
-  <%= form.select(:sectorial_commission,
-                 Decidim::Proposals::Proposal.sectorial_commissions.keys.collect { |sectorial_commission|
-                  [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission), sectorial_commission] },
-                  selected: emendation&.sectorial_commission,
-                  label: t("decidim.amendments.sectorial_commission")) %>
-  <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commission") %></p>
+  <% if amendable.component.settings.participatory_texts_enabled? %>
+    <%= form.select(:sectorial_commission, sectorial_commissions,
+                    selected: emendation&.sectorial_commission,
+                    label: t("decidim.amendments.sectorial_commissions_title")) %>
+    <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commissions") %></p>
+  <% end %>
 <% end %>
+
+<%= javascript_include_tag "decidim/proposals" %>
