@@ -15,12 +15,13 @@
     <% end %>
   <% end %>
 
-  <%= form.select(:amendment_type,
-                  amendment_types.map { |g| [g[:name], g[:key]] },
-                  selected: emendation&.amendment_type,
-                  label: t("decidim.amendments.type")) %>
-
   <% if amendable.component.settings.participatory_texts_enabled? %>
+    <%= form.select(:amendment_type,
+                    amendment_types.map { |g| [g[:name], g[:key]] },
+                    selected: emendation&.amendment_type,
+                    label: t("decidim.amendments.type")) %>
+
+    
     <%= form.select(:sectorial_commission, sectorial_commissions,
                     selected: emendation&.sectorial_commission,
                     label: t("decidim.amendments.sectorial_commissions_title")) %>
