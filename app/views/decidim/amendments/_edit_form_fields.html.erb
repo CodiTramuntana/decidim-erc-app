@@ -21,8 +21,11 @@
       { name: t("decidim.amendments.types.modify"), key: "modify" }
     ]
   %>
-  <%= form.select(:amendment_type,
-                  values.map { |g| [g[:name], g[:key]] },
-                  selected: emendation&.amendment_type,
-                  label: t("decidim.amendments.type")) %>
+
+  <% if amendable.component.settings.participatory_texts_enabled? %>
+    <%= form.select(:amendment_type,
+                    values.map { |g| [g[:name], g[:key]] },
+                    selected: emendation&.amendment_type,
+                    label: t("decidim.amendments.type")) %>
+  <% end %>
 <% end %>
