@@ -77,7 +77,8 @@ ca:
             rebutjada el <strong>%{date}</strong>.
           withdrawn: Aquesta esmena de la %{amendable_type} %{proposal_link} ha estat
             retirada per l'autora.
-      help_sectorial_commission: Pots triar una Comissió Sectorial només en cas que en siguis membre
+      help_sectorial_commission: Pots triar una Comissió Sectorial només en cas que
+        en siguis membre
       new:
         send: Crear
         title: Crea esborrany d'esmena
