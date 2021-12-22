@@ -22,10 +22,12 @@
     ]
   %>
 
-  <%= form.select(:amendment_type,
-                  values.map { |g| [g[:name], g[:key]] },
-                  selected: emendation&.amendment_type,
-                  label: t("decidim.amendments.type")) %>
+  <% if amendable.component.settings.participatory_texts_enabled? %>
+    <%= form.select(:amendment_type,
+                    values.map { |g| [g[:name], g[:key]] },
+                    selected: emendation&.amendment_type,
+                    label: t("decidim.amendments.type")) %>
+  <% end %>
 
   <%= form.select(:sectorial_commission,
                  Decidim::Proposals::Proposal.sectorial_commissions.keys.collect { |sectorial_commission|
