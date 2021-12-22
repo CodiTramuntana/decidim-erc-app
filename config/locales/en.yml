@@ -52,8 +52,9 @@ en:
         phone_number: Contact phone number
         phone_number_help: Please, contact administracio@erc.cat if your data is not
           up to date.
-      help_sectorial_commission: You can choose a Sectorial Commission only if you are a member
-      sectorial_commission: Organ that will debate it
+      help_sectorial_commissions: You can choose a Sectorial Commission only if you are a member
+      sectorial_commissions: Sectorial Comissions
+      sectorial_commissions_title: Organ that will debate it
       type: Amendment type
       types:
         add: Addition

@@ -78,7 +78,7 @@ es:
             rechazada el <strong>%{date}</strong>.
           withdrawn: Esta enmienda de la %{amendable_type} %{proposal_link} ha sido
             retirada por su autora.
-      help_sectorial_commission: Puedes elegir una Comisión Sectorial sólo en caso
+      help_sectorial_commissions: Puedes elegir una Comisión Sectorial sólo en caso
         de que seas miembro
       new:
         send: Crear
@@ -90,7 +90,8 @@ es:
       publish_draft:
         error: Se ha producido un error al publicar el borrador de enmienda.
         success: El borrador de enmienda se ha publicado correctamente.
-      sectorial_commission: Órgano que la debatirá
+      sectorial_commissions: Comisiones Sectoriales
+      sectorial_commissions_title: Órgano que la debatirá
       type: Tipo de enmienda
       types:
         add: Adición
