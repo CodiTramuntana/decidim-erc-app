@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git
-  revision: 3cbf0eee4f6ec7533fee80474e7071635f7f5e53
-  branch: feat/hide_newsletter_in_sign_up
-  tag: v1.1.4
+  revision: 2a984bb980053299438ea27fc5bd1921230b6ebf
+  branch: feat/change_csv_signup_enabling
+  tag: v1.1.5
   specs:
-    decidim-erc-crm_authenticable (1.1.4)
+    decidim-erc-crm_authenticable (1.1.5)
       decidim-core (= 0.23.6)
       decidim-verifications (= 0.23.6)
 
