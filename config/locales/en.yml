@@ -1,5 +1,36 @@
 ---
 en:
+  activerecord:
+    attributes:
+      decidim/proposals/proposal:
+        sectorial_commissions:
+          territorial_congress: Territorial Congress
+          economic_financial_policy: Economic and Financial Policy
+          agriculture_livestock_fishing: Agriculture, Livestock and fishing
+          company_industry_services: Company, Industry and Services
+          commerce_tourism_consumption: Commerce, Tourism and Consumption
+          universities_search_innovation: Universities, Search and Innovation
+          information_society: Information Society
+          work_self_employment_social_economy: Work, Self-Employed and Social Economy
+          union_forum: Union Forum
+          aapp: AAPP
+          justice: Justice
+          social_movements: Social movements
+          lgtbi: LGTBI
+          citizenship: Citizenship
+          social_rights: Social rights
+          health: Health
+          sports: Sports
+          education: Education
+          culture: Culture
+          linguistic_politic: Linguistic politic
+          audiovisual_communication: Audiovisual Communication
+          memory_repair: Memory and Repair
+          environment_energy: Environment and Energy
+          territorial_policy: Territorial policy
+          security_civil_protection: Security and Civil Protection
+          european_union_internatinal_politics: European Union and International Politics
+          peace_solidarity_cooperation: Peace and Solidarity Cooperation
   decidim:
     actions:
       export_amendments:
@@ -21,6 +52,9 @@ en:
         phone_number: Contact phone number
         phone_number_help: Please, contact administracio@erc.cat if your data is not
           up to date.
+      help_sectorial_commissions: You can choose a Sectorial Commission only if you are a member
+      sectorial_commissions: Sectorial Comissions
+      sectorial_commissions_title: Organ that will debate it
       type: Amendment type
       types:
         add: Addition

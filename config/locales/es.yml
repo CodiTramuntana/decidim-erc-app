@@ -1,5 +1,36 @@
 ---
 es:
+  activerecord:
+    attributes:
+      decidim/proposals/proposal:
+        sectorial_commissions:
+          aapp: AAPP
+          agriculture_livestock_fishing: Agricultura, Ganadería y Pesca
+          audiovisual_communication: Comunicación Audiovisual
+          citizenship: Ciudadanía
+          commerce_tourism_consumption: Comercio, Turismo y Consumo
+          company_industry_services: Empresa, Industria y Servicios
+          culture: Cultura
+          economic_financial_policy: Política Económica y Financiera
+          education: Educación
+          environment_energy: Medio Ambiente y Energía
+          european_union_internatinal_politics: Unión Europea y Política Internacional
+          health: Salud
+          information_society: Sociedad de la información
+          justice: Justicia
+          lgtbi: LGTBI
+          linguistic_politic: Política lingüística
+          memory_repair: Memoria y Reparación
+          peace_solidarity_cooperation: Cooperación Paz y Solidaridad
+          security_civil_protection: Seguridad y Protección Civil
+          social_movements: Movimientos Sociales
+          social_rights: Derechos Sociales
+          sports: Deportes
+          territorial_congress: Congreso Territorial
+          territorial_policy: Política territorial
+          union_forum: Fórum Sindical
+          universities_search_innovation: Universidades, Búsqueda e Innovación
+          work_self_employment_social_economy: Trabajo, Autónomos y Economía Social
   decidim:
     account:
       destroy:
@@ -47,6 +78,8 @@ es:
             rechazada el <strong>%{date}</strong>.
           withdrawn: Esta enmienda de la %{amendable_type} %{proposal_link} ha sido
             retirada por su autora.
+      help_sectorial_commissions: Puedes elegir una Comisión Sectorial sólo en caso
+        de que seas miembro
       new:
         send: Crear
         title: Crea borrador de enmienda
@@ -57,6 +90,8 @@ es:
       publish_draft:
         error: Se ha producido un error al publicar el borrador de enmienda.
         success: El borrador de enmienda se ha publicado correctamente.
+      sectorial_commissions: Comisiones Sectoriales
+      sectorial_commissions_title: Órgano que la debatirá
       type: Tipo de enmienda
       types:
         add: Adición
