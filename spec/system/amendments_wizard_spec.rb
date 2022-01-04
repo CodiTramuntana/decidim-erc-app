@@ -162,13 +162,8 @@ describe "Amendment Wizard", type: :system do
             within ".new_amendment" do
               fill_in :amendment_emendation_params_title, with: title
               fill_in :amendment_emendation_params_body, with: body
-              find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
               find("*[type=submit]").click
             end
-          end
-
-          it "emendation draft has amendment_type" do
-            expect(emendation_draft.amendment_type).to eq("add")
           end
 
           it "shows similar emendations only of the same scope" do
@@ -196,13 +191,8 @@ describe "Amendment Wizard", type: :system do
           within ".new_amendment" do
             fill_in :amendment_emendation_params_title, with: title
             fill_in :amendment_emendation_params_body, with: body
-            find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
             find("*[type=submit]").click
           end
-        end
-
-        it "emendation draft has amendment_type" do
-          expect(emendation_draft.amendment_type).to eq("add")
         end
 
         it "show the phone_number field prefilled" do
@@ -222,8 +212,8 @@ describe "Amendment Wizard", type: :system do
             end
           end
 
-          it "last proposal has amendment_type" do
-            expect(Decidim::Proposals::Proposal.last.amendment_type).to eq("add")
+          it "last proposal has NOT amendment_type" do
+            expect(Decidim::Proposals::Proposal.last.amendment_type).to eq(nil)
           end
 
           it "last proposal has NOT sectorial_commission" do
