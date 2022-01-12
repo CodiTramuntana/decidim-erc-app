@@ -1,0 +1,459 @@
+---
+'0103': Alacant
+'0106': Mutxamel
+'0110': Xixona
+'0201': L'Alcora
+'0301': Alcoi
+'0402': Alcover
+'0404': Bràfim
+'0413': El Pla de Santa Maria
+'0421': Valls
+'0511': Cadaqués
+'0514': Castelló d'Empúries
+'0518': L'Escala
+'0521': Figueres
+'0525': La Jonquera
+'0527': Llançà
+'0529': Salines-Bassegoda
+'0545': Roses
+'0558': Ventalló
+'0562': Vilafant
+'0563': Vilajuïga
+'0703': Castellet i la Gornal
+'0706': Gelida
+'0709': Olèrdola
+'0710': Olesa de Bonesvalls
+'0715': Sant Cugat Sesgarrigues
+'0717': Sant Martí Sarroca
+'0718': Sant Pere de Riudebitlles
+'0719': Sant Quintí de Mediona
+'0720': Sant Sadurní d'Anoia
+'0722': Santa Margarida i els Monjos
+'0723': Subirats
+'0725': Torrelles de Foix
+'0726': Vilafranca del Penedès
+'0812': Organyà
+'0816': La Seu d'Urgell
+'1003': Vilaller
+'1505': Alta Segarra
+'1507': Capellades
+'1508': Carme
+'1512': Els Hostalets de Pierola
+'1513': Igualada
+'1514': Jorba
+'1516': Masquefa
+'1518': Òdena
+'1520': Piera
+'1521': La Pobla de Claramunt
+'1525': Sant Martí de Tous
+'1528': Santa Margarida de Montbui
+'1531': Vallbona d'Anoia
+'1533': Vilanova del Camí
+'1602': Artés
+'1603': Avinyó
+'1604': Balsareny
+'1606': Callús
+'1607': Cardona
+'1608': Castellbell i el Vilar
+'1610': Castellgalí
+'1611': Castellnou de Bages
+'1613': Fonollosa
+'1615': Manresa
+'1619': Monistrol de Montserrat
+'1620': Mura
+'1621': Navarcles
+'1622': Navàs
+'1623': El Pont de Vilomara i Rocafort
+'1624': Rajadell
+'1625': Sallent
+'1626': Sant Feliu Sasserra
+'1627': Sant Fruitós de Bages
+'1628': Sant Joan de Vilatorrada
+'1629': Sant Mateu de Bages
+'1630': Sant Salvador de Guardiola
+'1631': Sant Vicenç de Castellet
+'1633': Santpedor
+'1634': Súria
+'1702': L'Aleixar
+'1703': Alforja
+'1704': Almoster
+'1707': Les Borges del Camp
+'1708': Botarell
+'1709': Cambrils
+'1711': Castellvell del Camp
+'1716': Mont-roig del Camp
+'1717': Montbrió del Camp
+'1720': Reus
+'1722': Riudecols
+'1723': Riudoms
+'1724': La Selva del Camp
+'1725': Vandellòs i l'Hospitalet de l'Infant
+'1728': Vinyols i els Arcs
+'1901': L'Aldea
+'1904': L'Ametlla de Mar
+'1905': L'Ampolla
+'1907': Camarles
+'1908': Deltebre
+'1910': El Perelló
+'1911': Roquetes
+'1913': Tortosa
+'1914': Xerta
+'1915': Campredó
+'2002': Begur
+'2004': La Bisbal d'Empordà
+'2005': Calonge i Sant Antoni
+'2006': Castell-Platja d'Aro i s'Agaró
+'2017': Palafrugell
+'2018': Palamós
+'2020': Pals
+'2025': Sant Feliu de Guíxols
+'2026': Santa Cristina d'Aro
+'2030': Torroella de Montgrí
+'2101': Abrera
+'2102': Begues
+'2103': Castelldefels
+'2104': Castellví de Rosanes
+'2105': Cervelló
+'2106': Collbató
+'2107': Corbera de Llobregat
+'2108': Cornellà de Llobregat
+'2109': Esparreguera
+'2110': Esplugues de Llobregat
+'2111': Gavà
+'2112': Martorell
+'2113': Molins de Rei
+'2114': Olesa de Montserrat
+'2115': Pallejà
+'2116': La Palma de Cervelló
+'2117': El Papiol
+'2118': El Prat
+'2119': Sant Andreu de la Barca
+'2120': Sant Boi de Llobregat
+'2121': Sant Climent de Llobregat
+'2122': Sant Esteve Sesrovires
+'2123': Sant Feliu de Llobregat
+'2124': Sant Joan Despí
+'2125': Sant Just Desvern
+'2126': Sant Vicenç dels Horts
+'2127': Santa Coloma de Cervelló
+'2128': Torrelles de Llobregat
+'2129': Vallirana
+'2130': Viladecans
+'2131': L'Hospitalet
+'2202': Benicarló
+'2217': Vinaròs
+'2301': Albinyana
+'2302': L'Arboç
+'2305': La Bisbal del Penedès
+'2307': Calafell
+'2308': Cunit
+'2309': Llorenç del Penedès
+'2312': Sant Jaume dels Domenys
+'2313': Santa Oliva
+'2314': El Vendrell
+'2401': Crevillent
+'2402': Elx
+'2501': Badalona
+'2502': Sant Adrià de Besòs
+'2503': Santa Coloma de Gramenet
+'2601': BCN.Barcelona Vella
+'2701': BCN.Eixample
+'2801': BCN.Sants-Montjuïc
+'2901': BCN.Les Corts
+'3001': BCN.Sarrià-Sant Gervasi
+'3101': BCN.Gràcia
+'3201': BCN.Horta-Guinardó
+'3301': BCN.Nou Barris
+'3401': BCN.Sant Andreu
+'3501': BCN.Clot-Verneda
+'3502': BCN.Poblenou_Besòs
+'3602': Bagà
+'3603': Berga
+'3610': Cercs
+'3613': Gironella
+'3621': La Pobla de Lillet
+'3622': Puig-reig
+'3706': Benifairó de les Valls
+'3709': Faura
+'3714': Sagunt
+'3807': Llíria
+'3811': La Pobla de Vallbona
+'3812': Riba-roja de Túria
+'4101': Baga de Cerdanya
+'4102': Baridà-Batllia
+'4115': Puigcerdà
+'4304': L'Espluga de Francolí
+'4307': Montblanc
+'4601': Eivissa
+'4605': Sant Josep de sa Talaia
+'4801': Canyelles
+'4802': Cubelles
+'4803': Olivella
+'4804': Sant Pere de Ribes
+'4805': Sitges
+'4806': Vilanova i la Geltrú
+'4901': L'Albagès
+'4903': Arbeca
+'4905': Les Borges Blanques
+'4916': Juneda
+'5004': Castellfollit de la Roca
+'5008': Olot
+'5102': Bescanó
+'5103': Bordils
+'5106': Cassà de la Selva
+'5107': Celrà
+'5110': Fornells de la Selva
+'5111': Girona
+'5113': Llagostera
+'5114': Llambilles
+'5116': Quart
+'5117': Salt
+'5119': Sant Gregori
+'5122': Sant Julià de Ramis
+'5125': Sarrià de Ter
+'5126': Vilablareix
+'5204': Alboraia
+'5215': Catarroja
+'5226': Montcada de l'Horta
+'5242': València
+'5501': Alaró
+'5510': Bunyola
+'5527': Llucmajor
+'5528': Manacor
+'5534': Palma
+'5537': Pollença
+'5545': Santa Maria del Camí
+'5546': Santanyí
+'5601': Alella
+'5602': Arenys de Mar
+'5603': Arenys de Munt
+'5604': Argentona
+'5605': Cabrera de Mar
+'5606': Cabrils
+'5607': Caldes d'Estrac
+'5608': Calella
+'5609': Canet de Mar
+'5610': Dosrius
+'5611': Malgrat de Mar
+'5612': El Masnou
+'5613': Mataró
+'5614': Montgat
+'5615': Òrrius
+'5616': Palafolls
+'5617': Pineda de Mar
+'5618': Premià de Dalt
+'5619': Premià de Mar
+'5620': Sant Andreu de Llavaneres
+'5621': Sant Cebrià de Vallalta
+'5622': Sant Iscle de Vallalta
+'5623': Sant Pol de Mar
+'5624': Sant Vicenç de Montalt
+'5625': Santa Susanna
+'5626': Teià
+'5627': Tiana
+'5628': Tordera
+'5629': Vilassar de Dalt
+'5630': Vilassar de Mar
+'5711': Dénia
+'5732': Xàbia
+'6005': Maó
+'6101': Alcanar
+'6102': Amposta
+'6104': La Galera
+'6105': Godall
+'6106': Mas de Barberans
+'6108': La Ràpita
+'6109': Sant Jaume d'Enveja
+'6110': Santa Bàrbara
+'6111': La Sénia
+'6112': Ulldecona
+'6201': Àger
+'6205': Artesa de Segre
+'6207': Balaguer
+'6209': Bellcaire d'Urgell
+'6213': Castelló de Farfanya
+'6222': Ponts
+'6223': Baix Sió
+'6225': Térmens
+'6227': Torrelameu
+'6303': Calldetenes
+'6304': Centelles
+'6306': Espinelves - Viladrau
+'6307': Folgueroles
+'6308': Gurb
+'6309': Balenyà
+'6312': Manlleu
+'6314': El Voltreganès
+'6316': Muntanyola
+'6317': Olost
+'6321': Prats de Lluçanès
+'6322': Roda de Ter i el Cabrerès
+'6328': Sant Julià de Vilatorta
+'6331': Sant Pere de Torelló
+'6332': Bisaura
+'6334': Sant Vicenç de Torelló
+'6336': Santa Eugènia de Berga
+'6337': Santa Eulàlia de Riuprimer
+'6343': Taradell
+'6346': Tona
+'6347': Torelló
+'6348': Vic
+'6405': Isona i Conca Dellà
+'6407': La Pobla de Segur
+'6414': Tremp
+'6505': Valls d'Àneu
+'6513': Sort
+'6602': Bell-lloc d'Urgell
+'6603': Bellvís
+'6606': Golmés
+'6607': Ivars d'Urgell
+'6608': Linyola
+'6610': Mollerussa
+'6611': El Palau d'Anglesola
+'6701': Banyoles
+'6806': Castelló
+'7205': Cornudella de Montsant
+'7206': Falset
+'7405': Algemesí
+'7407': Alzira
+'7415': Carlet
+'7511': Sueca
+'7602': Benissanet
+'7603': Flix
+'7606': Miravet
+'7607': Móra d'Ebre
+'7608': Móra la Nova
+'7612': Tivissa
+'7801': Campdevànol
+'7803': Vall de Camprodon
+'7812': Vall de Ribes
+'7813': Ripoll
+'7814': Sant Joan de les Abadesses
+'7949': Perpinyà
+'8016': Gandia
+'8027': Simat de la Valldigna
+'8028': Tavernes de la Valldigna
+'8102': Cervera
+'8106': Guissona
+'8201': Aitona
+'8203': Albatàrrec
+'8205': Alcarràs
+'8206': Alcoletge
+'8207': Alfarràs
+'8209': Alguaire
+'8210': Almacelles
+'8212': Almenar
+'8213': Alpicat
+'8221': Lleida
+'8227': Rosselló
+'8229': Seròs
+'8235': Torrefarrera
+'8237': Vilanova de la Barca
+'8301': Amer
+'8303': Arbúcies
+'8304': Blanes
+'8305': Breda
+'8307': Caldes de Malavella
+'8310': Hostalric
+'8311': Lloret de Mar
+'8312': Maçanet de la Selva
+'8315': Riells i Viabrea
+'8317': Riudellots de la Selva
+'8319': Sant Hilari Sacalm
+'8321': Santa Coloma de Farners
+'8322': Sils
+'8324': Tossa de Mar
+'8325': Vidreres
+'8515': Solsona
+'8601': Altafulla
+'8602': El Catllar
+'8603': Constantí
+'8604': Creixell
+'8605': El Morell
+'8607': Els Pallaresos
+'8608': Perafort i Puigdelfí
+'8610': La Pobla de Montornès
+'8613': Roda de Berà
+'8615': Salou
+'8616': La Secuita
+'8617': Tarragona
+'8618': Torredembarra
+'8620': Vila-seca
+'8621': Vilallonga del Camp
+'8622': La Canonja
+'8701': Arnes
+'8706': La Fatarella
+'8707': Gandesa
+'8801': Agramunt
+'8802': Anglesola
+'8804': Bellpuig
+'8806': La Vall del Corb
+'8816': Tàrrega
+'8819': Verdú
+'8908': Vielha e Mijaran
+'9201': Badia del Vallès
+'9202': Barberà del Vallès
+'9203': Castellar del Vallès
+'9204': Castellbisbal
+'9205': Cerdanyola
+'9207': Matadepera
+'9208': Montcada i Reixac
+'9209': Palau-Solità i Plegamans
+'9210': Polinyà
+'9211': Rellinars
+'9212': Ripollet
+'9213': Rubí
+'9214': Sabadell
+'9215': Sant Cugat del Vallès
+'9216': Sant Llorenç Savall
+'9217': Sant Quirze del Vallès
+'9218': Santa Perpètua de Mogoda
+'9219': Sentmenat
+'9220': Terrassa
+'9221': Ullastrell
+'9222': Vacarisses
+'9223': Viladecavalls
+'9301': Aiguafreda
+'9302': L'Ametlla del Vallès
+'9303': Bigues i Riells
+'9304': Caldes de Montbui
+'9306': Canovelles
+'9307': Cànoves i Samalús
+'9308': Cardedeu
+'9312': Les Franqueses del Vallès
+'9313': La Garriga
+'9315': Granollers
+'9316': Gualba
+'9317': La Llagosta
+'9318': Lliçà d'Amunt
+'9319': Lliçà de Vall
+'9320': Llinars del Vallès
+'9321': Martorelles
+'9322': Mollet del Vallès
+'9324': Montmeló
+'9325': Montornés del Vallès
+'9326': Montseny
+'9327': Parets del Vallès
+'9328': La Roca del Vallès
+'9329': Sant Antoni de Vilamajor
+'9330': Sant Celoni
+'9331': Sant Esteve de Palautordera
+'9332': Sant Feliu de Codines
+'9333': Sant Fost de Campsentelles
+'9334': Sant Pere de Vilamajor
+'9336': Santa Eulàlia de Ronçana
+'9337': Santa Maria de Martorelles
+'9338': Santa Maria de Palautordera
+'9339': Tagamanent
+'9340': Vallgorguina
+'9341': Vallromanes
+'9343': Vilanova del Vallès
+'9801': Moià
+'9802': L'Estany
+'9803': Santa Maria d'Oló
+'9804': Castellterçol
+'9901': Amèrica
+'9902': Europa
+'9903': No Adscrits Catalunya
+'9904': No Adscrits País Valencià
+'9905': No Adscrits Illes
