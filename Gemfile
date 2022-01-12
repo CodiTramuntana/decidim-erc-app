@@ -8,7 +8,7 @@ gem "rails", "< 6"
 DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.23-stable" }.freeze
 TERM_CUSTOMIZER_VERSION = { git: "https://github.com/mainio/decidim-module-term_customizer", branch: "0.23-stable" }.freeze
 DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = {
-  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", tag: "v1.1.5"
+  git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", tag: "v1.1.6"
 }.freeze
 
 gem "decidim", DECIDIM_VERSION
