@@ -20,9 +20,8 @@
                     amendment_types.map { |g| [g[:name], g[:key]] },
                     selected: emendation&.amendment_type,
                     label: t("decidim.amendments.type")) %>
-  <% end %>
 
-  <% if amendable.component.settings.participatory_texts_enabled? %>
+    
     <%= form.select(:sectorial_commission, sectorial_commissions,
                     selected: emendation&.sectorial_commission,
                     label: t("decidim.amendments.sectorial_commissions_title")) %>
@@ -30,4 +29,4 @@
   <% end %>
 <% end %>
 
-<%= javascript_include_tag "decidim/proposals" %>
+<%= javascript_include_tag "proposals" %>

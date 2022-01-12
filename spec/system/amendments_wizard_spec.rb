@@ -101,14 +101,8 @@ describe "Amendment Wizard", type: :system do
           expect(emendation_draft.amendment_type).to eq("add")
         end
 
-        it "show the phone_number field prefilled" do
-          within ".edit_amendment" do
-            # Data returned from CiviCRM should be readonly and users must be informed.
-            expect(page).to have_field("Contact phone number", with: "666-666-666", readonly: true)
-            within "#amendment_phone_number" do
-              expect(page).to have_tag("span.help-text", text: /administracio@erc.cat/)
-            end
-          end
+        it "emendation draft has sectorial_commission" do
+          expect(emendation_draft.sectorial_commission).to eq("territorial_congress")
         end
 
         it "show the phone_number field prefilled" do
@@ -126,6 +120,20 @@ describe "Amendment Wizard", type: :system do
             within ".edit_amendment" do
               find("*[type=submit]").click
             end
+          end
+        end
+
+          it "last proposal has amendment_type" do
+            expect(Decidim::Proposals::Proposal.last.amendment_type).to eq("add")
+          end
+
+          it "last proposal has sectorial_commission" do
+            expect(Decidim::Proposals::Proposal.last.sectorial_commission).to eq("territorial_congress")
+          end
+
+          it "creates a proposal note" do
+            expect(emendation_draft.proposal_notes_count).to eq(1)
+            expect(Decidim::Proposals::ProposalNote.last.body).to eq("666-666-666")
           end
 
           it "last proposal has amendment_type" do
@@ -168,13 +176,8 @@ describe "Amendment Wizard", type: :system do
             within ".new_amendment" do
               fill_in :amendment_emendation_params_title, with: title
               fill_in :amendment_emendation_params_body, with: body
-              find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
               find("*[type=submit]").click
             end
-          end
-
-          it "emendation draft has amendment_type" do
-            expect(emendation_draft.amendment_type).to eq("add")
           end
 
           it "shows similar emendations only of the same scope" do
@@ -202,13 +205,8 @@ describe "Amendment Wizard", type: :system do
           within ".new_amendment" do
             fill_in :amendment_emendation_params_title, with: title
             fill_in :amendment_emendation_params_body, with: body
-            find("#amendment_amendment_type").find(:xpath, "option[1]").select_option
             find("*[type=submit]").click
           end
-        end
-
-        it "emendation draft has amendment_type" do
-          expect(emendation_draft.amendment_type).to eq("add")
         end
 
         it "show the phone_number field prefilled" do
@@ -228,8 +226,8 @@ describe "Amendment Wizard", type: :system do
             end
           end
 
-          it "last proposal has amendment_type" do
-            expect(Decidim::Proposals::Proposal.last.amendment_type).to eq("add")
+          it "last proposal has NOT amendment_type" do
+            expect(Decidim::Proposals::Proposal.last.amendment_type).to eq(nil)
           end
 
           it "last proposal has NOT sectorial_commission" do
