@@ -1,112 +1,100 @@
 ---
-'4': Vallès Oriental (comarcal)
-'1911': Sant Andreu (comarcal)
-'1928': Esquerra Maresme
-'1954': Alt Penedès (comarcal)
-'3849': Anoia (comarcal)
-'5722': Bages (comarcal)
-'5723': Baix Llobregat (comarcal)
-'5724': Barcelones Nord (comarcal)
-'5725': Berguedà (comarcal)
-'5726': Garraf (comarcal)
-'5727': Maresme (comarcal)
-'5728': Osona (comarcal)
-'5729': Vallès Occidental (comarcal)
-'5731': Alt Empordà (comarcal)
-'5732': Baix Empordà (comarcal)
-'5733': Cerdanya (comarcal)
-'5734': Garrotxa (comarcal)
-'5735': Gironès (comarcal)
-'5736': Pla de l'Estany (comarcal)
-'5737': Ripollès (comarcal)
-'5738': Selva (comarcal)
-'5739': Alta Ribagorça (comarcal)
-'5740': Alt Urgell (comarcal)
-'5741': Garrigues (comarcal)
-'5742': Noguera (comarcal)
-'5743': Pallars Jussà (comarcal)
-'5744': Pallars Sobirà (comarcal)
-'5745': Pla d'Urgell (comarcal)
-'5746': Segarra (comarcal)
-'5747': Segrià (comarcal)
-'5748': Solsonès (comarcal)
-'5749': Urgell (comarcal)
-'5750': Aran (comarcal)
-'5751': Alt Camp (comarcal)
-'5752': Baix Camp (comarcal)
-'5753': Baix Ebre (comarcal)
-'5754': Baix Penedès (comarcal)
-'5755': Conca de Barberà (comarcal)
-'5756': Montsià (comarcal)
-'5757': Priorat (comarcal)
-'5758': Ribera d'Ebre (comarcal)
-'5759': Tarragonès (comarcal)
-'5760': Terra Alta (comarcal)
-'5761': Baix Cinca (comarcal)
-'5762': Ribagorça (comarcal)
-'5763': Llitera (comarcal)
-'5764': Matarranya (comarcal)
-'5765': Andorra (comarcal)
-'5766': Eivissa i Formentera (comarcal)
-'5767': Mallorca (comarcal)
-'5768': Menorca (comarcal)
-'5769': Alcalatén (comarcal)
-'5770': Alacantí (comarcal)
-'5771': Alcoià (comarcal)
-'5772': Alt Maestrat (comarcal)
-'5773': Alto Mijares (comarcal)
-'5774': Alto Palancia (comarcal)
-'5775': Alto Vinalopó (comarcal)
-'5776': Baix Maestrat (comarcal)
-'5777': Vega Baja (comarcal)
-'5778': Baix Vinalopó (comarcal)
-'5779': Camp de Morvedre (comarcal)
-'5780': Camp de Túria (comarcal)
-'5781': Canal de Navarrés (comarcal)
-'5782': Comtat (comarcal)
-'5783': La Costera (comarcal)
-'5784': Hoya de Buñol (comarcal)
-'5785': Horta (comarcal)
-'5786': Marina Alta (comarcal)
-'5787': Marina Baixa (comarcal)
-'5788': Plana Alta (comarcal)
-'5789': Plana Baixa (comarcal)
-'5790': Plana de Requena-Utiel (comarcal)
-'5791': Ports (comarcal)
-'5792': Rincón de Ademuz (comarcal)
-'5793': Ribera Alta (comarcal)
-'5794': Ribera Baixa (comarcal)
-'5795': Safor (comarcal)
-'5796': Serranos (comarcal)
-'5797': Vall d'Albaida (comarcal)
-'5798': Valle de Ayora-Cofrentes (comarcal)
-'5799': Valls del Vinalopó (comarcal)
-'5800': Vinalopó Medio (comarcal)
-'5801': Fenolheda (comarcal)
-'5802': Alta Cerdanya (comarcal)
-'5803': Capcir (comarcal)
-'5804': Conflent (comarcal)
-'5805': Rosselló (comarcal)
-'5806': Vallespir (comarcal)
-'5807': Estranger (comarcal)
-'5808': BCN_Barcelona Vella (comarcal)
-'5809': BCN_Eixample (comarcal)
-'5810': BCN_Sants-Montjuïc (comarcal)
-'5811': BCN_Les Corts (comarcal)
-'5812': BCN_Sarrià-Sant Gervasi (comarcal)
-'5813': BCN_Gràcia (comarcal)
-'5814': BCN_Horta-Guinardó (comarcal)
-'5815': BCN_Nou Barris (comarcal)
-'5816': BCN_Sant Andreu (comarcal)
-'5817': BCN_Sant Martí (comarcal)
-'5818': Moianès (comarcal)
-'13124': 3B3
-'13141': 3B3
-'13157': 1X
-'13198': 1P
-'13228': 1T
-'13233': 3B3
-'13422': 1T
-'13534': 1P
-'13695': 1P
-'13702': 3B3
+'0100': Alacantí
+'0200': Alcalatén
+'0300': Alcoià
+'0400': Alt Camp
+'0500': Alt Empordà
+'0600': Alt Maestrat
+'0700': Alt Penedès
+'0800': Alt Urgell
+'0900': Alta Cerdanya
+'1000': Alta Ribagorça
+'1100': Alto Mijares
+'1200': Alto Palancia
+'1300': Alto Vinalopó
+'1400': Andorra
+'1500': Anoia
+'1600': Bages
+'1700': Baix Camp
+'1800': Baix Cinca
+'1900': Baix Ebre
+'2000': Baix Empordà
+'2100': Baix Llobregat
+'2200': Baix Maestrat
+'2300': Baix Penedès
+'2400': Baix Vinalopó
+'2500': Baix Besòs
+'2600': BCN_Barcelona Vella
+'2700': BCN_Eixample
+'2800': BCN_Sants-Montjuïc
+'2900': BCN_Les Corts
+'3000': BCN_Sarrià-Sant Gervasi
+'3100': BCN_Gràcia
+'3200': BCN_Horta-Guinardó
+'3300': BCN_Nou Barris
+'3400': BCN_Sant Andreu
+'3500': BCN_Sant Martí
+'3600': Berguedà
+'3700': Camp de Morvedre
+'3800': Camp de Túria
+'3900': Canal de Navarrés
+'4000': Capcir
+'4100': Cerdanya
+'4200': Comtat
+'4300': Conca de Barberà
+'4400': Conflent
+'4500': La Costera
+'4600': Eivissa i Formentera
+'4700': Fenolheda
+'4800': Garraf
+'4900': Garrigues
+'5000': Garrotxa
+'5100': Gironès
+'5200': Horta
+'5300': Hoya de Buñol
+'5400': Llitera
+'5500': Mallorca
+'5600': Maresme
+'5700': Marina Alta
+'5800': Marina Baixa
+'5900': Matarranya
+'6000': Menorca
+'6100': Montsià
+'6200': Noguera
+'6300': Osona
+'6400': Pallars Jussà
+'6500': Pallars Sobirà
+'6600': Pla d'Urgell
+'6700': Pla de l'Estany
+'6800': Plana Alta
+'6900': Plana Baixa
+'7000': Plana de Requena-Utiel
+'7100': Ports
+'7200': Priorat
+'7300': Baixa Ribagorça
+'7400': Ribera Alta
+'7500': Ribera Baixa
+'7600': Ribera d'Ebre
+'7700': Rincón de Ademuz
+'7800': Ripollès
+'7900': Rosselló
+'8000': Safor
+'8100': Segarra
+'8200': Segrià
+'8300': Selva
+'8400': Serranos
+'8500': Solsonès
+'8600': Tarragonès
+'8700': Terra Alta
+'8800': Urgell
+'8900': Aran
+'9000': Vall d'Albaida
+'9100': Valle de Ayora-Cofrentes
+'9200': Vallès Occidental
+'9300': Vallès Oriental
+'9400': Vallespir
+'9500': Valls del Vinalopó
+'9600': Vega Baja
+'9700': Vinalopó Medio
+'9800': Moianès
+'9900': Estranger i No Adscrits
