@@ -22,5 +22,9 @@ describe "Account", type: :system do
       expect(page).to have_field(:user_nickname, readonly: true)
       expect(page).to have_field(:user_email, readonly: true)
     end
+
+    it "does not show to update an profile image" do
+      expect(page).to have_no_css(".edit_user.columns.large-4")
+    end
   end
 end
