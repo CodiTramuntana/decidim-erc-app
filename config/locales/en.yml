@@ -67,3 +67,7 @@ en:
         participatory_texts:
           all_scopes: All scopes
           filter_by_scope: Filter by scope
+    proposals:
+      proposals:
+        orders:
+          alphabetically: Alphabetically

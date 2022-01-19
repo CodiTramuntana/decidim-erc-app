@@ -7,6 +7,7 @@ ignore_missing:
   - "decidim.proposals.proposal_endorsements_helper.render_endorsements_button_card_part.endorse"
   - "decidim.proposals.proposals.endorsements_card_row.comments"
   - decidim.account.show.*
+  - "decidim.proposals.proposals.orders.alphabetically"
 
 ignore_unused:
   - "decidim.admin.officializations.index.remove_user"
@@ -16,6 +17,7 @@ ignore_unused:
   - "decidim.wizard_step_form.*"
   - "decidim.components.proposals.settings.*"
   - "decidim.proposals.models.proposal.fields.author"
+  - "decidim.proposals.proposals.orders.alphabetically"
 
 # Find translate calls
 search:
