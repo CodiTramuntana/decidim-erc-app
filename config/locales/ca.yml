@@ -140,6 +140,9 @@ ca:
         proposal:
           fields:
             author: Autor
+      proposals:
+        orders:
+          alphabetically: Alfabèticament
     wizard_step_form:
       wizard_aside:
         back: Enrere

@@ -26,10 +26,10 @@ describe "Filter Proposals", type: :system do
 
         context "when the user is logged in" do
           context "and there are emendations with same scope as the user" do
-            let!(:emendation_same_scope) { create(:proposal, body: body, scope: user.scope, component: component) }
+            let!(:emendation_same_scope) { create(:proposal, body: body, scope: user.scope, component: component, title: "Article 1") }
             let!(:amendment_same_scope) { create(:amendment, amendable: proposal, emendation: emendation_same_scope) }
 
-            let!(:emendation_other_scope) { create(:proposal, component: component) }
+            let!(:emendation_other_scope) { create(:proposal, component: component, title: "Article 2") }
             let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
             before do
@@ -52,6 +52,14 @@ describe "Filter Proposals", type: :system do
               expect(page).to have_content("1 PROPOSAL")
               expect(page).to have_content(translated(emendation_same_scope.title))
               expect(page).to have_no_content(translated(emendation_other_scope.title))
+            end
+
+            it "can be order alphabetically" do
+              within ".order-by" do
+                expect(page).to have_selector("ul[data-dropdown-menu$=dropdown-menu]", text: "Alphabetically")
+              end
+
+              expect(page).to have_selector("#proposals .card-grid .column:first-child", text: translated(emendation_same_scope.title))
             end
           end
 
@@ -101,6 +109,14 @@ describe "Filter Proposals", type: :system do
               within "form.new_filter" do
                 expect(page).to have_content(/Type/i)
               end
+            end
+
+            it "can be order alphabetically" do
+              within ".order-by" do
+                expect(page).to have_selector("ul[data-dropdown-menu$=dropdown-menu]", text: "Alphabetically")
+              end
+
+              expect(page).to have_selector("#proposals .card-grid .column:first-child", text: translated(emendation_same_scope.title))
             end
 
             it "lists all the amendments" do
