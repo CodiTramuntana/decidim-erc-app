@@ -7,7 +7,6 @@ Decidim::Erc::CrmAuthenticable::CIVICRM_COMARCAL_EXCEPTIONS = %w(
   5600
   9200
   9900
-  0800
 ).freeze
 filepath = Rails.root.join("config", "civi_crm", "decidim_scopes_mapping.yml")
 Decidim::Erc::CrmAuthenticable::SCOPE_CODES = YAML.load_file(filepath).freeze if File.exist?(filepath)
