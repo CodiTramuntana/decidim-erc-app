@@ -47,7 +47,7 @@ module Decidim
     def new_body
       body = emendation.body["ca"]
 
-      body = body.chars.each_slice(MAX_LENGTH).map(&:join).first + "</p>" if body.length >= MAX_LENGTH
+      body = body.truncate(MAX_LENGTH, escape: false) if body.length >= MAX_LENGTH
 
       body
     end
