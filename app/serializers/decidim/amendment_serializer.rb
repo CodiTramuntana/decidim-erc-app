@@ -4,6 +4,7 @@ module Decidim
   class AmendmentSerializer < Decidim::Exporters::Serializer
     include Decidim::ResourceHelper
     include Decidim::TranslationsHelper
+    MAX_LENGTH = 32_767
 
     # Public: Initializes the serializer with a result.
     def initialize(result)
@@ -15,7 +16,7 @@ module Decidim
       {
         title: emendation.title,
         old_body: amendable.body,
-        new_body: emendation.body,
+        new_body: new_body,
         user_name: amendment_user&.name,
         scope: amendment_user&.scope&.name,
         amendment_type: emendation.amendment_type,
@@ -43,8 +44,16 @@ module Decidim
       @emendation ||= amendable_type.find(@result.decidim_emendation_id)
     end
 
+    def new_body
+      body = emendation.body["ca"]
+
+      body = body.chars.each_slice(MAX_LENGTH).map(&:join).first + "</p>" if body.length >= MAX_LENGTH
+
+      body
+    end
+
     def amendment_diff
-      Differ.diff_by_word(emendation.body.values.first, amendable.body.values.first).format_as(:ascii)
+      Differ.diff_by_word(new_body, amendable.body.values.first).format_as(:ascii)
     end
   end
 end
