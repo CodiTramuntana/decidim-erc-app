@@ -116,7 +116,7 @@ describe "Filter Proposals", type: :system do
                 expect(page).to have_selector("ul[data-dropdown-menu$=dropdown-menu]", text: "Alphabetically")
               end
 
-              expect(page).to have_selector("#proposals .card-grid .column:first-child", text: translated(emendation_same_scope.title))
+              expect(page).to have_selector("#proposals .row.small-up-1.medium-up-2.card-grid .column:first-child", text: translated(emendation_same_scope.title))
             end
 
             it "lists all the amendments" do

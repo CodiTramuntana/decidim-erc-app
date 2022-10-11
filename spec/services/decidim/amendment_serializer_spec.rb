@@ -18,13 +18,13 @@ module Decidim
         end
 
         it "render original and new titles" do
-          expect(subject).to include(original_title: amendable.title["ca"])
-          expect(subject).to include(new_title: emendation.title["ca"])
+          expect(subject).to include(original_title: amendable.title)
+          expect(subject).to include(new_title: emendation.title)
         end
 
         it "render old and new bodies" do
           expect(subject).to include(old_body: amendable.body)
-          expect(subject).to include(new_body: emendation.body["ca"])
+          expect(subject).to include(new_body: emendation.body)
         end
       end
     end
