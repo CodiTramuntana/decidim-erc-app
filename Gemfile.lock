@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git
+  revision: 6439bde34c1147d0c0b8d26998e547982a5a5d74
+  branch: dep/upgrade_to_decidim_0_24
+  specs:
+    decidim-erc-crm_authenticable (1.2.0)
+      decidim-core (~> 0.24.0)
+      decidim-verifications (~> 0.24.0)
+
+GIT
   remote: https://github.com/CodiTramuntana/decidim.git
   revision: dc47eaeca33a077bdfbcf2f4c78c6e45bcea3e9c
   branch: release/0.24-stable
@@ -214,13 +223,6 @@ GIT
     decidim-term_customizer (0.24.0)
       decidim-admin (~> 0.24.0)
       decidim-core (~> 0.24.0)
-
-PATH
-  remote: /home/oliver/prog/decidim/modules/decidim-erc-crm_authenticable
-  specs:
-    decidim-erc-crm_authenticable (1.2.0)
-      decidim-core (~> 0.24.0)
-      decidim-verifications (~> 0.24.0)
 
 GEM
   remote: https://rubygems.org/
