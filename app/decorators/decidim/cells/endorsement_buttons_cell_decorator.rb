@@ -40,7 +40,7 @@ Decidim::EndorsementButtonsCell.class_eval do
         content
       end
     else
-      content_tag(:div, tag_params) do
+      tag.div(tag_params) do
         content
       end
     end

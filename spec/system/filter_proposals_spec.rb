@@ -94,7 +94,7 @@ describe "Filter Proposals", type: :system do
 
         context "when the user is logged in" do
           context "and there are emendations with same scope as the user" do
-            let!(:emendation_same_scope) { create(:proposal, body: body, scope: user.scope, component: component) }
+            let!(:emendation_same_scope) { create(:proposal, title: "AAAAAA", body: body, scope: user.scope, component: component) }
             let!(:amendment_same_scope) { create(:amendment, amendable: proposal, emendation: emendation_same_scope) }
 
             let!(:emendation_other_scope) { create(:proposal, component: component) }

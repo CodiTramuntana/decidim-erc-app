@@ -91,7 +91,7 @@ Style/Alias:
     - prefer_alias_method
 
 # Align the elements of a hash literal if they span more than one line.
-Layout/AlignHash:
+Layout/HashAlignment:
   # Alignment of entries using hash rocket as separator. Valid values are:
   #
   # key - left alignment of keys
@@ -154,7 +154,7 @@ Layout/AlignHash:
     - ignore_implicit
     - ignore_explicit
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   # Alignment of parameters in multi-line method calls.
   #
   # The `with_first_parameter` style aligns the following lines along the same
@@ -264,20 +264,6 @@ Style/BlockDelimiters:
     - lambda
     - proc
     - it
-
-Style/BracesAroundHashParameters:
-  EnforcedStyle: no_braces
-  SupportedStyles:
-    # The `braces` style enforces braces around all method parameters that are
-    # hashes.
-    - braces
-    # The `no_braces` style checks that the last parameter doesn't have braces
-    # around it.
-    - no_braces
-    # The `context_dependent` style checks that the last parameter doesn't have
-    # braces around it, but requires braces if the second to last parameter is
-    # also a hash literal.
-    - context_dependent
 
 # Indentation of `when`.
 Layout/CaseIndentation:
@@ -473,7 +459,7 @@ Naming/FileName:
   # files with a shebang in the first line).
   IgnoreExecutableScripts: true
 
-Layout/IndentFirstArgument:
+Layout/FirstArgumentIndentation:
   EnforcedStyle: special_for_inner_method_call_in_parentheses
   SupportedStyles:
     # The first parameter should always be indented one step more than the
@@ -561,7 +547,7 @@ Layout/IndentationWidth:
   Width: 2
 
 # Checks the indentation of the first element in an array literal.
-Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
   # The value `special_inside_parentheses` means that array literals with
   # brackets that have their opening bracket on the same line as a surrounding
   # opening round parenthesis, shall have their first element indented relative
@@ -583,13 +569,13 @@ Layout/IndentFirstArrayElement:
   IndentationWidth: ~
 
 # Checks the indentation of assignment RHS, when on a different line from LHS
-Layout/IndentAssignment:
+Layout/AssignmentIndentation:
   # By default, the indentation width from Style/IndentationWidth is used
   # But it can be overridden by setting this parameter
   IndentationWidth: ~
 
 # Checks the indentation of the first key in a hash literal.
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   # The value `special_inside_parentheses` means that hash literals with braces
   # that have their opening brace on the same line as a surrounding opening
   # round parenthesis, shall have their first key indented relative to the
@@ -671,6 +657,19 @@ Style/ModuleFunction:
   SupportedStyles:
     - module_function
     - extend_self
+
+
+Layout/LineLength:
+  Max: 180
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  Exclude:
+    - "**/spec/**/*"
 
 Layout/MultilineArrayBraceLayout:
   EnforcedStyle: symmetrical
@@ -796,12 +795,12 @@ Naming/PredicateName:
     - has_
     - have_
   # Predicate name prefixes that should be removed.
-  NamePrefixBlacklist:
+  ForbiddenPrefixes:
     - is_
     - have_
   # Predicate names which, despite having a blacklisted prefix, or no ?,
   # should still be accepted
-  NameWhitelist:
+  AllowedMethods:
     - is_a?
   # Exclude Rspec specs because there is a strong convetion to write spec
   # helpers in the form of `have_something` or `be_something`.
@@ -983,7 +982,7 @@ Style/TernaryParentheses:
     - require_no_parentheses
   AllowSafeAssignment: true
 
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   EnforcedStyle: final_newline
   SupportedStyles:
     - final_newline
@@ -1033,7 +1032,7 @@ Style/TrivialAccessors:
   # Commonly used in DSLs
   AllowDSLWriters: false
   IgnoreClassMethods: false
-  Whitelist:
+  AllowedMethods:
     - to_ary
     - to_a
     - to_c
@@ -1106,18 +1105,6 @@ Metrics/CyclomaticComplexity:
   Max: 9
   Exclude:
     - "**/*/permissions.rb"
-
-Metrics/LineLength:
-  Max: 180
-  # To make it possible to copy or click on URIs in the code, we allow lines
-  # containing a URI to be longer than Max.
-  AllowHeredoc: true
-  AllowURI: true
-  URISchemes:
-    - http
-    - https
-  Exclude:
-    - "**/spec/**/*"
 
 Metrics/MethodLength:
   CountComments: false  # count full line comments?
@@ -1240,6 +1227,12 @@ RSpec/MessageSpies:
 
 RSpec/MultipleExpectations:
   Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 12
+  Exclude:
+    - spec/system/participatory_texts_spec.rb
+    - spec/system/amendments_wizard_spec.rb
 
 RSpec/NestedGroups:
   Max: 7
