@@ -14,7 +14,9 @@ module Decidim
     # Public: Exports a hash with the serialized data for this result.
     def serialize
       {
-        title: emendation.title,
+        id: emendation.id,
+        original_title: amendable.title,
+        new_title: emendation.title,
         old_body: amendable.body,
         new_body: new_body,
         user_name: amendment_user&.name,
@@ -45,7 +47,7 @@ module Decidim
     end
 
     def new_body
-      body = emendation.body["ca"]
+      body = emendation.body
 
       body = body.truncate(MAX_LENGTH, escape: false) if body.length >= MAX_LENGTH
 
@@ -53,7 +55,7 @@ module Decidim
     end
 
     def amendment_diff
-      Differ.diff_by_word(new_body, amendable.body.values.first).format_as(:ascii)
+      Differ.diff_by_word(new_body.to_s, amendable.body.to_s).format_as(:ascii)
     end
   end
 end
