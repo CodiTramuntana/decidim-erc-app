@@ -91,4 +91,4 @@ module AmendableExtension
   end
 end
 
-Decidim::Proposals::Proposal.send(:include, AmendableExtension)
+Decidim::Proposals::Proposal.include AmendableExtension

@@ -15,7 +15,6 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
-  # rubocop:disable Rails/FilePath
   if Rails.root.join("tmp/caching-dev.txt").exist?
     config.action_controller.perform_caching = true
 
@@ -28,8 +27,6 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-  # rubocop:enable Rails/FilePath
-
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :letter_opener_web
