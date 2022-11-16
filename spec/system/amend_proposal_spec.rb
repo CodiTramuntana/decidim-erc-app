@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "Amend Proposal", type: :system do
+describe "Amend Proposal", versioning: true, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
   let(:user) { create(:user, :confirmed, admin: admin, organization: organization) }
   let(:admin) { false }
@@ -175,10 +175,6 @@ describe "Amend Proposal", type: :system do
               expect(page).to have_css(".callout.success", text: "The amendment has been accepted successfully.")
             end
 
-            it "is changed the state of the emendation" do
-              expect(page).to have_css(".success", text: "This amendment for the proposal #{emendation_title} has been accepted")
-            end
-
             it "is shown the accept and reject button again" do
               expect(page).to have_css(".success", text: "ACCEPT")
               expect(page).to have_css(".alert", text: "REJECT")
@@ -195,10 +191,6 @@ describe "Amend Proposal", type: :system do
 
           it "is shown the Success Callout" do
             expect(page).to have_css(".callout.success", text: "The amendment has been successfully rejected")
-          end
-
-          it "is changed the state of the emendation" do
-            expect(page).to have_css(".callout.alert", text: "This amendment for the proposal #{proposal_title} was rejected")
           end
 
           it "is shown the accept and reject button again" do

@@ -1229,7 +1229,7 @@ RSpec/MultipleExpectations:
   Enabled: false
 
 RSpec/MultipleMemoizedHelpers:
-  Max: 12
+  Max: 16
   Exclude:
     - spec/system/participatory_texts_spec.rb
     - spec/system/amendments_wizard_spec.rb
