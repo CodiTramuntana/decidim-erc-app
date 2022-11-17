@@ -56,6 +56,8 @@ The new option "scope" allows to filter emendations by the scope of the user.
 Amendment view customizations:
 - `app/views/decidim/proposals/proposals/_endorsements_card_row.html.erb`
 
+Accept and reject buttons are always visible. (`app/decorators/decidim/helpers/amendments_helper_decorator.rb`)
+
 ### open-data is disabled
 `app/assets/stylesheets/application.scss` applies css styles to hide the open-data links.
 The corresponding rake task is neither scheduled.
