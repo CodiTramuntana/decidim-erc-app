@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "Amend Proposal", type: :system do
+describe "Amend Proposal", versioning: true, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
   let(:user) { create(:user, :confirmed, admin: admin, organization: organization) }
   let(:admin) { false }
@@ -132,6 +132,7 @@ describe "Amend Proposal", type: :system do
 
       before do
         component.update!(step_settings: { active_step_id => { amendment_reaction_enabled: true } })
+        proposal.versions.last.update(object: { id: proposal.id, title: proposal.title, body: proposal.body })
       end
 
       context "and the proposal author visits an emendation to their proposal" do
@@ -175,10 +176,6 @@ describe "Amend Proposal", type: :system do
               expect(page).to have_css(".callout.success", text: "The amendment has been accepted successfully.")
             end
 
-            it "is changed the state of the emendation" do
-              expect(page).to have_css(".success", text: "This amendment for the proposal #{emendation_title} has been accepted")
-            end
-
             it "is shown the accept and reject button again" do
               expect(page).to have_css(".success", text: "ACCEPT")
               expect(page).to have_css(".alert", text: "REJECT")
@@ -187,8 +184,6 @@ describe "Amend Proposal", type: :system do
         end
 
         context "when the user clicks on the reject button" do
-          let(:proposal_title) { translated(proposal.title) }
-
           before do
             click_link "Reject"
           end
@@ -197,13 +192,32 @@ describe "Amend Proposal", type: :system do
             expect(page).to have_css(".callout.success", text: "The amendment has been successfully rejected")
           end
 
-          it "is changed the state of the emendation" do
-            expect(page).to have_css(".callout.alert", text: "This amendment for the proposal #{proposal_title} was rejected")
-          end
-
           it "is shown the accept and reject button again" do
             expect(page).to have_css(".success", text: "ACCEPT")
             expect(page).to have_css(".alert", text: "REJECT")
+          end
+        end
+
+        context "when the user clicks on the accept button and then click on the reject button" do
+          let(:emendation_title) { translated(emendation.title) }
+          let(:emendation_body) { translated(emendation.body) }
+
+          before do
+            click_link "Accept"
+            within ".edit_amendment" do
+              click_button "Accept amendment"
+            end
+            click_link "Reject"
+          end
+
+          it "traces the action when reject amendment and recover the last proposal version", versioning: true do
+            action_log = Decidim::ActionLog.last
+            expect(action_log.version).to be_present
+            expect(action_log.version.event).to eq "update"
+            expect(action_log.version.object["title"]).to eq emendation.title
+
+            expect(page).not_to have_field("Title", with: emendation_title)
+            expect(page).not_to have_field("Body", with: emendation_body)
           end
         end
       end
