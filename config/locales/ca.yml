@@ -4,33 +4,35 @@ ca:
     attributes:
       decidim/proposals/proposal:
         sectorial_commissions:
-          aapp: AAPP
-          agriculture_livestock_fishing: Agricultura, Ramaderia i Pesca
-          audiovisual_communication: Comunicació Audiovisual
-          citizenship: Ciutadania
-          commerce_tourism_consumption: Comerç, Turisme i Consum
-          company_industry_services: Empresa, Indústria i Serveis
-          culture: Cultura
-          economic_financial_policy: Política Econòmica i Financera
-          education: Educació
-          environment_energy: Medi Ambient i Energia
-          european_union_internatinal_politics: Unió Europea i Política Internacional
-          health: Salut
-          information_society: Societat de la informació
-          justice: Justícia
-          lgtbi: LGTBI
-          linguistic_politic: Política lingüística
-          memory_repair: Memòria i Reparació
-          peace_solidarity_cooperation: Cooperació Pau i Solidaritat
-          security_civil_protection: Seguretat i Protecció Civil
-          social_movements: Moviments Socials
-          social_rights: Drets Socials
-          sports: Esports
+          agriculture_livestock_fishing: CS Agricultura, Ramaderia, Silvicultura i
+            Pesca
+          animal_rights: CS Drets i Benestar dels Animals
+          audiovisual_communication: CS Comunicació Audiovisual
+          citizenship: CS Ciutadania i Migracions
+          commerce_tourism_consumption: CS Comerç, Turisme i Consum
+          company_industry_services: CS Empresa, Indústria i Serveis
+          culture: CS Cultura
+          economic_financial_policy: CS Política Econòmica i Financera
+          education: CS Educació
+          environment_energy: CS Medi Ambient i Energia
+          european_union_internatinal_politics: CS Unió Europea i Política Internacional
+          health: CS Salut
+          information_society: CS Societat Digital
+          justice: CS Justícia
+          lgtbi: CS Coordinadora LGTBI
+          linguistic_politic: CS Política lingüística
+          memory: CS Memòria
+          peace_solidarity_cooperation: CS Cooperació, Pau i Drets Humans
+          public_administrations: CS Administracions Públiques
+          security_civil_protection: CS Seguretat, Emergències i Protecció Civil
+          social_movements: CS Moviments Socials
+          social_rights: CS Drets Socials
+          sports: CS Esports
           territorial_congress: Congrés Territorial
-          territorial_policy: Política territorial
-          union_forum: Fòrum Sindical
-          universities_search_innovation: Universitats, Recerca i Innovació
-          work_self_employment_social_economy: Treball, Autònoms i Economia Social
+          territorial_policy: CS Política Territorial i Habitatge
+          union_forum: CS Fòrum Sindical
+          universities_search_innovation: CS Universitats, Recerca i Innovació
+          work_self_employment_social_economy: CS Treball, Autònoms i Economia Social
   decidim:
     account:
       destroy:
