@@ -91,7 +91,7 @@ ca:
       publish_draft:
         error: S'ha produït un error en publicar el borrador d'esmena.
         success: El borrador d'esmena s'ha publicat correctament.
-      sectorial_commissions: Ámbits Sectorials
+      sectorial_commissions: Àmbits Sectorials
       sectorial_commissions_title: Òrgan que la debatrà
       type: Tipus d'esmena
       types:
