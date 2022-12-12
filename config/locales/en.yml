@@ -18,7 +18,7 @@ en:
           health: CS Health
           information_society: SC Digital Society
           justice: SC Justice
-          lgtbi: SC LGTBI Coprdinator
+          lgtbi: LGTBI Coordinator
           linguistic_politic: SC Linguistic politic
           memory: SC Memory
           peace_solidarity_cooperation: SC Cooperation, Peace and Human Rights
@@ -54,7 +54,7 @@ en:
         phone_number_help: Please, contact administracio@erc.cat if your data is not
           up to date.
       help_sectorial_commissions: You can choose a Sectorial Commission only if you are a member
-      sectorial_commissions: Sectorial Comissions
+      sectorial_commissions: Scopes Comissions
       sectorial_commissions_title: Organ that will debate it
       type: Amendment type
       types:
