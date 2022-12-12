@@ -4,7 +4,8 @@ es:
     attributes:
       decidim/proposals/proposal:
         sectorial_commissions:
-          agriculture_livestock_fishing: CS Agricultura, Ganadería, Silvicultura y Pesca
+          agriculture_livestock_fishing: CS Agricultura, Ganadería, Silvicultura y
+            Pesca
           animal_rights: CS Derechos y Bienestar de los Animales
           audiovisual_communication: CS Comunicación Audiovisual
           citizenship: CS Ciudadanía y Migraciones
@@ -18,7 +19,7 @@ es:
           health: CS Salud
           information_society: CS Sociedad digital
           justice: CS Justicia
-          lgtbi: CS Coordinadora LGTBI
+          lgtbi: Coordinadora LGTBI
           linguistic_politic: CS Política lingüística
           memory: CS Memoria
           peace_solidarity_cooperation: CS Cooperación, Paz y Derechos Humanos
@@ -91,7 +92,7 @@ es:
       publish_draft:
         error: Se ha producido un error al publicar el borrador de enmienda.
         success: El borrador de enmienda se ha publicado correctamente.
-      sectorial_commissions: Comisiones Sectoriales
+      sectorial_commissions: Ámbitos Sectoriales
       sectorial_commissions_title: Órgano que la debatirá
       type: Tipo de enmienda
       types:

@@ -4,7 +4,8 @@ ca:
     attributes:
       decidim/proposals/proposal:
         sectorial_commissions:
-          agriculture_livestock_fishing: CS Agricultura, Ramaderia, Silvicultura i Pesca
+          agriculture_livestock_fishing: CS Agricultura, Ramaderia, Silvicultura i
+            Pesca
           animal_rights: CS Drets i Benestar dels Animals
           audiovisual_communication: CS Comunicació Audiovisual
           citizenship: CS Ciutadania i Migracions
@@ -18,11 +19,11 @@ ca:
           health: CS Salut
           information_society: CS Societat Digital
           justice: CS Justícia
-          lgtbi: CS Coordinadora LGTBI
+          lgtbi: Coordinadora LGTBI
           linguistic_politic: CS Política lingüística
           memory: CS Memòria
           peace_solidarity_cooperation: CS Cooperació, Pau i Drets Humans
-          public_administrations: CS Administracions Públiques 
+          public_administrations: CS Administracions Públiques
           security_civil_protection: CS Seguretat, Emergències i Protecció Civil
           social_movements: CS Moviments Socials
           social_rights: CS Drets Socials
@@ -90,7 +91,7 @@ ca:
       publish_draft:
         error: S'ha produït un error en publicar el borrador d'esmena.
         success: El borrador d'esmena s'ha publicat correctament.
-      sectorial_commissions: Comissions Sectorials
+      sectorial_commissions: Ámbits Sectorials
       sectorial_commissions_title: Òrgan que la debatrà
       type: Tipus d'esmena
       types:
