@@ -19,7 +19,7 @@ ca:
           health: CS Salut
           information_society: CS Societat Digital
           justice: CS Justícia
-          lgtbi: CS Coordinadora LGTBI
+          lgtbi: Coordinadora LGTBI
           linguistic_politic: CS Política lingüística
           memory: CS Memòria
           peace_solidarity_cooperation: CS Cooperació, Pau i Drets Humans
@@ -91,7 +91,7 @@ ca:
       publish_draft:
         error: S'ha produït un error en publicar el borrador d'esmena.
         success: El borrador d'esmena s'ha publicat correctament.
-      sectorial_commissions: Comissions Sectorials
+      sectorial_commissions: Àmbits Sectorials
       sectorial_commissions_title: Òrgan que la debatrà
       type: Tipus d'esmena
       types:
