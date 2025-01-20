@@ -1,7 +1,18 @@
 default: &default
+  DECIDIM_APPLICATION_NAME: Decidim ERC APP
+  # DECIDIM_MAILER_SENDER: example@mail.com
+  DECIDIM_AVAILABLE_LOCALES: "ca,en,es"
+  DECIDIM_DEFAULT_LOCALE: "ca"
+  DECIDIM_CORS_ENABLED: "true"
+  DECIDIM_TRACK_NEWSLETTER_LINKS: auto
+  DECIDIM_THROTTLING_MAX_REQUESTS: "250"
+  # DECIDIM_THROTTLING_PERIOD in minutes
+  DECIDIM_THROTTLING_PERIOD: "1"
+  DECIDIM_FOLLOW_HTTP_X_FORWARDED_HOST: "true"
+
   # Database configuration
   DB_PORT: "5432"
-  DB_POOL: "<%= ENV.fetch("RAILS_MAX_THREADS") { "5" } %>"
+  DB_POOL: "<%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>"
   DB_HOST: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
   DB_DATABASE: "database name"
   DB_USERNAME: "database username"
@@ -13,11 +24,15 @@ default: &default
   MAILER_SMTP_USER_NAME: "smtp email username"
   MAILER_SMTP_PASSWORD: "smtp email password"
   # GeoCoder configuration (developer.here.com)
-  GEOCODER_LOOKUP_API_KEY: "api_key"
-  SECRET_KEY_BASE: "secret_key_base"
+  GEOCODER_LOOKUP_API_KEY: "here_api_key"
+  SECRET_KEY_BASE: "must be different for each environment; run bin/rake secret and copy here"
 
 development:
   <<: *default
+
+test:
+  <<: *default
+  DB_TEST_DATABASE: "decidim_erc_app_test"
 
 integration:
   <<: *default

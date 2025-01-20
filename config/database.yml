@@ -10,11 +10,10 @@ default: &default
 
 development:
   <<: *default
-  min_messages: notice
 
 test:
   <<: *default
-  url: <%= ENV['DB_TEST_DATABASE'] %>
+  database: <%= ENV['DB_TEST_DATABASE'] %>
 
 integration:
   <<: *default
