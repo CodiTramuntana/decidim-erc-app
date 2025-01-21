@@ -5,27 +5,27 @@
     <% key = key.to_sym %>
     <% if amendable.amendable_fields.include?(key) %>
 
-      <div class="field hashtags__container">
-        <%= amendments_form_field_for(key, emendation_form, original) %>
-      </div>
+      <%= amendments_form_field_for(key, emendation_form, original) %>
 
       <% form.object.errors.full_messages_for(key).each do |message| %>
         <small class="form-error is-visible"><%= message %></small>
       <% end %>
+
+      <%# Customization %>
+       <% if amendable.component.settings.participatory_texts_enabled? %>
+        <%= form.select(:amendment_type,
+                        amendment_types.map { |g| [g[:name], g[:key]] },
+                        selected: emendation&.amendment_type,
+                        label: t("decidim.amendments.type")) %>
+
+        
+        <%= form.select(:sectorial_commission, sectorial_commissions,
+                        selected: emendation&.sectorial_commission,
+                        label: t("decidim.amendments.sectorial_commissions_title")) %>
+        <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commissions") %></p>
+      <% end %>
+      <%# Customization %>
     <% end %>
-  <% end %>
-
-  <% if amendable.component.settings.participatory_texts_enabled? %>
-    <%= form.select(:amendment_type,
-                    amendment_types.map { |g| [g[:name], g[:key]] },
-                    selected: emendation&.amendment_type,
-                    label: t("decidim.amendments.type")) %>
-
-    
-    <%= form.select(:sectorial_commission, sectorial_commissions,
-                    selected: emendation&.sectorial_commission,
-                    label: t("decidim.amendments.sectorial_commissions_title")) %>
-    <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commissions") %></p>
   <% end %>
 <% end %>
 

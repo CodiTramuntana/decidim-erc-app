@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_20_112750) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_21_130334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
   enable_extension "pg_trgm"
@@ -1246,6 +1246,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_20_112750) do
     t.integer "position"
     t.string "participatory_text_level"
     t.boolean "created_in_meeting", default: false
+    t.string "amendment_type"
     t.decimal "cost"
     t.jsonb "cost_report"
     t.jsonb "execution_period"
@@ -1255,6 +1256,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_20_112750) do
     t.jsonb "body"
     t.integer "comments_count", default: 0, null: false
     t.integer "follows_count", default: 0, null: false
+    t.integer "sectorial_commission"
     t.integer "old_state", default: 0, null: false
     t.integer "valuation_assignments_count", default: 0
     t.datetime "withdrawn_at", precision: nil
@@ -1588,6 +1590,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_20_112750) do
     t.datetime "digest_sent_at", precision: nil
     t.datetime "password_updated_at", precision: nil
     t.string "previous_passwords", default: [], array: true
+    t.integer "decidim_scope_id"
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["email", "decidim_organization_id"], name: "index_decidim_users_on_email_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false) AND ((type)::text = 'Decidim::User'::text))"
