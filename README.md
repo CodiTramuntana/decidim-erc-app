@@ -24,7 +24,6 @@ Only admins can view the links to "Edit profile" and "Create group". This is man
 #### User profile
 Search engine don't search users.
 - User profile view has been made readonly: `app/views/decidim/account/show.html.erb`.
-- User can not modify its telephone number: `app/views/decidim/_user_scope.html.erb`
 - User's interests page is disabled: `app/controllers/decidim/user_interests_controller.rb`.
 - User's `ConversationsController` now raises a not found: `app/controllers/decidim/messaging/conversations_controller.rb`.
 
@@ -37,6 +36,8 @@ There is logic to prevent endorsing a proposal for special cases related to the 
 The logic to handle when to show the endorsements button for and which endorsement identities this button can show when clicked can be found in `app/decorators/decidim/proposals/proposal_endorsements_helper_decorator.rb`.
 
 Also the nickname field is added to serialized proposals. Find the source here: `app/decorators/decidim/proposals/proposal_serializer_decorator.rb`.
+
+Proposal can be ordered alphabetically with `app/controllers/concerns/decidim/proposals/orderable.rb`
 
 ### Amendments
 Amendments and users both have a scope attribute.
