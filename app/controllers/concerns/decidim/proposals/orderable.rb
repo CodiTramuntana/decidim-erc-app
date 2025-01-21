@@ -15,22 +15,42 @@ module Decidim
 
         # Available orders based on enabled settings
         def available_orders
-          @available_orders ||= begin
-            available_orders = %w(random recent)
-            available_orders << "most_voted" if most_voted_order_available?
-            available_orders << "most_endorsed" if current_settings.endorsements_enabled?
-            available_orders << "most_commented" if component_settings.comments_enabled?
-            available_orders << "most_followed" << "with_more_authors"
-            available_orders << "alphabetically"
-            available_orders
-          end
+          @available_orders ||= [default_order] + possible_orders.excluding(default_order)
         end
 
+        def possible_orders
+          @possible_orders ||= begin
+            possible_orders = %w(random recent)
+            possible_orders << "most_voted" if most_voted_order_available?
+            possible_orders << "most_endorsed" if current_settings.endorsements_enabled?
+            possible_orders << "most_commented" if component_settings.comments_enabled?
+            possible_orders << "most_followed" << "with_more_authors"
+            # ERC customization
+            possible_orders << "alphabetically"
+            # ERC customization
+
+            possible_orders
+          end
+        end
+ 
         def default_order
+          @default_order ||= fetch_default_order
+        end
+
+        def fetch_default_order
+          default_order = current_settings.default_sort_order.presence || component_settings.default_sort_order
+          return order_by_default if default_order == "automatic"
+
+          possible_orders.include?(default_order) ? default_order : order_by_default
+        end
+
+        def order_by_default
           if order_by_votes?
-            detect_order("most_voted")
+            "most_voted"
           else
+            # ERC customization
             "alphabetically"
+            # ERC customization
           end
         end
 
@@ -45,11 +65,11 @@ module Decidim
         def reorder(proposals)
           case order
           when "most_commented"
-            proposals.left_joins(:comments).group(:id).order(Arel.sql("COUNT(decidim_comments_comments.id) DESC"))
+            proposals.order(comments_count: :desc)
           when "most_endorsed"
             proposals.order(endorsements_count: :desc)
           when "most_followed"
-            proposals.left_joins(:follows).group(:id).order(Arel.sql("COUNT(decidim_follows.id) DESC"))
+            proposals.order(follows_count: :desc)
           when "most_voted"
             proposals.order(proposal_votes_count: :desc)
           when "random"
@@ -58,9 +78,11 @@ module Decidim
             proposals.order(published_at: :desc)
           when "with_more_authors"
             proposals.order(coauthorships_count: :desc)
+          # ERC customization
           when "alphabetically"
             proposals.order(title: :asc)
           end
+          # ERC customization
         end
       end
     end

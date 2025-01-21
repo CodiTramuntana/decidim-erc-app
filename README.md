@@ -69,6 +69,13 @@ This Decidim application completelly relies on [CodiTramuntana/decidim-erc-crm_a
 
 This module requires an initializer: `config/initializers/decidim_erc_crm_authenticable.rb`.
 
+### Officialization users
+Remove users from participants list
+  - app/commands/decidim/destroy_user_account.rb
+  - app/decorators/decidim/controllers/decidim/admin/officializations_controller_decorator.rb
+  - app/overrides/decidim/admin/officializations/index.rb
+
+
 ## Testing
 
 Configure the name of the test DB in you `config/application.yml` file and run:
