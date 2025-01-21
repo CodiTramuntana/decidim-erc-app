@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # This decorator adds logic to which endorsement identities this button can show when clicked.
-module Decidim::EndorsableHelperDecorator
+module Decidim::Helpers::EndorsableHelperDecorator
   def self.decorate
     Decidim::EndorsableHelper.class_eval do
       # Method overrided.
@@ -51,4 +51,4 @@ module Decidim::EndorsableHelperDecorator
   end
 end
 
-::Decidim::EndorsableHelperDecorator.decorate
+::Decidim::Helpers::EndorsableHelperDecorator.decorate

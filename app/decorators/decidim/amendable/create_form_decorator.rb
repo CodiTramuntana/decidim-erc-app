@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
-Decidim::Amendable::CreateForm.class_eval do
-  attribute :amendment_type, String
-  attribute :sectorial_commission, Integer
+module Decidim::Amendable::CreateFormDecorator
+  def self.decorate
+    Decidim::Amendable::CreateForm.class_eval do
+      attribute :amendment_type, String
+      attribute :sectorial_commission, Integer
+    end
+  end
 end
+
+::Decidim::Amendable::CreateFormDecorator.decorate
