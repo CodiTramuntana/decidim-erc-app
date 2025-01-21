@@ -14,7 +14,7 @@ Decidim.configure do |config|
   # of languages will be equal or a subset of the list in this file.
   # config.available_locales = Rails.application.secrets.decidim[:available_locales].presence || [:en]
   # Or block set it up manually and prevent ENV manipulation:
-  config.available_locales = [:ca]
+  config.available_locales = [:ca, :en, :es]
 
     # Configure available options for Decidim::Amendment::VisibilityStepSetting::options
     config.amendments_visibility_options = %w(all participants scope)
