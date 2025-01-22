@@ -148,6 +148,11 @@ es:
       wizard_header:
         see_steps: ver los pasos
         step_of: Paso %{current_step} de %{total_steps}
+    verifications:
+      id_documents:
+        dni: DNI
+        nie: NIE
+        passport: Pasaporte
   devise:
     mailer:
       confirmation_instructions:

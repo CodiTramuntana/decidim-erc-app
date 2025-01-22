@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-require "decidim/proposals/test/capybara_proposals_picker"
+# require "decidim/proposals/test/capybara_proposals_picker"
 
 describe "Admin manages amendments", type: :system, serves_map: true, serves_geocoding_autocomplete: true do
   let(:manifest_name) { "proposals" }

@@ -4,40 +4,47 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "rails", "< 6"
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.24-stable" }.freeze
-TERM_CUSTOMIZER_VERSION = { git: "https://github.com/mainio/decidim-module-term_customizer", branch: "0.24-stable" }.freeze
-DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION = { git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", tag: "v1.2.0" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.29-stable" }.freeze
+# TERM_CUSTOMIZER_VERSION = { git: "https://github.com/mainio/decidim-module-term_customizer", branch: "main" }.freeze
 
 gem "decidim", DECIDIM_VERSION
-gem "decidim-erc-crm_authenticable", DECIDIM_ERC_CRM_AUTHENTICABLE_VERSION
-gem "decidim-term_customizer", TERM_CUSTOMIZER_VERSION
+gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git", branch: "main"
+gem "decidim-erc-crm_authenticable", git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", branch: "update/0.29-stable"
+# gem "decidim-term_customizer", TERM_CUSTOMIZER_VERSION
 
 gem "daemons"
 gem "deface"
 gem "delayed_job_active_record"
-gem "puma", ">= 4.3"
-gem "uglifier", ">= 1.3.0"
-gem "whenever"
-
-gem "figaro", ">= 1.1.1"
 gem "openssl"
+gem "puma"
+gem "whenever", require: false
+
+# TODO: move to rubyXL for amendments export
+gem "spreadsheet"
+gem "wkhtmltopdf-binary"
+
+# TODO: Psych problem: https://github.com/laserlemon/figaro/issues/289
+# gem "figaro"
+# This gem is an alternative to Figaro meanwhile fix that problem in Figaro.
+# https://github.com/hlascelles/figjam
+gem "figjam"
 
 gem "differ"
+
+# concurrent-ruby v1.3.5 has removed the dependency on logger
+gem "concurrent-ruby", "~> 1.3.4"
 
 group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
   gem "bootsnap"
   gem "byebug", platform: :mri
+  gem "decidim-dev", DECIDIM_VERSION
+  gem "faker"
 end
 
 group :development do
-  gem "decidim-dev", DECIDIM_VERSION
-  gem "faker"
-  gem "letter_opener_web", "~> 1.3.0"
-  gem "listen", "~> 3.1.0"
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "letter_opener_web"
+  gem "listen"
   gem "web-console"
 end

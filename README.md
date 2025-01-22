@@ -53,10 +53,7 @@ In `app/extensions/decidim/proposals/proposal.rb`, the following methods have be
 - #visible_emendations_for(user)
 
 The new option "scope" allows to filter emendations by the scope of the user.
-
 Amendment view customizations:
-- `app/views/decidim/proposals/proposals/_endorsements_card_row.html.erb`
-
 - Accept and reject buttons are always visible (`app/decorators/decidim/helpers/amendments_helper_decorator.rb`) and reject an amendment create a new proposal version (`app/decorators/decidim/commands/decidim/amendable/reject_decorator.rb`)
 
 
