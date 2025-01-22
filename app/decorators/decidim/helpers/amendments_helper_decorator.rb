@@ -10,7 +10,7 @@ module Decidim::Helpers::AmendmentsHelperDecorator
           { name: t("decidim.amendments.types.modify"), key: "modify" }
         ]
       end
-    
+
       def sectorial_commissions
         sectorial_commissions = Decidim::Proposals::Proposal.sectorial_commissions.keys.collect do |sectorial_commission|
           [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission), sectorial_commission]
@@ -18,7 +18,7 @@ module Decidim::Helpers::AmendmentsHelperDecorator
         sectorial_commissions.insert(1, ["――――――――――――――", ""])
         sectorial_commissions.insert(2, [t("decidim.amendments.sectorial_commissions"), ""])
       end
-    
+
       # Checks if the user can accept and reject the emendation.
       # Buttons are always visible.
       def allowed_to_accept_and_reject?(emendation)

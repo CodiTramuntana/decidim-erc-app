@@ -8,13 +8,13 @@ module Decidim::Amendable::EditFormDecorator
       attribute :phone_number, String
       attribute :amendment_type, String
       attribute :sectorial_commission, Integer
-    
+
       # Method overrided.
       # Injects the scope of the user into the emendation_params.
       def before_validation
         self.emendation_params = emendation_params.merge(scope: current_user.scope)
       end
-    
+
       # Method overrided.
       # Assigns the :phone_number attribute value from the amender.
       def map_model(model)

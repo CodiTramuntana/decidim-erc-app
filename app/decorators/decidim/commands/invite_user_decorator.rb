@@ -5,7 +5,7 @@ module Decidim::Commands::InviteUserDecorator
   def self.decorate
     Decidim::InviteUser.class_eval do
       private
-    
+
       def invite_user
         @user = Decidim::User.new(
           name: form.name,

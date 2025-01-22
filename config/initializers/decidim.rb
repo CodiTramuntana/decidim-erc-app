@@ -16,8 +16,8 @@ Decidim.configure do |config|
   # Or block set it up manually and prevent ENV manipulation:
   config.available_locales = [:ca, :en, :es]
 
-    # Configure available options for Decidim::Amendment::VisibilityStepSetting::options
-    config.amendments_visibility_options = %w(all participants scope)
+  # Configure available options for Decidim::Amendment::VisibilityStepSetting::options
+  config.amendments_visibility_options = %w(all participants scope)
 
   # Sets the default locale for new organizations. When creating a new
   # organization from the System area, system admins will be able to overwrite

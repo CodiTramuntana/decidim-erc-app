@@ -27,10 +27,12 @@ jobs:
         env:
           POSTGRES_PASSWORD: postgres
     env:
+      DB_DATABASE: erc-app-test 
       DB_TEST_DATABASE: erc-app-test
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
       DB_HOST: localhost
+      SECRET_KEY_BASE: "secret_key"
 
     steps:
       - uses: actions/checkout@v2.0.0

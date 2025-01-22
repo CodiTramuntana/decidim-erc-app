@@ -32,7 +32,7 @@ module Decidim
             possible_orders
           end
         end
- 
+
         def default_order
           @default_order ||= fetch_default_order
         end

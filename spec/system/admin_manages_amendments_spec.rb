@@ -3,7 +3,7 @@
 require "rails_helper"
 # require "decidim/proposals/test/capybara_proposals_picker"
 
-describe "Admin manages amendments", type: :system, serves_map: true, serves_geocoding_autocomplete: true do
+describe "Admin manages amendments", :serves_geocoding_autocomplete, :serves_map, type: :system do
   let(:manifest_name) { "proposals" }
   let!(:component) { create(:proposal_component) }
   let!(:amendable) { create(:proposal, component: component) }

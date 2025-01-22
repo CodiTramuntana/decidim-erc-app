@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Deface::Override.new(virtual_path: +"decidim/admin/officializations/index",
                      name: "add_remove_icon_to_officializations_index",
                      insert_after: "erb[loud]:contains('current_or_new_conversation_path_with(user)')",

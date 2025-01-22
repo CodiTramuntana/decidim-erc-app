@@ -8,7 +8,7 @@ module Decidim::Proposals::ProposalSerializerDecorator
   def self.decorate
     Decidim::Proposals::ProposalSerializer.class_eval do
       alias_method :original_serialize, :serialize
-    
+
       def serialize
         original_serialize.tap do |hsh|
           hsh.merge!(nickname: proposal.creator_author.try(:nickname))

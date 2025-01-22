@@ -8,17 +8,17 @@ module Decidim::Amendable::UpdateDraftDecorator
       # Modifies the transaction block to include a new method.
       def call
         return broadcast(:invalid) unless form.valid? && amendment.draft? && amender == current_user
-    
+
         transaction do
           update_draft
           create_proposal_note
         end
-    
+
         broadcast(:ok, @amendment)
       end
-    
+
       private
-    
+
       # Method added.
       # Creates a ProposalNote with the phone number.
       def create_proposal_note

@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "Endorse Amendment", versioning: true, type: :system do
+describe "Endorse Amendment", :versioning, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
   let!(:user) { create(:user, :confirmed, organization: organization) }
   let!(:user_group) { create(:user_group, :confirmed, :verified, organization: organization) }

@@ -213,11 +213,11 @@ describe "Amendment Wizard", type: :system do
           end
 
           it "last proposal has NOT amendment_type" do
-            expect(Decidim::Proposals::Proposal.last.amendment_type).to eq(nil)
+            expect(Decidim::Proposals::Proposal.last.amendment_type).to be_nil
           end
 
           it "last proposal has NOT sectorial_commission" do
-            expect(Decidim::Proposals::Proposal.last.sectorial_commission).to eq(nil)
+            expect(Decidim::Proposals::Proposal.last.sectorial_commission).to be_nil
           end
 
           it "creates a proposal note" do

@@ -19,7 +19,7 @@ Deface::Override.new(virtual_path: +"decidim/proposals/admin/proposals/show",
             presented_author.class == Decidim::UserPresenter ? presented_author.full_name : presented_author.name,
             presented_author.profile_path,
             target: :blank
-            ) %>   
+            ) %>
         <% end %>
       </li>
     <% end %>

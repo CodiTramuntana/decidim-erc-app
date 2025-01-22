@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "Amend Proposal", versioning: true, type: :system do
+describe "Amend Proposal", :versioning, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
   let(:user) { create(:user, :confirmed, admin: admin, organization: organization) }
   let(:admin) { false }
@@ -210,7 +210,7 @@ describe "Amend Proposal", versioning: true, type: :system do
             click_link "Reject"
           end
 
-          it "traces the action when reject amendment and recover the last proposal version", versioning: true do
+          it "traces the action when reject amendment and recover the last proposal version", :versioning do
             action_log = Decidim::ActionLog.last
             expect(action_log.version).to be_present
             expect(action_log.version.event).to eq "update"
