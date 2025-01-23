@@ -5,12 +5,12 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.29-stable" }.freeze
-# TERM_CUSTOMIZER_VERSION = { git: "https://github.com/mainio/decidim-module-term_customizer", branch: "main" }.freeze
+TERM_CUSTOMIZER_VERSION = { git: "https://github.com/CodiTramuntana/decidim-module-term_customizer", branch: "upgrade/decidim_0.29" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git", branch: "main"
 gem "decidim-erc-crm_authenticable", git: "https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git", branch: "update/0.29-stable"
-# gem "decidim-term_customizer", TERM_CUSTOMIZER_VERSION
+gem "decidim-term_customizer", TERM_CUSTOMIZER_VERSION
 
 gem "daemons"
 gem "deface"
@@ -32,7 +32,7 @@ gem "figjam"
 gem "differ"
 
 # concurrent-ruby v1.3.5 has removed the dependency on logger
-gem "concurrent-ruby", "~> 1.3.4"
+gem "concurrent-ruby", "1.3.4"
 
 group :development, :test do
   gem "better_errors"

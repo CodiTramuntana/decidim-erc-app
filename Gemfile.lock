@@ -19,6 +19,15 @@ GIT
       ruby-progressbar
 
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-module-term_customizer
+  revision: e369bc933f06fd1e47d6987fa6e408f0a2549e73
+  branch: upgrade/decidim_0.29
+  specs:
+    decidim-term_customizer (0.29.0)
+      decidim-admin (~> 0.29.0)
+      decidim-core (~> 0.29.0)
+
+GIT
   remote: https://github.com/CodiTramuntana/decidim.git
   revision: bc8f7d12ddaca29934ea5fdaac474ebe8ffc2ba7
   branch: release/0.29-stable
@@ -867,12 +876,13 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   byebug
-  concurrent-ruby (~> 1.3.4)
+  concurrent-ruby (= 1.3.4)
   daemons
   decidim!
   decidim-cdtb!
   decidim-dev!
   decidim-erc-crm_authenticable!
+  decidim-term_customizer!
   deface
   delayed_job_active_record
   differ
