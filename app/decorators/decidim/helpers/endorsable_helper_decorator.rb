@@ -9,8 +9,9 @@ module Decidim::Helpers::EndorsableHelperDecorator
       def render_endorsement_identity(resource, user, user_group = nil)
         # ERC customization
         return if resource.emendation? && user_group.nil?
+
         # ERC customization
-    
+
         if user_group
           presenter = Decidim::UserGroupPresenter.new(user_group)
           selected = resource.endorsed_by?(user, user_group)
@@ -20,31 +21,31 @@ module Decidim::Helpers::EndorsableHelperDecorator
         end
         http_method = selected ? :delete : :post
         render partial: "decidim/endorsements/identity", locals:
-        { identity: presenter, selected:,
-          http_method:,
+        { identity: presenter, selected: selected,
+          http_method: http_method,
           create_url: path_to_create_endorsement(resource, user_group),
           destroy_url: path_to_destroy_endorsement(resource, user_group) }
       end
-    
+
       # Method added.
       # Caches the result of the Rectify::Query
       def manageable_user_groups
         return [] unless current_user
-    
+
         @manageable_user_groups ||= Decidim::UserGroups::ManageableUserGroups.for(current_user).verified
       end
-    
+
       # Method added.
       # Returns the CSS classes used for showing only the endorsements count in the resource show page
       def endorsements_count_only_classes
         "button small compact light button--sc button--shadow expanded"
       end
-    
+
       # Method added.
       # Handles the size of the div that wraps the comment button in the resource show page
       def comment_button_column_size
         return "small-6" if @resource.emendation? && manageable_user_groups.empty?
-    
+
         "small-3"
       end
     end

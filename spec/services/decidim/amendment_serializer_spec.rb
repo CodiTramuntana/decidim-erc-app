@@ -10,7 +10,7 @@ module Decidim
     let!(:amendment) { create(:amendment, amendable: amendable, emendation: emendation) }
 
     describe "#serialize" do
-      let(:subject) { described_class.new(amendment).serialize }
+      subject { described_class.new(amendment).serialize }
 
       context "when export an amendment" do
         it "render id" do

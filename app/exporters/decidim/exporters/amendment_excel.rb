@@ -16,6 +16,7 @@ module Decidim
     class AmendmentExcel < CSV
       # Override constructor
       def initialize
+        super
         @book = Spreadsheet::Workbook.new
       end
 
@@ -37,12 +38,14 @@ module Decidim
         sheet = @book.create_worksheet
         sheet.name = name
 
+        # rubocop:disable Naming/VariableNumber
         sheet.row(0).default_format = Spreadsheet::Format.new(
           weight: :bold,
           pattern: 1,
           pattern_fg_color: :xls_color_14,
           horizontal_align: :center
         )
+        # rubocop:enable Naming/VariableNumber
 
         yield(sheet) if block_given?
 

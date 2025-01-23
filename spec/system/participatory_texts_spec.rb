@@ -24,10 +24,10 @@ describe "Participatory texts", type: :system do
                manifest: manifest,
                participatory_space: participatory_process)
       end
-      let!(:emendation_1) { create(:proposal, :published, component: component, scope: scopes.first) }
-      let!(:amendment_1) { create :amendment, amendable: proposals.first, emendation: emendation_1 }
-      let!(:emendation_2) { create(:proposal, component: component, scope: scopes.second) }
-      let!(:amendment_2) { create(:amendment, amendable: proposals.first, emendation: emendation_2) }
+      let!(:emendation) { create(:proposal, :published, component: component, scope: scopes.first) }
+      let!(:amendment) { create :amendment, amendable: proposals.first, emendation: emendation }
+      let!(:other_emendation) { create(:proposal, component: component, scope: scopes.second) }
+      let!(:other_amendment) { create(:amendment, amendable: proposals.first, emendation: other_emendation) }
 
       before do
         login_as current_user, scope: :user

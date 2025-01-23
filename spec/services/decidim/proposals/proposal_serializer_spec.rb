@@ -11,7 +11,7 @@ module Decidim
       let!(:amendment) { create(:amendment, :draft, amendable: amendable, emendation: emendation) }
 
       describe "#serialize" do
-        let(:subject) { described_class.new(proposal).serialize }
+        subject { described_class.new(proposal).serialize }
 
         context "when the proposal is official" do
           let(:amendable) { create(:proposal, :official, component: component) }

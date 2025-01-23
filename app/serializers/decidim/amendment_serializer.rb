@@ -8,6 +8,7 @@ module Decidim
 
     # Public: Initializes the serializer with a result.
     def initialize(result)
+      super
       @result = result
     end
 

@@ -9,6 +9,7 @@ module Decidim
     #
     # form - The form with the data.
     def initialize(form, user)
+      super
       @form = form
       @user = user
     end
