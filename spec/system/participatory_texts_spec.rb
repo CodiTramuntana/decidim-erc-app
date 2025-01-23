@@ -58,12 +58,10 @@ describe "Participatory texts", type: :system do
           expect(page).to have_content(translated(participatory_text.title))
 
           proposal_title = translated(proposals.first.title)
-          find("#proposals div.hover-section", text: proposal_title).hover
-          within all("#proposals div.hover-section").first, visible: :visible do
-            within ".amend-buttons" do
-              expect(page).to have_link("Amend")
-              expect(page).to have_link(amendments_count)
-            end
+          find("#proposals section[id^='proposal']", text: proposal_title).hover
+          within all("#proposals section[id^='proposal']").first, visible: :visible do
+            expect(page).to have_link("Amend")
+            expect(page).to have_link(amendments_count)
           end
         end
 
@@ -75,12 +73,10 @@ describe "Participatory texts", type: :system do
           expect(page).to have_content(translated(participatory_text.title))
 
           proposal_title = translated(proposals.first.title)
-          find("#proposals div.hover-section", text: proposal_title).hover
-          within all("#proposals div.hover-section").first, visible: :visible do
-            within ".amend-buttons" do
-              expect(page).to have_link("Amend")
-              expect(page).to have_link(2)
-            end
+          find("#proposals section[id^='proposal']", text: proposal_title).hover
+          within all("#proposals section[id^='proposal']").first, visible: :visible do
+            expect(page).to have_link("Amend")
+            expect(page).to have_link(2)
           end
         end
       end

@@ -39,14 +39,14 @@ describe "Amend Proposal", :versioning, type: :system do
         end
 
         it "is shown emendations of different scope in the amendments list" do
-          within ".amendment-list" do
+          within "#amendment-list" do
             expect(page).to have_content(translated(emendation_same_scope.title))
             expect(page).to have_content(translated(emendation_other_scope.title))
           end
         end
 
         it "is shown authors of emendation of different scope in the amenders list" do
-          within ".amender-list" do
+          within ".kayout-author" do
             expect(page).to have_content(amendment_same_scope.amender.nickname)
             expect(page).to have_content(amendment_other_scope.amender.nickname)
           end
@@ -93,14 +93,14 @@ describe "Amend Proposal", :versioning, type: :system do
         end
 
         it "is shown ONLY emendations of the same scope as the user in the amendments list" do
-          within ".amendment-list" do
+          within "#amendment-list" do
             expect(page).to have_content(translated(emendation_same_scope.title))
             expect(page).not_to have_content(translated(emendation_other_scope.title))
           end
         end
 
         it "is shown authors of emendation of the same scope as the user in the amenders list" do
-          within ".amender-list" do
+          within ".layout-author" do
             expect(page).to have_content(amendment_same_scope.amender.nickname)
             expect(page).not_to have_content(amendment_other_scope.amender.nickname)
           end
@@ -110,13 +110,13 @@ describe "Amend Proposal", :versioning, type: :system do
           let(:admin) { true }
 
           it "is shown emendations of different scope in the amendments list" do
-            within ".amendment-list" do
+            within "#amendment-list" do
               expect(page).to have_content(translated(emendation_other_scope.title))
             end
           end
 
           it "is shown authors of emendation of different scope in the amenders list" do
-            within ".amender-list" do
+            within ".layout-author" do
               expect(page).to have_content(amendment_same_scope.amender.nickname)
               expect(page).to have_content(amendment_other_scope.amender.nickname)
             end
