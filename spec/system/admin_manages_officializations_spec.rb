@@ -24,14 +24,14 @@ describe "Admin manages officializations", type: :system do
     let!(:not_officialized) { create(:user, organization: organization) }
     let!(:deleted) do
       user = create(:user, organization: organization)
-      result = Decidim::DestroyAccount.call(user, OpenStruct.new(valid?: true, delete_reason: "Testing"))
+      result = Decidim::DestroyUserAccount.call(user, OpenStruct.new(valid?: true, delete_reason: "Testing"))
       result["ok"]
     end
     let!(:external_not_officialized) { create(:user) }
 
     before do
-      within ".secondary-nav" do
-        click_link "Participants"
+      within_admin_sidebar_menu do
+        click_on "Participants"
       end
     end
 
@@ -53,8 +53,8 @@ describe "Admin manages officializations", type: :system do
       let!(:user) { create(:user, organization: organization) }
 
       before do
-        within ".secondary-nav" do
-          click_link "Participants"
+        within_admin_sidebar_menu do
+          click_on "Participants"
         end
 
         within "tr[data-user-id=\"#{user.id}\"]" do
@@ -101,8 +101,8 @@ describe "Admin manages officializations", type: :system do
       end
 
       before do
-        within ".secondary-nav" do
-          click_link "Participants"
+        within_admin_sidebar_menu do
+          click_on "Participants"
         end
 
         within "tr[data-user-id=\"#{user.id}\"]" do
@@ -133,8 +133,8 @@ describe "Admin manages officializations", type: :system do
     let!(:user) { create(:user, :officialized, organization: organization) }
 
     before do
-      within ".secondary-nav" do
-        click_link "Participants"
+      within_admin_sidebar_menu do
+        click_on "Participants"
       end
 
       within "tr[data-user-id=\"#{user.id}\"]" do
@@ -155,8 +155,8 @@ describe "Admin manages officializations", type: :system do
     let!(:user) { create(:user, organization: organization) }
 
     before do
-      within ".secondary-nav" do
-        click_link "Participants"
+      within_admin_sidebar_menu do
+        click_on "Participants"
       end
     end
 
@@ -172,8 +172,8 @@ describe "Admin manages officializations", type: :system do
     let!(:user) { create(:user, organization: organization) }
 
     before do
-      within ".secondary-nav" do
-        click_link "Participants"
+      within_admin_sidebar_menu do
+        click_on "Participants"
       end
     end
 
@@ -192,8 +192,8 @@ describe "Admin manages officializations", type: :system do
     let!(:user) { create(:user, organization: organization) }
 
     before do
-      within ".secondary-nav" do
-        click_link "Participants"
+      within_admin_sidebar_menu do
+        click_on "Participants"
       end
     end
 
@@ -212,8 +212,8 @@ describe "Admin manages officializations", type: :system do
     let!(:users) { create_list(:user, 3, organization: organization) }
 
     before do
-      within ".secondary-nav" do
-        click_link "Participants"
+      within_admin_sidebar_menu do
+        click_on "Participants"
       end
     end
 
@@ -249,8 +249,10 @@ describe "Admin manages officializations", type: :system do
     it "shows confirm remove user and redirects to officializations" do
       users.each do |user|
         # inside Participants, view the list of participants (expects to be viewing admins)
-        within ".secondary-nav" do
-          click_link "Participants"
+        before do
+          within_admin_sidebar_menu do
+            click_on "Participants"
+          end
         end
 
         within "tr[data-user-id=\"#{user.id}\"]" do
