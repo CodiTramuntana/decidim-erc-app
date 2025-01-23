@@ -41,4 +41,7 @@ module Decidim::Proposals::ProposalDecorator
   end
 end
 
-::Decidim::Proposals::ProposalDecorator.decorate
+# This condition fix an error with a FixReferenceForAllResources migration
+if ActiveRecord::Base.connection.table_exists? 'decidim_proposals_proposals'
+  ::Decidim::Proposals::ProposalDecorator.decorate
+end
