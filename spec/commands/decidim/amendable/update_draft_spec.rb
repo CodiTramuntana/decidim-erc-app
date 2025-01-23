@@ -38,7 +38,10 @@ module Decidim
         it "updates the emendation with the scope of the user" do
           emendation.update(scope: nil)
 
-          expect { command.call }.to change(form.emendation, :scope).from(nil).to(user.scope)
+          expect { command.call }
+            .to change(form.emendation, :title)
+            .and change(form.emendation, :body)
+          expect(amendable.class.last.versions.count).to eq(0)
         end
       end
     end
