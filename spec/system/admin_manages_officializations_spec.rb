@@ -182,7 +182,7 @@ describe "Admin manages officializations", type: :system do
         click_link user.name
       end
 
-      within ".profile--sidebar" do
+      within "div.profile__details" do
         expect(page).to have_content(user.nickname)
       end
     end
@@ -202,7 +202,7 @@ describe "Admin manages officializations", type: :system do
         click_link user.nickname
       end
 
-      within ".profile--sidebar" do
+      within "div.profile__details" do
         expect(page).to have_content(user.nickname)
       end
     end
@@ -224,14 +224,14 @@ describe "Admin manages officializations", type: :system do
         end
 
         within "#show-email-modal" do
-          expect(page).to have_content("Show participant email address")
+          expect(page).to have_content("Show participant's email address")
           expect(page).not_to have_content(user.email)
 
           click_button "Show"
 
           expect(page).to have_content(user.email)
 
-          find("button[data-close]").click
+          find("button[data-dialog-close]").click
         end
       end
 
@@ -249,16 +249,17 @@ describe "Admin manages officializations", type: :system do
     it "shows confirm remove user and redirects to officializations" do
       users.each do |user|
         # inside Participants, view the list of participants (expects to be viewing admins)
-        before do
-          within_admin_sidebar_menu do
-            click_on "Participants"
-          end
+        within_admin_sidebar_menu do
+          click_on "Participants"
         end
 
         within "tr[data-user-id=\"#{user.id}\"]" do
           click_link "Remove"
         end
-        click_link "OK"
+
+        within "#confirm-modal" do
+          click_on "OK"
+        end
 
         within ".success" do
           expect(page).to have_content("successfully")

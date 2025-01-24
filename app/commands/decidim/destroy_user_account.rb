@@ -44,12 +44,12 @@ module Decidim
       user.admin = false if user.admin?
       user.deleted_at = Time.current
       user.skip_reconfirmation!
-      user.avatar.purge
+      user.avatar&.purge
       user.save!
     end
 
     def destroy_user_identities
-      user.identities.destroy_all
+      user.identities&.destroy_all
     end
 
     def destroy_user_group_memberships

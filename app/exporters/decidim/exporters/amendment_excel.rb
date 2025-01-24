@@ -16,7 +16,6 @@ module Decidim
     class AmendmentExcel < CSV
       # Override constructor
       def initialize
-        super
         @book = Spreadsheet::Workbook.new
       end
 

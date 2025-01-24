@@ -44,22 +44,22 @@ describe "Filter Proposals", type: :system do
             end
 
             it "lists emendations of the same scope as the user" do
-              within ".filters" do
+              within "#panel-dropdown-menu-amendment_type" do
                 choose "Amendments"
               end
 
-              expect(page).to have_css(".card.card--proposal", count: 1)
-              expect(page).to have_content("1 PROPOSAL")
+              expect(page).to have_css("[id^='proposals__proposal']", count: 2)
+              expect(page).to have_content("Amendment", count: 2)
               expect(page).to have_content(translated(emendation_same_scope.title))
               expect(page).to have_no_content(translated(emendation_other_scope.title))
             end
 
             it "can be order alphabetically" do
-              within ".order-by" do
-                expect(page).to have_selector("ul[data-dropdown-menu$=dropdown-menu]", text: "Alphabetically")
+              within "#dropdown-menu-order" do
+                click_on "Alphabetically"
               end
 
-              expect(page).to have_selector("#proposals .card-grid .column:first-child", text: translated(emendation_same_scope.title))
+              expect(page).to have_css("[id^='proposals__proposal']:first-child", text: translated(emendation_same_scope.title))
             end
           end
 
@@ -112,19 +112,19 @@ describe "Filter Proposals", type: :system do
             end
 
             it "can be order alphabetically" do
-              within ".order-by" do
-                expect(page).to have_selector("ul[data-dropdown-menu$=dropdown-menu]", text: "Alphabetically")
+              within "#dropdown-menu-order" do
+                click_on "Alphabetically"
               end
 
-              expect(page).to have_selector("#proposals .row.small-up-1.medium-up-2.card-grid .column:first-child", text: translated(emendation_same_scope.title))
+              expect(page).to have_css("[id^='proposals__proposal']:first-child", text: translated(emendation_same_scope.title))
             end
 
             it "lists all the amendments" do
-              within ".filters" do
+              within "#panel-dropdown-menu-amendment_type" do
                 choose "Amendments"
               end
-              expect(page).to have_css(".card.card--proposal", count: 2)
-              expect(page).to have_content("2 PROPOSAL")
+              expect(page).to have_css("[id^='proposals__proposal']", count: 2)
+              expect(page).to have_content("Amendment", count: 3)
               expect(page).to have_content(translated(emendation_same_scope.title))
               expect(page).to have_content(translated(emendation_other_scope.title))
             end

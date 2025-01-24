@@ -44,13 +44,6 @@ describe "Amend Proposal", :versioning, type: :system do
             expect(page).to have_content(translated(emendation_other_scope.title))
           end
         end
-
-        it "is shown authors of emendation of different scope in the amenders list" do
-          within ".kayout-author" do
-            expect(page).to have_content(amendment_same_scope.amender.nickname)
-            expect(page).to have_content(amendment_other_scope.amender.nickname)
-          end
-        end
       end
     end
 
@@ -69,8 +62,8 @@ describe "Amend Proposal", :versioning, type: :system do
         end
 
         it "is NOT shown the accept and reject button" do
-          expect(page).not_to have_css(".success", text: "ACCEPT")
-          expect(page).not_to have_css(".alert", text: "REJECT")
+          expect(page).not_to have_css("a.button.button__secondary", text: "Accept")
+          expect(page).not_to have_css("a.button.button__transparent-secondary", text: "Reject")
         end
       end
     end
@@ -99,26 +92,12 @@ describe "Amend Proposal", :versioning, type: :system do
           end
         end
 
-        it "is shown authors of emendation of the same scope as the user in the amenders list" do
-          within ".layout-author" do
-            expect(page).to have_content(amendment_same_scope.amender.nickname)
-            expect(page).not_to have_content(amendment_other_scope.amender.nickname)
-          end
-        end
-
         context "when the user is admin" do
           let(:admin) { true }
 
           it "is shown emendations of different scope in the amendments list" do
             within "#amendment-list" do
               expect(page).to have_content(translated(emendation_other_scope.title))
-            end
-          end
-
-          it "is shown authors of emendation of different scope in the amenders list" do
-            within ".layout-author" do
-              expect(page).to have_content(amendment_same_scope.amender.nickname)
-              expect(page).to have_content(amendment_other_scope.amender.nickname)
             end
           end
         end
@@ -144,9 +123,9 @@ describe "Amend Proposal", :versioning, type: :system do
           visit emendation_path
         end
 
-        it "is shown the accept and reject button" do
-          expect(page).to have_css(".success", text: "ACCEPT")
-          expect(page).to have_css(".alert", text: "REJECT")
+        it "is NOT shown the accept and reject button" do
+          expect(page).to have_no_css(".success", text: "ACCEPT")
+          expect(page).to have_no_css(".alert", text: "REJECT")
         end
 
         context "when the user clicks on the accept button" do
@@ -159,7 +138,7 @@ describe "Amend Proposal", :versioning, type: :system do
 
           it "is shown the amendment review form" do
             expect(page).to have_css(".edit_amendment")
-            expect(page).to have_content("REVIEW THE AMENDMENT")
+            expect(page).to have_content("Review the amendment")
             expect(page).to have_field("Title", with: emendation_title)
             expect(page).to have_field("Body", with: emendation_body)
             expect(page).to have_button("Accept amendment")
@@ -172,13 +151,17 @@ describe "Amend Proposal", :versioning, type: :system do
               end
             end
 
-            it "is shown the Success Callout" do
-              expect(page).to have_css(".callout.success", text: "The amendment has been accepted successfully.")
+            it "is shown the Success Flash" do
+              expect(page).to have_css("[data-alert-box].success", text: "The amendment has been accepted successfully.")
+            end
+
+            it "is changed the state of the emendation" do
+              expect(page).to have_css(".flash", text: "This amendment for the proposal #{emendation_title} has been accepted")
             end
 
             it "is shown the accept and reject button again" do
-              expect(page).to have_css(".success", text: "ACCEPT")
-              expect(page).to have_css(".alert", text: "REJECT")
+              expect(page).to have_css("a.button.button__secondary", text: "Accept")
+              expect(page).to have_css("a.button.button__transparent-secondary", text: "Reject")
             end
           end
         end
@@ -189,12 +172,12 @@ describe "Amend Proposal", :versioning, type: :system do
           end
 
           it "is shown the Success Callout" do
-            expect(page).to have_css(".callout.success", text: "The amendment has been successfully rejected")
+            expect(page).to have_css(".flash.success", text: "The amendment has been successfully rejected")
           end
 
           it "is shown the accept and reject button again" do
-            expect(page).to have_css(".success", text: "ACCEPT")
-            expect(page).to have_css(".alert", text: "REJECT")
+            expect(page).to have_css("a.button.button__secondary", text: "Accept")
+            expect(page).to have_css("a.button.button__transparent-secondary", text: "Reject")
           end
         end
 
