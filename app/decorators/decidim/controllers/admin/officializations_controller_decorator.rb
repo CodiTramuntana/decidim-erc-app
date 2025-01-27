@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # This decorator adds the logic to remove user from admin panel in participants.
-module Decidim::Admin::OfficializationsControllerDecorator
+module Decidim::Controllers::Admin::OfficializationsControllerDecorator
   def self.decorate
     Decidim::Admin::OfficializationsController.class_eval do
       def destroy_participant
@@ -29,4 +29,4 @@ module Decidim::Admin::OfficializationsControllerDecorator
   end
 end
 
-::Decidim::Admin::OfficializationsControllerDecorator.decorate
+::Decidim::Controllers::Admin::OfficializationsControllerDecorator.decorate
