@@ -9,7 +9,7 @@ module Decidim::Cells::EndorsementButtonsCellDecorator
       # the user is not a manager of a grup or has a different scope than the resource.
       def render_endorsements_button
         return if resource.emendation? && (manageable_user_groups.empty? || resource.scope != current_user.scope)
-    
+
         if endorsements_blocked_or_user_can_not_participate?
           render_disabled_endorsements_button
         elsif !current_user
@@ -25,13 +25,13 @@ module Decidim::Cells::EndorsementButtonsCellDecorator
           render_verification_modal
         end
       end
-    
+
       # Method overrided.
       # Add guard clause for emendations: don't show the endorsement button if
       # the user is not a manager of a grup or has a different scope than the resource.
       def render_endorsements_count
         return if resource.emendation? && (manageable_user_groups.empty? || resource.scope != current_user.scope)
-    
+
         content = icon("bullhorn", class: "icon--small", aria_label: t("decidim.endorsable.endorsements_count"), role: "img")
         content += resource.endorsements_count.to_s
         html_class = "button small compact button--shadow secondary"
