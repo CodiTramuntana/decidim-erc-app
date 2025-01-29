@@ -14,7 +14,9 @@
 '1300': Alto Vinalopó
 '1400': Andorra
 '1500': Anoia
+'8900': Aran
 '1600': Bages
+'2500': Baix Besòs
 '1700': Baix Camp
 '1800': Baix Cinca
 '1900': Baix Ebre
@@ -23,16 +25,17 @@
 '2200': Baix Maestrat
 '2300': Baix Penedès
 '2400': Baix Vinalopó
+'7300': Baixa Ribagorça
 '2600': BCN_Barcelona Vella
 '2700': BCN_Eixample
-'2800': BCN_Sants-Montjuïc
-'2900': BCN_Les Corts
-'3000': BCN_Sarrià-Sant Gervasi
 '3100': BCN_Gràcia
 '3200': BCN_Horta-Guinardó
+'2900': BCN_Les Corts
 '3300': BCN_Nou Barris
 '3400': BCN_Sant Andreu
 '3500': BCN_Sant Martí
+'2800': BCN_Sants-Montjuïc
+'3000': BCN_Sarrià-Sant Gervasi
 '3600': Berguedà
 '3700': Camp de Morvedre
 '3800': Camp de Túria
@@ -42,8 +45,8 @@
 '4200': Comtat
 '4300': Conca de Barberà
 '4400': Conflent
-'4500': La Costera
 '4600': Eivissa i Formentera
+'9900': Estranger i No Adscrits
 '4700': Fenolheda
 '4800': Garraf
 '4900': Garrigues
@@ -51,13 +54,16 @@
 '5100': Gironès
 '5200': Horta
 '5300': Hoya de Buñol
+'4500': La Costera
 '5400': Llitera
+'7000': Lluçanès
 '5500': Mallorca
-'5600': Baix Besòs - Maresme
+'5600': Maresme
 '5700': Marina Alta
 '5800': Marina Baixa
 '5900': Matarranya
 '6000': Menorca
+'9800': Moianès
 '6100': Montsià
 '6200': Noguera
 '6300': Osona
@@ -67,10 +73,8 @@
 '6700': Pla de l'Estany
 '6800': Plana Alta
 '6900': Plana Baixa
-'7000': Plana de Requena-Utiel
 '7100': Ports
 '7200': Priorat
-'7300': Baixa Ribagorça
 '7400': Ribera Alta
 '7500': Ribera Baixa
 '7600': Ribera d'Ebre
@@ -86,7 +90,6 @@
 '8600': Tarragonès
 '8700': Terra Alta
 '8800': Urgell
-'8900': Aran
 '9000': Vall d'Albaida
 '9100': Valle de Ayora-Cofrentes
 '9200': Vallès Occidental
@@ -95,5 +98,3 @@
 '9500': Valls del Vinalopó
 '9600': Vega Baja
 '9700': Vinalopó Medio
-'9800': Moianès
-'9900': Estranger i No Adscrits
