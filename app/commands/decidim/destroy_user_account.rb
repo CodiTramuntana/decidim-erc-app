@@ -45,7 +45,7 @@ module Decidim
       user.deleted_at = Time.current
       user.skip_reconfirmation!
       user.avatar&.purge
-      user.save!
+      user.save!(validate: false)
     end
 
     def destroy_user_identities
