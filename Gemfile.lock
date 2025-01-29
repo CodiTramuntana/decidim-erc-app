@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git
-  revision: e1e61a0539ff61dba2a35bd9fb9859d370ef4792
+  revision: aeedbad170f0693600590d63f036e53a97b80043
   branch: update/0.29-stable
   specs:
     decidim-erc-crm_authenticable (2.0.0)
@@ -628,7 +628,7 @@ GEM
     psych (4.0.6)
       stringio
     public_suffix (6.0.1)
-    puma (6.5.0)
+    puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.10)
