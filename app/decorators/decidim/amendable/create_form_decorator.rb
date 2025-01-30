@@ -5,6 +5,7 @@ module Decidim::Amendable::CreateFormDecorator
     Decidim::Amendable::CreateForm.class_eval do
       attribute :amendment_type, String
       attribute :sectorial_commission, Integer
+      attribute :decidim_scope_id, Integer
     end
   end
 end

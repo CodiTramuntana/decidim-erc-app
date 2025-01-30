@@ -20,6 +20,7 @@ module Decidim::Amendable::CreateDraftDecorator
             emendation.sectorial_commission = form.sectorial_commission
             emendation.component = amendable.component
             emendation.add_author(current_user, user_group)
+            emendation.decidim_scope_id = form.decidim_scope_id
             emendation.save!
             emendation
           end

@@ -21,7 +21,7 @@ module Decidim
         old_body: amendable.body,
         new_body: new_body,
         user_name: amendment_user&.name,
-        scope: amendment_user&.scope&.name,
+        scope: amendment_user&.scope.present? ? amendment_user.scope.name["ca"] : nil,
         amendment_type: emendation.amendment_type,
         sectorial_commission: emendation.sectorial_commission,
         diff: amendment_diff,
