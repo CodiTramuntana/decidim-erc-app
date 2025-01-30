@@ -4,9 +4,10 @@
 //
 // By default this is empty.
 
-// Hide open data link in footer
+// Hide open data and conversations links in footer
 .main-footer {
-  a[href*="/open-data/download"] {
+  a[href*="/open-data/download"],
+  a[href*="/conversations"] {
     display: none;
   }
 }
