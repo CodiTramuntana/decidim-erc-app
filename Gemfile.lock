@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-erc-crm_authenticable.git
-  revision: a4654e2d1f6a43f623ecb2a005020e95305ecaba
+  revision: ca8b4bd8df95c5bcd7a76c26abf828e0a52e2673
   branch: update/0.29-stable
   specs:
     decidim-erc-crm_authenticable (2.0.0)
@@ -30,7 +30,7 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim.git
-  revision: bc8f7d12ddaca29934ea5fdaac474ebe8ffc2ba7
+  revision: 12a74b72a6507291661d667af8ce97ba8a715ab3
   branch: release/0.29-stable
   specs:
     decidim (0.29.1)
@@ -87,6 +87,7 @@ GIT
       cells-erb (~> 0.1.0)
       cells-rails (~> 0.1.3)
       charlock_holmes (~> 0.7)
+      concurrent-ruby (= 1.3.4)
       date_validator (~> 0.12.0)
       devise (~> 4.7)
       devise-i18n (~> 1.2, < 1.11.1)
