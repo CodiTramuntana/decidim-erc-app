@@ -24,6 +24,12 @@ module Decidim::Helpers::AmendmentsHelperDecorator
       def allowed_to_accept_and_reject?(emendation)
         emendation.amendable.created_by?(current_user) || current_user.admin?
       end
+
+      # Fix because when step is 2 in original method, throught an error.
+      # Returns the link we want the back button to point to.
+      def wizard_aside_back_url(amendable)
+        Decidim::ResourceLocatorPresenter.new(amendable).path
+      end
     end
   end
 end

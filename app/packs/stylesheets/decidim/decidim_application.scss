@@ -28,20 +28,6 @@
   }
 }
 
-// To check
-
-#endorsements-count-only{
-  a.button--shadow{
-    margin-bottom: 0;
-  }
-}
-
-.filters-scope-texts {
-  .picker-values {
-    display: none;
-  }
-}
-
 #amendment_sectorial_commission {
   option:nth-child(1) {
     font-weight: bold;
@@ -54,3 +40,22 @@
   }
 }
 
+// Changes in elements color where there is the primary color (yellow)
+.menu-bar,
+.participatory-space__nav-container,
+.home__menu-element {
+  span,
+  svg,
+  a {
+    color: black !important;
+  }
+
+  .button__transparent {
+    border-color: black !important;
+  }
+}
+
+.home__menu-element:last-child::before,
+.home__menu-element::after {
+  background-color: black !important;
+}

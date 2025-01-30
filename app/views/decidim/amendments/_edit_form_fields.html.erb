@@ -26,6 +26,15 @@
                     label: t("decidim.amendments.sectorial_commissions_title")) %>
     <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commissions") %></p>
   <% end %>
+  <!-- Overwriting this view to add this field -->
+  <div class="field">
+    <%= form.text_field :phone_number,
+                        label: t("decidim.amendments.edit_draft.phone_number"),
+                        help_text: t("decidim.amendments.edit_draft.phone_number_help").html_safe,
+                        value: Base64.decode64(current_user.extended_data["phone_number"].to_s),
+                        readonly: true %>
+  </div>
+  <!-- /Overwriting this view to add this field -->
 
   <%= form.hidden_field :decidim_scope_id, value: current_user.decidim_scope_id %>
   <!-- /Overwriting this view to add this field -->
