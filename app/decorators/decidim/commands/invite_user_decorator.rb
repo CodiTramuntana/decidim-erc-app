@@ -10,7 +10,7 @@ module Decidim::Commands::InviteUserDecorator
         @user = Decidim::User.new(
           name: form.name,
           email: form.email.downcase,
-          nickname: "#{form.name.slice(0,2)}_#{form.organization.name["ca"].slice(0,3)}_#{rand(1000..9999)}",
+          nickname:,
           organization: form.organization,
           admin: form.role == "admin",
           roles: form.role == "admin" ? [] : [form.role].compact,
@@ -20,6 +20,12 @@ module Decidim::Commands::InviteUserDecorator
           form.invited_by,
           invitation_instructions: form.invitation_instructions
         )
+      end
+
+      def nickname
+        Decidim::UserBaseEntity.nicknamize(form.name, organization: current_organization)
+        initials = form.name.split.map { |w| w.chars.first }.join
+        Decidim::UserBaseEntity.nicknamize(initials, organization: current_organization).upcase
       end
     end
   end
