@@ -12,8 +12,8 @@ module Decidim::Helpers::AmendmentsHelperDecorator
       end
 
       def sectorial_commissions
-        sectorial_commissions = Decidim::Proposals::Proposal.sectorial_commissions.keys.collect do |sectorial_commission|
-          [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission), sectorial_commission]
+        sectorial_commissions = Decidim::Proposals::Proposal.sectorial_commissions.map do |sectorial_commission|
+          [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission.first), sectorial_commission.second]
         end
         sectorial_commissions.insert(1, ["――――――――――――――", ""])
         sectorial_commissions.insert(2, [t("decidim.amendments.sectorial_commissions"), ""])
