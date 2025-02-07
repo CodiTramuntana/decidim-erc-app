@@ -161,7 +161,7 @@ es:
         greeting: Estimado, estimada %{recipient}
         information: Recuerda que tu alias son tus iniciales.
         instruction: 'Para confirmar tu registro en la plataforma Decidim Esquerra
-          Republicana para hacer enmiendas al Plenari del 28è Congrés Nacional d’Esquerra
+          Republicana para hacer enmiendas al Plenari del 30è Congrés Nacional d’Esquerra
           Republicana, haz clic en el siguiente enlace: '
     sessions:
       new:
