@@ -1,12 +1,5 @@
 name: "[CI] Lint / Lint code"
-
-on:
-  push:
-    branches:
-      - master
-      - release/*
-      - "*-stable"
-  pull_request:
+on: [push]
 
 env:
   RUBY_VERSION: 3.2.2
