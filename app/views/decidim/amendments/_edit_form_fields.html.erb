@@ -5,28 +5,37 @@
     <% key = key.to_sym %>
     <% if amendable.amendable_fields.include?(key) %>
 
-      <div class="field hashtags__container">
-        <%= amendments_form_field_for(key, emendation_form, original) %>
-      </div>
+      <%= amendments_form_field_for(key, emendation_form, original) %>
 
       <% form.object.errors.full_messages_for(key).each do |message| %>
         <small class="form-error is-visible"><%= message %></small>
       <% end %>
+
     <% end %>
   <% end %>
-
+  
+  <!-- Overwriting this view to add this field -->
   <% if amendable.component.settings.participatory_texts_enabled? %>
     <%= form.select(:amendment_type,
                     amendment_types.map { |g| [g[:name], g[:key]] },
                     selected: emendation&.amendment_type,
                     label: t("decidim.amendments.type")) %>
-
     
     <%= form.select(:sectorial_commission, sectorial_commissions,
                     selected: emendation&.sectorial_commission,
                     label: t("decidim.amendments.sectorial_commissions_title")) %>
     <p class="help-text" id="userHelp"><%= t("decidim.amendments.help_sectorial_commissions") %></p>
   <% end %>
-<% end %>
+  <!-- Overwriting this view to add this field -->
+  <div class="field">
+    <%= form.text_field :phone_number,
+                        label: t("decidim.amendments.edit_draft.phone_number"),
+                        help_text: t("decidim.amendments.edit_draft.phone_number_help").html_safe,
+                        value: Base64.decode64(current_user.extended_data["phone_number"].to_s),
+                        readonly: true %>
+  </div>
+  <!-- /Overwriting this view to add this field -->
 
-<%= javascript_include_tag "proposals" %>
+  <%= form.hidden_field :decidim_scope_id, value: current_user.decidim_scope_id %>
+  <!-- /Overwriting this view to add this field -->
+<% end %>

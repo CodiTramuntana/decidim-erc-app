@@ -4,10 +4,10 @@ require "rails_helper"
 
 describe "Filter Proposals", type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
-  let!(:user) { create :user, :confirmed, organization: organization }
-  let!(:component) { create(:proposal_component, organization: organization) }
+  let!(:user) { create :user, :confirmed, organization: }
+  let!(:component) { create(:proposal_component, organization:) }
   let!(:active_step_id) { component.participatory_space.active_step.id }
-  let!(:proposal) { create(:proposal, component: component) }
+  let!(:proposal) { create(:proposal, component:) }
 
   before do
     switch_to_host(organization.host)
@@ -26,10 +26,10 @@ describe "Filter Proposals", type: :system do
 
         context "when the user is logged in" do
           context "and there are emendations with same scope as the user" do
-            let!(:emendation_same_scope) { create(:proposal, body: body, scope: user.scope, component: component, title: "Article 1") }
+            let!(:emendation_same_scope) { create(:proposal, body:, scope: user.scope, component:, title: "Article 1") }
             let!(:amendment_same_scope) { create(:amendment, amendable: proposal, emendation: emendation_same_scope) }
 
-            let!(:emendation_other_scope) { create(:proposal, component: component, title: "Article 2") }
+            let!(:emendation_other_scope) { create(:proposal, component:, title: "Article 2") }
             let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
             before do
@@ -44,27 +44,27 @@ describe "Filter Proposals", type: :system do
             end
 
             it "lists emendations of the same scope as the user" do
-              within ".filters" do
+              within "#panel-dropdown-menu-amendment_type" do
                 choose "Amendments"
               end
 
-              expect(page).to have_css(".card.card--proposal", count: 1)
-              expect(page).to have_content("1 PROPOSAL")
+              expect(page).to have_css("[id^='proposals__proposal']", count: 2)
+              expect(page).to have_content("Amendment", count: 2)
               expect(page).to have_content(translated(emendation_same_scope.title))
               expect(page).to have_no_content(translated(emendation_other_scope.title))
             end
 
             it "can be order alphabetically" do
-              within ".order-by" do
-                expect(page).to have_selector("ul[data-dropdown-menu$=dropdown-menu]", text: "Alphabetically")
+              within "#dropdown-menu-order" do
+                click_on "Alphabetically"
               end
 
-              expect(page).to have_selector("#proposals .card-grid .column:first-child", text: translated(emendation_same_scope.title))
+              expect(page).to have_css("[id^='proposals__proposal']:first-child", text: translated(emendation_same_scope.title))
             end
           end
 
           context "and there are NO emendations with same scope as the user" do
-            let!(:emendation_other_scope) { create(:proposal, component: component) }
+            let!(:emendation_other_scope) { create(:proposal, component:) }
             let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
             before do
@@ -94,10 +94,10 @@ describe "Filter Proposals", type: :system do
 
         context "when the user is logged in" do
           context "and there are emendations with same scope as the user" do
-            let!(:emendation_same_scope) { create(:proposal, title: "AAAAAA", body: body, scope: user.scope, component: component) }
+            let!(:emendation_same_scope) { create(:proposal, title: "AAAAAA", body:, scope: user.scope, component:) }
             let!(:amendment_same_scope) { create(:amendment, amendable: proposal, emendation: emendation_same_scope) }
 
-            let!(:emendation_other_scope) { create(:proposal, component: component) }
+            let!(:emendation_other_scope) { create(:proposal, component:) }
             let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
             before do
@@ -112,26 +112,26 @@ describe "Filter Proposals", type: :system do
             end
 
             it "can be order alphabetically" do
-              within ".order-by" do
-                expect(page).to have_selector("ul[data-dropdown-menu$=dropdown-menu]", text: "Alphabetically")
+              within "#dropdown-menu-order" do
+                click_on "Alphabetically"
               end
 
-              expect(page).to have_selector("#proposals .row.small-up-1.medium-up-2.card-grid .column:first-child", text: translated(emendation_same_scope.title))
+              expect(page).to have_css("[id^='proposals__proposal']:first-child", text: translated(emendation_same_scope.title))
             end
 
             it "lists all the amendments" do
-              within ".filters" do
+              within "#panel-dropdown-menu-amendment_type" do
                 choose "Amendments"
               end
-              expect(page).to have_css(".card.card--proposal", count: 2)
-              expect(page).to have_content("2 PROPOSAL")
+              expect(page).to have_css("[id^='proposals__proposal']", count: 2)
+              expect(page).to have_content("Amendment", count: 3)
               expect(page).to have_content(translated(emendation_same_scope.title))
               expect(page).to have_content(translated(emendation_other_scope.title))
             end
           end
 
           context "and there are NO emendations with same scope as the user" do
-            let!(:emendation_other_scope) { create(:proposal, component: component) }
+            let!(:emendation_other_scope) { create(:proposal, component:) }
             let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
             before do

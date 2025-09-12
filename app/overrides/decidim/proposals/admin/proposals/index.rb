@@ -8,4 +8,4 @@ Deface::Override.new(virtual_path: +"decidim/proposals/admin/proposals/index",
       <%= sort_link(query, :author, t('models.proposal.fields.author', scope: 'decidim.proposals')) %>
     </th>
   ",
-                     original: "3050ec7efdccc43ad69b11a095f7dcec05a785c3")
+                     original: "7b69af0098b5efc51731264f854cd8cad873ba0c")

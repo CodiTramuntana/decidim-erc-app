@@ -8,4 +8,4 @@ Deface::Override.new(virtual_path: +"decidim/proposals/admin/proposals/_proposal
       <%= Decidim::Proposals::ProposalPresenter.new(proposal).author.name %>
     </td>
    ",
-                     original: "3378e0a93910eedab971f2b7cee1bcdc68920de5")
+                     original: "7cfebc79f4240f348a72976c718e76537c3c45c8")

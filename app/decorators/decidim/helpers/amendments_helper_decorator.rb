@@ -1,25 +1,37 @@
 # frozen_string_literal: true
 
-Decidim::AmendmentsHelper.class_eval do
-  def amendment_types
-    [
-      { name: t("decidim.amendments.types.add"), key: "add" },
-      { name: t("decidim.amendments.types.remove"), key: "remove" },
-      { name: t("decidim.amendments.types.modify"), key: "modify" }
-    ]
-  end
+module Decidim::Helpers::AmendmentsHelperDecorator
+  def self.decorate
+    Decidim::AmendmentsHelper.class_eval do
+      def amendment_types
+        [
+          { name: t("decidim.amendments.types.add"), key: "add" },
+          { name: t("decidim.amendments.types.remove"), key: "remove" },
+          { name: t("decidim.amendments.types.modify"), key: "modify" }
+        ]
+      end
 
-  def sectorial_commissions
-    sectorial_commissions = Decidim::Proposals::Proposal.sectorial_commissions.keys.collect do |sectorial_commission|
-      [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission), sectorial_commission]
+      def sectorial_commissions
+        sectorial_commissions = Decidim::Proposals::Proposal.sectorial_commissions.map do |sectorial_commission|
+          [Decidim::Proposals::Proposal.human_enum_name(:sectorial_commissions, sectorial_commission.first), sectorial_commission.second]
+        end
+        sectorial_commissions.insert(1, ["――――――――――――――", ""])
+        sectorial_commissions.insert(2, [t("decidim.amendments.sectorial_commissions"), ""])
+      end
+
+      # Checks if the user can accept and reject the emendation.
+      # Buttons are always visible.
+      def allowed_to_accept_and_reject?(emendation)
+        emendation.amendable.created_by?(current_user) || current_user.admin?
+      end
+
+      # Fix because when step is 2 in original method, throught an error.
+      # Returns the link we want the back button to point to.
+      def wizard_aside_back_url(amendable)
+        Decidim::ResourceLocatorPresenter.new(amendable).path
+      end
     end
-    sectorial_commissions.insert(1, ["――――――――――――――", ""])
-    sectorial_commissions.insert(2, [t("decidim.amendments.sectorial_commissions"), ""])
-  end
-
-  # Checks if the user can accept and reject the emendation.
-  # Buttons are always visible.
-  def allowed_to_accept_and_reject?(emendation)
-    emendation.amendable.created_by?(current_user) || current_user.admin?
   end
 end
+
+::Decidim::Helpers::AmendmentsHelperDecorator.decorate

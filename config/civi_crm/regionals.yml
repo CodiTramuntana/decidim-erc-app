@@ -1,13 +1,15 @@
 ---
-'0001': Regió Metropolitana de Barcelona
-'0002': Girona
-'0003': Camp de Tarragona
-'0004': Ebre
-'0005': Catalunya Central
-'0006': Lleida
 '0007': Alt Pirineu
+'0101': Baix Besòs - Maresme
+'2100': Baix Llobregat
 '0008': Barcelona
+'0003': Camp de Tarragona
+'0005': Catalunya Central
+'0106': Girona - Catalunya del Nord
+'0004': Ebre
+'0099': Estranger i No Adscrits
 '0009': Illes Balears i Pitiüses
+'0006': Lleida
 '0010': País Valencià
-'0011': Catalunya del Nord
 '0012': Penedès
+'0113': Vallès Occidental - Vallès Oriental

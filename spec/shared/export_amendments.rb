@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 shared_examples "export amendments" do
-  let!(:amendment) { create_list(:amendment, 3, :draft, amendable: amendable, emendation: emendation) }
+  let!(:amendment) { create_list(:amendment, 3, :draft, amendable:, emendation:) }
 
   it "exports all" do
-    find(".exports.dropdown.amendments").click
+    find(".exports-amendments").click
     click_link "All"
 
-    within ".callout.success" do
+    within ".flash.success" do
       expect(page).to have_content("in progress")
     end
 
@@ -17,10 +17,10 @@ shared_examples "export amendments" do
   end
 
   it "exports only of scope" do
-    find(".exports.dropdown.amendments").click
+    find(".exports-amendments").click
     click_link "Amendments of #{translated(scope.name)}"
 
-    within ".callout.success" do
+    within ".flash.success" do
       expect(page).to have_content("in progress")
     end
 

@@ -1,7 +1,6 @@
-
-<% if current_user&.admin? %>
-  <div class='card card__link p-xs flex--fsc reveal__trigger filter-by-scope' data-open='participatory-text-scope'>
-    <%= icon 'list', class: 'mr-s', role: 'img', 'aria-hidden': true %>
+<% if false %>
+  <div class='card card__link p-xs flex reveal__trigger filter-by-scope' data-open='participatory-text-scope'>
+    <%= icon 'list-ordered', class: 'mr-s', role: 'img', 'aria-hidden': true %>
     <strong><%= t('decidim.components.proposals.participatory_texts.filter_by_scope') %></strong>
   </div>
   <div id='participatory-text-scope' class='reveal large' data-reveal>

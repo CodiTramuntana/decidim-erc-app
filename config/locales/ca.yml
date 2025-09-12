@@ -151,6 +151,11 @@ ca:
       wizard_header:
         see_steps: veure els passos
         step_of: Pas %{current_step} de %{total_steps}
+    verifications:
+      id_documents:
+        dni: DNI
+        nie: NIE
+        passport: Pasaport
   devise:
     mailer:
       confirmation_instructions:
@@ -159,7 +164,7 @@ ca:
         greeting: Benvolgut, benvolguda %{recipient}
         information: Recorda que el teu Àlies són les teves inicials.
         instruction: 'Per confirmar el teu registre a la plataforma Decidim Esquerra
-          Republicana per a fer esmenes al Plenari del 28è Congrés Nacional d’Esquerra
+          Republicana per a fer esmenes al Plenari del 30è Congrés Nacional d’Esquerra
           Republicana, fes clic al següent enllaç: '
     sessions:
       new:

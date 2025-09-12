@@ -3,7 +3,7 @@
 require "rails_helper"
 
 describe "Profile", type: :system do
-  let(:user) { create(:user, :confirmed, admin: admin) }
+  let(:user) { create(:user, :confirmed, admin:) }
 
   before do
     switch_to_host(user.organization.host)

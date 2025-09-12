@@ -1,0 +1,61 @@
+// This is a file that can be overridden by the application in order to override styles
+// Notice that this file is included at the very end of the stylesheets packs to have
+// more priority
+//
+// By default this is empty.
+
+// Hide open data and conversations links in footer
+.main-footer {
+  a[href*="/open-data/download"],
+  a[href*="/conversations"] {
+    display: none;
+  }
+}
+
+// Hide conversations in dropdown user menu
+.main-bar__dropdown-container {
+  ul {
+    li:nth-child(4) {
+      display: none;
+    }
+  }
+}
+
+// Hide update avatar in profile
+.edit_user {
+  .upload-modal__files-container{
+    display: none;
+  }
+}
+
+#amendment_sectorial_commission {
+  option:nth-child(1) {
+    font-weight: bold;
+  }
+}
+
+.card__content .edit_proposal {
+  fieldset:first-of-type {
+    display: none;
+  }
+}
+
+// Changes in elements color where there is the primary color (yellow)
+.menu-bar,
+.participatory-space__nav-container,
+.home__menu-element {
+  span,
+  svg,
+  a {
+    color: black !important;
+  }
+
+  .button__transparent {
+    border-color: black !important;
+  }
+}
+
+.home__menu-element:last-child::before,
+.home__menu-element::after {
+  background-color: black !important;
+}

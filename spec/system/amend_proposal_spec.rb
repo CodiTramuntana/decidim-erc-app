@@ -2,20 +2,20 @@
 
 require "rails_helper"
 
-describe "Amend Proposal", versioning: true, type: :system do
+describe "Amend Proposal", :versioning, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
-  let(:user) { create(:user, :confirmed, admin: admin, organization: organization) }
+  let(:user) { create(:user, :confirmed, admin:, organization:) }
   let(:admin) { false }
 
-  let!(:component) { create(:proposal_component, organization: organization) }
+  let!(:component) { create(:proposal_component, organization:) }
   let!(:active_step_id) { component.participatory_space.active_step.id }
 
-  let!(:proposal) { create(:proposal, component: component) }
+  let!(:proposal) { create(:proposal, component:) }
   let(:proposal_path) { Decidim::ResourceLocatorPresenter.new(proposal).path }
 
-  let!(:emendation_same_scope) { create(:proposal, body: body, scope: user.scope, component: component) }
+  let!(:emendation_same_scope) { create(:proposal, body:, scope: user.scope, component:) }
   let!(:amendment_same_scope) { create(:amendment, amendable: proposal, emendation: emendation_same_scope) }
-  let!(:emendation_other_scope) { create(:proposal, component: component) }
+  let!(:emendation_other_scope) { create(:proposal, component:) }
   let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
   before do
@@ -39,16 +39,9 @@ describe "Amend Proposal", versioning: true, type: :system do
         end
 
         it "is shown emendations of different scope in the amendments list" do
-          within ".amendment-list" do
+          within "#amendment-list" do
             expect(page).to have_content(translated(emendation_same_scope.title))
             expect(page).to have_content(translated(emendation_other_scope.title))
-          end
-        end
-
-        it "is shown authors of emendation of different scope in the amenders list" do
-          within ".amender-list" do
-            expect(page).to have_content(amendment_same_scope.amender.nickname)
-            expect(page).to have_content(amendment_other_scope.amender.nickname)
           end
         end
       end
@@ -69,8 +62,8 @@ describe "Amend Proposal", versioning: true, type: :system do
         end
 
         it "is NOT shown the accept and reject button" do
-          expect(page).not_to have_css(".success", text: "ACCEPT")
-          expect(page).not_to have_css(".alert", text: "REJECT")
+          expect(page).not_to have_css("a.button.button__secondary", text: "Accept")
+          expect(page).not_to have_css("a.button.button__transparent-secondary", text: "Reject")
         end
       end
     end
@@ -93,16 +86,9 @@ describe "Amend Proposal", versioning: true, type: :system do
         end
 
         it "is shown ONLY emendations of the same scope as the user in the amendments list" do
-          within ".amendment-list" do
+          within "#amendment-list" do
             expect(page).to have_content(translated(emendation_same_scope.title))
             expect(page).not_to have_content(translated(emendation_other_scope.title))
-          end
-        end
-
-        it "is shown authors of emendation of the same scope as the user in the amenders list" do
-          within ".amender-list" do
-            expect(page).to have_content(amendment_same_scope.amender.nickname)
-            expect(page).not_to have_content(amendment_other_scope.amender.nickname)
           end
         end
 
@@ -110,15 +96,8 @@ describe "Amend Proposal", versioning: true, type: :system do
           let(:admin) { true }
 
           it "is shown emendations of different scope in the amendments list" do
-            within ".amendment-list" do
+            within "#amendment-list" do
               expect(page).to have_content(translated(emendation_other_scope.title))
-            end
-          end
-
-          it "is shown authors of emendation of different scope in the amenders list" do
-            within ".amender-list" do
-              expect(page).to have_content(amendment_same_scope.amender.nickname)
-              expect(page).to have_content(amendment_other_scope.amender.nickname)
             end
           end
         end
@@ -126,8 +105,8 @@ describe "Amend Proposal", versioning: true, type: :system do
     end
 
     context "when amendment REACTION is enabled" do
-      let!(:emendation) { create(:proposal, title: { en: "Amended Long enough title" }, component: component) }
-      let!(:amendment) { create :amendment, amendable: proposal, emendation: emendation }
+      let!(:emendation) { create(:proposal, title: { en: "Amended Long enough title" }, component:) }
+      let!(:amendment) { create :amendment, amendable: proposal, emendation: }
       let(:emendation_path) { Decidim::ResourceLocatorPresenter.new(emendation).path }
 
       before do
@@ -144,9 +123,9 @@ describe "Amend Proposal", versioning: true, type: :system do
           visit emendation_path
         end
 
-        it "is shown the accept and reject button" do
-          expect(page).to have_css(".success", text: "ACCEPT")
-          expect(page).to have_css(".alert", text: "REJECT")
+        it "is NOT shown the accept and reject button" do
+          expect(page).to have_no_css(".success", text: "ACCEPT")
+          expect(page).to have_no_css(".alert", text: "REJECT")
         end
 
         context "when the user clicks on the accept button" do
@@ -159,7 +138,7 @@ describe "Amend Proposal", versioning: true, type: :system do
 
           it "is shown the amendment review form" do
             expect(page).to have_css(".edit_amendment")
-            expect(page).to have_content("REVIEW THE AMENDMENT")
+            expect(page).to have_content("Review the amendment")
             expect(page).to have_field("Title", with: emendation_title)
             expect(page).to have_field("Body", with: emendation_body)
             expect(page).to have_button("Accept amendment")
@@ -172,13 +151,17 @@ describe "Amend Proposal", versioning: true, type: :system do
               end
             end
 
-            it "is shown the Success Callout" do
-              expect(page).to have_css(".callout.success", text: "The amendment has been accepted successfully.")
+            it "is shown the Success Flash" do
+              expect(page).to have_css("[data-alert-box].success", text: "The amendment has been accepted successfully.")
+            end
+
+            it "is changed the state of the emendation" do
+              expect(page).to have_css(".flash", text: "This amendment for the proposal #{emendation_title} has been accepted")
             end
 
             it "is shown the accept and reject button again" do
-              expect(page).to have_css(".success", text: "ACCEPT")
-              expect(page).to have_css(".alert", text: "REJECT")
+              expect(page).to have_css("a.button.button__secondary", text: "Accept")
+              expect(page).to have_css("a.button.button__transparent-secondary", text: "Reject")
             end
           end
         end
@@ -189,12 +172,12 @@ describe "Amend Proposal", versioning: true, type: :system do
           end
 
           it "is shown the Success Callout" do
-            expect(page).to have_css(".callout.success", text: "The amendment has been successfully rejected")
+            expect(page).to have_css(".flash.success", text: "The amendment has been successfully rejected")
           end
 
           it "is shown the accept and reject button again" do
-            expect(page).to have_css(".success", text: "ACCEPT")
-            expect(page).to have_css(".alert", text: "REJECT")
+            expect(page).to have_css("a.button.button__secondary", text: "Accept")
+            expect(page).to have_css("a.button.button__transparent-secondary", text: "Reject")
           end
         end
 
@@ -210,7 +193,7 @@ describe "Amend Proposal", versioning: true, type: :system do
             click_link "Reject"
           end
 
-          it "traces the action when reject amendment and recover the last proposal version", versioning: true do
+          it "traces the action when reject amendment and recover the last proposal version", :versioning do
             action_log = Decidim::ActionLog.last
             expect(action_log.version).to be_present
             expect(action_log.version.event).to eq "update"

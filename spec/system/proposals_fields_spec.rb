@@ -7,9 +7,9 @@ describe "Proposals", type: :system do
   let(:manifest_name) { "proposals" }
 
   let!(:category) { create :category, participatory_space: participatory_process }
-  let!(:scope) { create :scope, organization: organization }
-  let!(:user) { create :user, :confirmed, organization: organization }
-  let(:scoped_participatory_process) { create(:participatory_process, :with_steps, organization: organization, scope: scope) }
+  let!(:scope) { create :scope, organization: }
+  let!(:user) { create :user, :confirmed, organization: }
+  let(:scoped_participatory_process) { create(:participatory_process, :with_steps, organization:, scope:) }
 
   let(:proposal_title) { "More sidewalks and less roads" }
   let(:proposal_body) { "Cities need more people, not more cars" }
@@ -31,23 +31,23 @@ describe "Proposals", type: :system do
         let!(:component) do
           create(:proposal_component,
                  :with_creation_enabled,
-                 manifest: manifest,
+                 manifest:,
                  participatory_space: participatory_process,
                  settings: { scopes_enabled: true, scope_id: participatory_process.scope&.id })
         end
 
-        let(:proposal_draft) { create(:proposal, :draft, component: component) }
+        let(:proposal_draft) { create(:proposal, :draft, component:) }
 
         context "when attachments are allowed", processing_uploads_for: Decidim::AttachmentUploader do
           let!(:component) do
             create(:proposal_component,
                    :with_creation_enabled,
                    :with_attachments_allowed,
-                   manifest: manifest,
+                   manifest:,
                    participatory_space: participatory_process)
           end
 
-          let(:proposal_draft) { create(:proposal, :draft, users: [user], component: component, title: "Proposal with attachments", body: "This is my proposal and I want to upload attachments.") }
+          let(:proposal_draft) { create(:proposal, :draft, users: [user], component:, title: "Proposal with attachments", body: "This is my proposal and I want to upload attachments.") }
 
           it "creates a new proposal with attachments" do
             visit complete_proposal_path(component, proposal_draft)
@@ -71,5 +71,5 @@ describe "Proposals", type: :system do
 end
 
 def complete_proposal_path(component, proposal)
-  Decidim::EngineRouter.main_proxy(component).proposal_path(proposal) + "/complete"
+  "#{Decidim::EngineRouter.main_proxy(component).proposal_path(proposal)}/complete"
 end

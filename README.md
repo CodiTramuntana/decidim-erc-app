@@ -24,7 +24,6 @@ Only admins can view the links to "Edit profile" and "Create group". This is man
 #### User profile
 Search engine don't search users.
 - User profile view has been made readonly: `app/views/decidim/account/show.html.erb`.
-- User can not modify its telephone number: `app/views/decidim/_user_scope.html.erb`
 - User's interests page is disabled: `app/controllers/decidim/user_interests_controller.rb`.
 - User's `ConversationsController` now raises a not found: `app/controllers/decidim/messaging/conversations_controller.rb`.
 
@@ -37,6 +36,8 @@ There is logic to prevent endorsing a proposal for special cases related to the 
 The logic to handle when to show the endorsements button for and which endorsement identities this button can show when clicked can be found in `app/decorators/decidim/proposals/proposal_endorsements_helper_decorator.rb`.
 
 Also the nickname field is added to serialized proposals. Find the source here: `app/decorators/decidim/proposals/proposal_serializer_decorator.rb`.
+
+Proposal can be ordered alphabetically with `app/controllers/concerns/decidim/proposals/orderable.rb`
 
 ### Amendments
 Amendments and users both have a scope attribute.
@@ -52,10 +53,7 @@ In `app/extensions/decidim/proposals/proposal.rb`, the following methods have be
 - #visible_emendations_for(user)
 
 The new option "scope" allows to filter emendations by the scope of the user.
-
 Amendment view customizations:
-- `app/views/decidim/proposals/proposals/_endorsements_card_row.html.erb`
-
 - Accept and reject buttons are always visible (`app/decorators/decidim/helpers/amendments_helper_decorator.rb`) and reject an amendment create a new proposal version (`app/decorators/decidim/commands/decidim/amendable/reject_decorator.rb`)
 
 
@@ -68,6 +66,13 @@ The corresponding rake task is neither scheduled.
 This Decidim application completelly relies on [CodiTramuntana/decidim-erc-crm_authenticable](https://github.com/CodiTramuntana/decidim-erc-crm_authenticable) custom module for registration, login and verification.
 
 This module requires an initializer: `config/initializers/decidim_erc_crm_authenticable.rb`.
+
+### Officialization users
+Remove users from participants list
+  - app/commands/decidim/destroy_user_account.rb
+  - app/decorators/decidim/controllers/decidim/admin/officializations_controller_decorator.rb
+  - app/overrides/decidim/admin/officializations/index.rb
+
 
 ## Testing
 

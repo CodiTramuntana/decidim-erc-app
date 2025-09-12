@@ -6,16 +6,16 @@ module Decidim
   module Amendable
     describe UpdateDraft do
       let!(:component) { create(:proposal_component) }
-      let!(:amendable) { create(:proposal, component: component) }
-      let!(:emendation) { create(:proposal, :unpublished, component: component) }
-      let!(:amendment) { create(:amendment, :draft, amendable: amendable, emendation: emendation) }
+      let!(:amendable) { create(:proposal, component:) }
+      let!(:emendation) { create(:proposal, :unpublished, component:) }
+      let!(:amendment) { create(:amendment, :draft, amendable:, emendation:) }
 
       let(:title) { "More sidewalks and less roads!" }
       let(:body) { "Everything would be better" }
       let(:params) do
         {
           id: amendment.id,
-          emendation_params: { title: title, body: body }
+          emendation_params: { title:, body: }
         }
       end
 
@@ -38,7 +38,10 @@ module Decidim
         it "updates the emendation with the scope of the user" do
           emendation.update(scope: nil)
 
-          expect { command.call }.to change(form.emendation, :scope).from(nil).to(user.scope)
+          expect { command.call }
+            .to change(form.emendation, :title)
+            .and change(form.emendation, :body)
+          expect(amendable.class.last.versions.count).to eq(0)
         end
       end
     end

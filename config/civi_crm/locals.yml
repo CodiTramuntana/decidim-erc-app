@@ -1,459 +1,1869 @@
 ---
-'0103': Alacant
-'0106': Mutxamel
-'0110': Xixona
-'0201': L'Alcora
-'0301': Alcoi
-'0402': Alcover
-'0404': Bràfim
-'0413': El Pla de Santa Maria
-'0421': Valls
-'0511': Cadaqués
-'0514': Castelló d'Empúries
-'0518': L'Escala
-'0521': Figueres
-'0525': La Jonquera
-'0527': Llançà
-'0529': Salines-Bassegoda
-'0545': Roses
-'0558': Ventalló
-'0562': Vilafant
-'0563': Vilajuïga
-'0703': Castellet i la Gornal
-'0706': Gelida
-'0709': Olèrdola
-'0710': Olesa de Bonesvalls
-'0715': Sant Cugat Sesgarrigues
-'0717': Sant Martí Sarroca
-'0718': Sant Pere de Riudebitlles
-'0719': Sant Quintí de Mediona
-'0720': Sant Sadurní d'Anoia
-'0722': Santa Margarida i els Monjos
-'0723': Subirats
-'0725': Torrelles de Foix
-'0726': Vilafranca del Penedès
-'0812': Organyà
-'0816': La Seu d'Urgell
-'1003': Vilaller
-'1505': Alta Segarra
-'1507': Capellades
-'1508': Carme
-'1512': Els Hostalets de Pierola
-'1513': Igualada
-'1514': Jorba
-'1516': Masquefa
-'1518': Òdena
-'1520': Piera
-'1521': La Pobla de Claramunt
-'1525': Sant Martí de Tous
-'1528': Santa Margarida de Montbui
-'1531': Vallbona d'Anoia
-'1533': Vilanova del Camí
-'1602': Artés
-'1603': Avinyó
-'1604': Balsareny
-'1606': Callús
-'1607': Cardona
-'1608': Castellbell i el Vilar
-'1610': Castellgalí
-'1611': Castellnou de Bages
-'1613': Fonollosa
-'1615': Manresa
-'1619': Monistrol de Montserrat
-'1620': Mura
-'1621': Navarcles
-'1622': Navàs
-'1623': El Pont de Vilomara i Rocafort
-'1624': Rajadell
-'1625': Sallent
-'1626': Sant Feliu Sasserra
-'1627': Sant Fruitós de Bages
-'1628': Sant Joan de Vilatorrada
-'1629': Sant Mateu de Bages
-'1630': Sant Salvador de Guardiola
-'1631': Sant Vicenç de Castellet
-'1633': Santpedor
-'1634': Súria
-'1702': L'Aleixar
-'1703': Alforja
-'1704': Almoster
-'1707': Les Borges del Camp
-'1708': Botarell
-'1709': Cambrils
-'1711': Castellvell del Camp
-'1716': Mont-roig del Camp
-'1717': Montbrió del Camp
-'1720': Reus
-'1722': Riudecols
-'1723': Riudoms
-'1724': La Selva del Camp
-'1725': Vandellòs i l'Hospitalet de l'Infant
-'1728': Vinyols i els Arcs
-'1901': L'Aldea
-'1904': L'Ametlla de Mar
-'1905': L'Ampolla
-'1907': Camarles
-'1908': Deltebre
-'1910': El Perelló
-'1911': Roquetes
-'1913': Tortosa
-'1914': Xerta
-'1915': Campredó
-'2002': Begur
-'2004': La Bisbal d'Empordà
-'2005': Calonge i Sant Antoni
-'2006': Castell-Platja d'Aro i s'Agaró
-'2017': Palafrugell
-'2018': Palamós
-'2020': Pals
-'2025': Sant Feliu de Guíxols
-'2026': Santa Cristina d'Aro
-'2030': Torroella de Montgrí
+'6401': Abella de la Conca (local inactiva)
 '2101': Abrera
-'2102': Begues
-'2103': Castelldefels
-'2104': Castellví de Rosanes
-'2105': Cervelló
-'2106': Collbató
-'2107': Corbera de Llobregat
-'2108': Cornellà de Llobregat
-'2109': Esparreguera
-'2110': Esplugues de Llobregat
-'2111': Gavà
-'2112': Martorell
-'2113': Molins de Rei
-'2114': Olesa de Montserrat
-'2115': Pallejà
-'2116': La Palma de Cervelló
-'2117': El Papiol
-'2118': El Prat
-'2119': Sant Andreu de la Barca
-'2120': Sant Boi de Llobregat
-'2121': Sant Climent de Llobregat
-'2122': Sant Esteve Sesrovires
-'2123': Sant Feliu de Llobregat
-'2124': Sant Joan Despí
-'2125': Sant Just Desvern
-'2126': Sant Vicenç dels Horts
-'2127': Santa Coloma de Cervelló
-'2128': Torrelles de Llobregat
-'2129': Vallirana
-'2130': Viladecans
-'2131': L'Hospitalet
-'2202': Benicarló
-'2217': Vinaròs
-'2301': Albinyana
-'2302': L'Arboç
-'2305': La Bisbal del Penedès
-'2307': Calafell
-'2308': Cunit
-'2309': Llorenç del Penedès
-'2312': Sant Jaume dels Domenys
-'2313': Santa Oliva
-'2314': El Vendrell
-'2401': Crevillent
-'2402': Elx
-'2501': Badalona
-'2502': Sant Adrià de Besòs
-'2503': Santa Coloma de Gramenet
-'2601': BCN.Barcelona Vella
-'2701': BCN.Eixample
-'2801': BCN.Sants-Montjuïc
-'2901': BCN.Les Corts
-'3001': BCN.Sarrià-Sant Gervasi
-'3101': BCN.Gràcia
-'3201': BCN.Horta-Guinardó
-'3301': BCN.Nou Barris
-'3401': BCN.Sant Andreu
-'3501': BCN.Clot-Verneda
-'3502': BCN.Poblenou_Besòs
-'3602': Bagà
-'3603': Berga
-'3610': Cercs
-'3613': Gironella
-'3621': La Pobla de Lillet
-'3622': Puig-reig
-'3706': Benifairó de les Valls
-'3709': Faura
-'3714': Sagunt
-'3807': Llíria
-'3811': La Pobla de Vallbona
-'3812': Riba-roja de Túria
-'4101': Baga de Cerdanya
-'4102': Baridà-Batllia
-'4115': Puigcerdà
-'4304': L'Espluga de Francolí
-'4307': Montblanc
-'4601': Eivissa
-'4605': Sant Josep de sa Talaia
-'4801': Canyelles
-'4802': Cubelles
-'4803': Olivella
-'4804': Sant Pere de Ribes
-'4805': Sitges
-'4806': Vilanova i la Geltrú
-'4901': L'Albagès
-'4903': Arbeca
-'4905': Les Borges Blanques
-'4916': Juneda
-'5004': Castellfollit de la Roca
-'5008': Olot
-'5102': Bescanó
-'5103': Bordils
-'5106': Cassà de la Selva
-'5107': Celrà
-'5110': Fornells de la Selva
-'5111': Girona
-'5113': Llagostera
-'5114': Llambilles
-'5116': Quart
-'5117': Salt
-'5119': Sant Gregori
-'5122': Sant Julià de Ramis
-'5125': Sarrià de Ter
-'5126': Vilablareix
-'5204': Alboraia
-'5215': Catarroja
-'5226': Montcada de l'Horta
-'5242': València
+'7701': Ademuz
+'8001': Ador
+'6201': Àger
+'0101': Agost
+'8801': Agramunt
+'4201': Agres
+'1601': Aguilar de Segarra (local inactiva)
+'0501': Agullana (local inactiva)
+'9001': Agullents
+'9002': Aielo de Malferit
+'9003': Aielo de Rugat
+'9301': Aiguafreda
+'0401': Aiguamúrcia (local inactiva)
+'4401': Aiguatèbia i Talau
+'5101': Aiguaviva (local inactiva)
+'5901': Aiguaviva de Bergantes (local inactiva)
+'0102': Aigües
+'6901': Aín
+'8201': Aitona
+'0103': Alacant
+'6001': Alaior (local inactiva)
+'5201': Alaquàs
 '5501': Alaró
-'5510': Bunyola
-'5527': Llucmajor
-'5528': Manacor
-'5534': Palma
-'5537': Pollença
-'5545': Santa Maria del Camí
-'5546': Santanyí
+'0801': Alàs i Cerc (local inactiva)
+'9004': Albaida
+'5202': Albal
+'7501': Albalat de la Ribera
+'5203': Albalat dels Sorells
+'3701': Albalat dels Tarongers
+'0502': Albanyà (local inactiva)
+'8203': Albatàrrec
+'9601': Albatera
+'5401': Albelda (local inactiva)
+'0524': Albera Oriental (local inactiva)
+'7401': Alberic
+'6202': Albesa (local inactiva)
+'2301': Albinyana
+'0601': Albocàsser
+'2001': Albons (local inactiva)
+'5301': Alborache
+'5204': Alboraia
+'5205': Albuixec
+'2201': Alcalà de Xivert
+'5701': Alcalalí
+'6101': Alcanar
+'8204': Alcanó (local inactiva)
+'7402': Alcàntera de Xúquer
+'8205': Alcarràs
+'5206': Alcàsser
+'0301': Alcoi
+'4202': Alcoleja
+'8206': Alcoletge (local inactiva)
+'4203': Alcosser de Planes
+'0402': Alcover
+'5502': Alcúdia (local inactiva)
+'5207': Aldaia
+'1902': Aldover (local inactiva)
 '5601': Alella
+'7901': Alenyà
+'5208': Alfafar
+'4204': Alfafara
+'3702': Alfara d'Algimía
+'1903': Alfara de Carles (local inactiva)
+'5209': Alfara del Patriarca
+'7404': Alfarb
+'8207': Alfarràs
+'9005': Alfarrasí
+'8002': Alfauir
+'8208': Alfés (local inactiva)
+'6903': Alfondeguilla
+'1703': Alforja
+'5503': Algaida (local inactiva)
+'3703': Algar
+'7405': Algemesí
+'6203': Algerri (local inactiva)
+'3704': Algímia d'Alfara
+'1201': Algimia de Almonacid
+'7406': Alginet (local inactiva)
+'9602': Algorfa
+'8209': Alguaire
+'6501': Alins (local inactiva)
+'0403': Alió (local inactiva)
+'8210': Almacelles
+'5210': Almàssera
+'6801': Almassora (local inactiva)
+'8211': Almatret (local inactiva)
+'1202': Almedíjar
+'8212': Almenar
+'6904': Almenara
+'8003': Almiserà
+'8004': Almoines
+'9603': Almoradí
+'1704': Almoster
+'4205': Almudaina
+'7502': Almussafes
+'6204': Alòs de Balaguer (local inactiva)
+'6301': Alpens (local inactiva)
+'8213': Alpicat
+'8402': Alpuente
+'6502': Alt Àneu (local inactiva)
+'8601': Altafulla
+'5802': Altea
+'1203': Altura
+'7407': Alzira
+'8301': Amer
+'9901': Amèrica
+'6102': Amposta
+'4701': Ancinhàn
+'8403': Andilla
+'1401': Andorra la Vella(local inactiva)
+'5504': Andratx (local inactiva)
+'8302': Anglès (local inactiva)
+'8802': Anglesola
+'0901': Angostrina i Vilanova de les Escaldes
+'3901': Anna
+'7408': Antella
+'1101': Arañuel
+'8404': Aras de Alpuente
+'4903': Arbeca
+'4402': Arboçols
+'1705': Arbolí (local inactiva)
+'8303': Arbúcies
+'7301': Areny de Noguera (local inactiva)
+'5902': Arenys de Lledó (local inactiva)
 '5602': Arenys de Mar
 '5603': Arenys de Munt
+'0602': Ares del Maestrat
+'5001': Argelaguer (local inactiva)
+'7902': Argelers
+'1102': Argelita
+'1501': Argençola (local inactiva)
 '5604': Argentona
+'5505': Ariany (local inactiva)
+'9402': Arles
+'8701': Arnes
+'8901': Arres (local inactiva)
+'0802': Arsèguel (local inactiva)
+'5506': Artà (local inactiva)
+'6906': Artana
+'1602': Artés
+'8214': Artesa de Lleida (local inactiva)
+'6205': Artesa de Segre
+'7601': Ascó (local inactiva)
+'8215': Aspa (local inactiva)
+'9701': Aspe
+'9006': Atzeneta d'Albaida
+'0202': Atzeneta del Maestrat
+'3601': Avià (local inactiva)
+'1603': Avinyó
+'0504': Avinyonet de Puigventós (local inactiva)
+'5856': Avinyonet del Penedès (local inactiva)
+'1103': Ayódar
+'9101': Ayora
+'1204': Azuébar
+'2501': Badalona
+'9201': Badia del Vallès
+'5402': Baells (local inactiva)
+'3602': Bagà (Alt Berguedà)
+'4101': Baga de Cerdanya
+'7903': Bages de Rosselló
+'6503': Baix Pallars (local inactiva)
+'6223': Baix Sió
+'7904': Baixàs
+'6207': Balaguer
+'6309': Balenyà (local inactiva)
+'4207': Balones
+'1604': Balsareny
+'5507': Banyalbufar (local inactiva)
+'0302': Banyeres de Mariola
+'2303': Banyeres del Penedès (local inactiva)
+'6701': Banyoles
+'7905': Banyuls de la Marenda
+'7906': Banyuls dels Aspres
+'7907': Baó
+'6601': Barbens (local inactiva)
+'4301': Barberà de la Conca (local inactiva)
+'9202': Barberà del Vallès
+'4102': Baridà-Batllia
+'1205': Barracas
+'8007': Barx (local inactiva)
+'4502': Barxeta (local inactiva)
+'0505': Bàscara (local inactiva)
+'0803': Bassella (local inactiva)
+'8702': Batea (local inactiva)
+'8902': Bausen (local inactiva)
+'2601': BCN.Barcelona Vella
+'3501': BCN.Clot-Verneda
+'2701': BCN.Eixample
+'3101': BCN.Gràcia
+'3201': BCN.Horta-Guinardó
+'2901': BCN.Les Corts
+'3301': BCN.Nou Barris
+'3502': BCN.Poblenou_Besòs
+'3401': BCN.Sant Andreu
+'2801': BCN.Sants-Montjuïc
+'3001': BCN.Sarrià-Sant Gervasi
+'2102': Begues
+'2002': Begur
+'1206': Bejís
+'9007': Bèlgida
+'8803': Belianes (local inactiva)
+'6602': Bell-lloc d'Urgell
+'4904': Bellaguarda (local inactiva)
+'2003': Bellcaire d'Empordà (local inactiva)
+'6209': Bellcaire d'Urgell
+'4702': Bellestar de la Frontera
+'6210': Bellmunt d'Urgell (local inactiva)
+'5903': Bellmunt de Mesquí (local inactiva)
+'7201': Bellmunt del Priorat (local inactiva)
+'1502': Bellprat (local inactiva)
+'8804': Bellpuig
+'8008': Bellreguard
+'9008': Bellús
+'2304': Bellvei (local inactiva)
+'6603': Bellvís
+'1207': Benafer
+'8405': Benagéver
+'3801': Benaguasil (local inactiva)
+'4208': Benasau
+'7302': Benasc (local inactiva)
+'0603': Benassal
+'7303': Benavarri (local inactiva)
+'8216': Benavent de Segrià (local inactiva)
+'3705': Benavites
+'0203': Benblbafigos
+'0303': Beneixamab
+'7409': Beneixida
+'9604': Benejúzar
+'5211': Benetússer
+'9605': Benferri
+'5703': Beniarbeig
+'5803': Beniardà
+'8009': Beniarjó
+'4209': Beniarrés
+'9009': Beniatjar
+'2202': Benicarló
+'6802': Benicàssim
+'9010': Benicolet
+'5704': Benidoleig
+'5804': Benidorm (local inactiva)
+'7410': Benifaió
+'3706': Benifairó de les Valls
+'8010': Benifairó de Valldigna
+'1906': Benifallet (local inactiva)
+'0304': Benifallim
+'5805': Benifato
+'8011': Beniflà
+'9011': Benigànim
+'5705': Benigembla
+'9606': Benijófar
+'4210': Benilloba
+'4211': Benillup
+'5806': Benimantell
+'4212': Benimarfull
+'4213': Benimassot
+'5706': Benimeli
+'7411': Benimodo
+'7412': Benimuslem
+'5212': Beniparrell
+'8012': Benirredrà
+'5707': Benissa
+'7602': Benissanet
+'3802': Benissanó
+'9012': Benissoda
+'9013': Benissuera
+'5708': Benitatxell
+'6803': Benlloc
+'7304': Beranui (local inactiva)
+'3603': Berga
+'5002': Besalú (local inactiva)
+'5102': Bescanó
+'5904': Beseit (local inactiva)
+'3803': Bétera
+'6907': Betxí
+'5003': Beuda (local inactiva)
+'0305': Biar
+'3902': Bicorp
+'9607': Bigastro
+'9303': Bigues i Riells del Fai
+'5508': Binissalem (local inactiva)
+'8101': Biosca-Segarra (local inactiva)
+'6332': Bisaura (local inactiva)
+'7305': Bissaürri (local inactiva)
+'0506': Biure (local inactiva)
+'4302': Blancafort (local inactiva)
+'8304': Blanes
+'0507': Boadella d'Empordà (local inactiva)
+'9014': Bocairent
+'3903': Bolbaite
+'0902': Bolquera
+'5807': Bolulla
+'4103': Bolvir (local inactiva)
+'7910': Bompàs
+'7306': Bonansa (local inactiva)
+'2306': Bonastre (local inactiva)
+'5213': Bonrepòs i Mirambell
+'5103': Bordils (local inactiva)
+'0508': Borrassà (local inactiva)
+'3604': Borredà (local inactiva)
+'6908': Borriana
+'6804': Borriol
+'8904': Bossòst (local inactiva)
+'8703': Bot (local inactiva)
+'1708': Botarell
+'4906': Bovera (local inactiva)
+'0404': Bràfim
+'8305': Breda
+'7911': Brullà
+'8306': Brunyola i Sant Martí Sapresa (inactiva)
+'9015': Bufalí
+'8406': Bugarra
+'5509': Búger (local inactiva)
+'7912': Bula d'Amunt
+'7913': Bulaternera
+'5302': Buñol
+'5510': Bunyola
+'5214': Burjassot (local inactiva)
+'0104': Busot
+'7203': Cabacés (local inactiva)
+'6211': Cabanabona (local inactiva)
+'0509': Cabanelles (local inactiva)
+'0510': Cabanes (local inactiva)
+'6805': Cabanes de l'Arc
+'7914': Cabestany
+'0804': Cabó (local inactiva)
+'0405': Cabra del Camp (local inactiva)
+'1504': Cabrera d'Anoia (local inactiva)
 '5605': Cabrera de Mar
 '5606': Cabrils
-'5607': Caldes d'Estrac
-'5608': Calella
-'5609': Canet de Mar
-'5610': Dosrius
-'5611': Malgrat de Mar
-'5612': El Masnou
-'5613': Mataró
-'5614': Montgat
-'5615': Òrrius
-'5616': Palafolls
-'5617': Pineda de Mar
-'5618': Premià de Dalt
-'5619': Premià de Mar
-'5620': Sant Andreu de Llavaneres
-'5621': Sant Cebrià de Vallalta
-'5622': Sant Iscle de Vallalta
-'5623': Sant Pol de Mar
-'5624': Sant Vicenç de Montalt
-'5625': Santa Susanna
-'5626': Teià
-'5627': Tiana
-'5628': Tordera
-'5629': Vilassar de Dalt
-'5630': Vilassar de Mar
-'5711': Dénia
-'5732': Xàbia
-'6005': Maó
-'6101': Alcanar
-'6102': Amposta
-'6104': La Galera
-'6105': Godall
-'6106': Mas de Barberans
-'6108': La Ràpita
-'6109': Sant Jaume d'Enveja
-'6110': Santa Bàrbara
-'6111': La Sénia
-'6112': Ulldecona
-'6201': Àger
-'6205': Artesa de Segre
-'6207': Balaguer
-'6209': Bellcaire d'Urgell
-'6213': Castelló de Farfanya
-'6222': Ponts
-'6223': Baix Sió
-'6225': Térmens
-'6227': Torrelameu
-'6303': Calldetenes
-'6304': Centelles
-'6306': Espinelves - Viladrau
-'6307': Folgueroles
-'6308': Gurb
-'6309': Balenyà
-'6312': Manlleu
-'6314': El Voltreganès
-'6316': Muntanyola
-'6317': Olost
-'6321': Prats de Lluçanès
-'6322': Roda de Ter i el Cabrerès
-'6328': Sant Julià de Vilatorta
-'6331': Sant Pere de Torelló
-'6332': Bisaura
-'6334': Sant Vicenç de Torelló
-'6336': Santa Eugènia de Berga
-'6337': Santa Eulàlia de Riuprimer
-'6343': Taradell
-'6346': Tona
-'6347': Torelló
-'6348': Vic
-'6405': Isona i Conca Dellà
-'6407': La Pobla de Segur
-'6414': Tremp
-'6505': Valls d'Àneu
-'6513': Sort
-'6602': Bell-lloc d'Urgell
-'6603': Bellvís
-'6606': Golmés
-'6607': Ivars d'Urgell
-'6608': Linyola
-'6610': Mollerussa
-'6611': El Palau d'Anglesola
-'6701': Banyoles
-'6806': Castelló
-'7205': Cornudella de Montsant
-'7206': Falset
-'7405': Algemesí
-'7407': Alzira
-'7415': Carlet
-'7511': Sueca
-'7602': Benissanet
-'7603': Flix
-'7606': Miravet
-'7607': Móra d'Ebre
-'7608': Móra la Nova
-'7612': Tivissa
-'7801': Campdevànol
-'7803': Vall de Camprodon
-'7812': Vall de Ribes
-'7813': Ripoll
-'7814': Sant Joan de les Abadesses
-'7949': Perpinyà
-'8016': Gandia
-'8027': Simat de la Valldigna
-'8028': Tavernes de la Valldigna
-'8102': Cervera
-'8106': Guissona
-'8201': Aitona
-'8203': Albatàrrec
-'8205': Alcarràs
-'8206': Alcoletge
-'8207': Alfarràs
-'8209': Alguaire
-'8210': Almacelles
-'8212': Almenar
-'8213': Alpicat
-'8221': Lleida
-'8227': Rosselló
-'8229': Seròs
-'8235': Torrefarrera
-'8237': Vilanova de la Barca
-'8301': Amer
-'8303': Arbúcies
-'8304': Blanes
-'8305': Breda
+'0511': Cadaqués
+'5905': Calaceit (local inactiva)
+'1505': Calaf (Alta Segarra)
+'2307': Calafell
+'7915': Calce
+'1605': Calders (local inactiva)
+'5607': Caldes d'Estrac (local inactiva)
 '8307': Caldes de Malavella
-'8310': Hostalric
-'8311': Lloret de Mar
-'8312': Maçanet de la Selva
-'8315': Riells i Viabrea
-'8317': Riudellots de la Selva
-'8319': Sant Hilari Sacalm
-'8321': Santa Coloma de Farners
-'8322': Sils
-'8324': Tossa de Mar
-'8325': Vidreres
-'8515': Solsona
-'8601': Altafulla
-'8602': El Catllar
-'8603': Constantí
-'8604': Creixell
-'8605': El Morell
-'8607': Els Pallaresos
-'8608': Perafort i Puigdelfí
-'8610': La Pobla de Montornès
-'8613': Roda de Berà
-'8615': Salou
-'8616': La Secuita
-'8617': Tarragona
-'8618': Torredembarra
-'8620': Vila-seca
-'8621': Vilallonga del Camp
-'8622': La Canonja
-'8701': Arnes
-'8706': La Fatarella
-'8707': Gandesa
-'8801': Agramunt
-'8802': Anglesola
-'8804': Bellpuig
-'8806': La Vall del Corb
-'8816': Tàrrega
-'8819': Verdú
-'8908': Vielha e Mijaran
-'9201': Badia del Vallès
-'9202': Barberà del Vallès
-'9203': Castellar del Vallès
-'9204': Castellbisbal
-'9205': Cerdanyola
-'9207': Matadepera
-'9208': Montcada i Reixac
-'9209': Palau-Solità i Plegamans
-'9210': Polinyà
-'9211': Rellinars
-'9212': Ripollet
-'9213': Rubí
-'9214': Sabadell
-'9215': Sant Cugat del Vallès
-'9216': Sant Llorenç Savall
-'9217': Sant Quirze del Vallès
-'9218': Santa Perpètua de Mogoda
-'9219': Sentmenat
-'9220': Terrassa
-'9221': Ullastrell
-'9222': Vacarisses
-'9223': Viladecavalls
-'9301': Aiguafreda
-'9302': L'Ametlla del Vallès
-'9303': Bigues i Riells
 '9304': Caldes de Montbui
+'5608': Calella
+'2203': Càlig
+'6303': Calldetenes
+'8407': Calles
+'5808': Callosa d'en Sarrià
+'9608': Callosa de Segura
+'1606': Callús
+'7916': Calmella
+'1506': Calonge de Segarra (local inactiva)
+'2005': Calonge i Sant Antoni
+'5709': Calp
+'5511': Calvià (local inactiva)
+'6212': Camarasa (local inactiva)
+'1907': Camarles
+'1709': Cambrils
+'7917': Cameles
+'6702': Camós (local inactiva)
+'5512': Campanet (local inactiva)
+'7801': Campdevànol
+'7802': Campelles (local inactiva)
+'9305': Campins (local inactiva)
+'5104': Campllong (local inactiva)
+'4403': Campome
+'5404': Camporrells (local inactiva)
+'5513': Campos (local inactiva)
+'4703': Campossí
+'1915': Campredó
+'4503': Canals
+'4404': Canavelles
+'8905': Canejan (local inactiva)
+'5105': Canet d'Adri (local inactiva)
+'3707': Canet d'en Berenguer
+'5609': Canet de Mar
+'7918': Canet de Rosselló
+'2204': Canet lo Roig
+'1402': Canillo (local inactiva)
+'7919': Cànoes
 '9306': Canovelles
 '9307': Cànoves i Samalús
+'0513': Cantallops (local inactiva)
+'4801': Canyelles
+'1710': Capafonts (local inactiva)
+'7204': Capçanes (local inactiva)
+'5514': Capdepera (local inactiva)
+'1507': Capellades
+'0512': Capmany (local inactiva)
+'3605': Capolat (local inactiva)
+'4704': Caramany
+'7413': Carcaixent (local inactiva)
+'7414': Càrcer
 '9308': Cardedeu
-'9312': Les Franqueses del Vallès
-'9313': La Garriga
+'1607': Cardona
+'7415': Carlet
+'1508': Carme
+'9016': Carrícola
+'7920': Casafabre
+'7702': Casas Altas
+'7703': Casas Bajas
+'8704': Caseres (local inactiva)
+'3804': Casinos
+'5106': Cassà de la Selva
+'4705': Cassanyes
+'3606': Casserres (local inactiva)
+'7704': Castelfabib
+'2205': Castell de Cabres
+'5710': Castell de Castells
+'3607': Castell de l'Areny (local inactiva)
+'6402': Castell de Mur (local inactiva)
+'4405': Castell de Vernet
+'2006': Castell-Platja d'Aro i s'Agaró
+'8501': Castellar de la Ribera (local inactiva)
+'3608': Castellar de N'Hug (local inactiva)
+'3609': Castellar del Riu (local inactiva)
+'9203': Castellar del Vallès
+'1608': Castellbell i el Vilar
+'9204': Castellbisbal
+'9309': Castellcir (local inactiva)
+'4907': Castelldans (local inactiva)
+'2103': Castelldefels
+'0703': Castellet i la Gornal
+'5004': Castellfollit de la Roca
+'1509': Castellfollit de Riubregós (local inactiva)
+'1609': Castellfollit del Boix (local inactiva)
+'7101': Castellfort
+'1610': Castellgalí
+'1611': Castellnou de Bages
+'6604': Castellnou de Seana (local inactiva)
+'7922': Castellnou dels Aspres
+'1208': Castellnovo
+'6806': Castelló
+'0514': Castelló d'Empúries
+'6213': Castelló de Farfanya
+'7416': Castelló de la Ribera (local inactiva)
+'9017': Castelló de Rugat
+'1510': Castellolí (local inactiva)
+'8013': Castellonet de la Conquesta
+'5405': Castellonroi (local inactiva)
+'8805': Castellserà (local inactiva)
+'9804': Castellterçol
+'1711': Castellvell del Camp
+'0704': Castellví de la Marca (local inactiva)
+'2104': Castellví de Rosanes
+'7307': Castigaleu (local inactiva)
+'7308': Castilló de Sos (local inactiva)
+'7417': Catadau
+'5215': Catarroja
+'0604': Catí
+'4406': Catllà de Conflent
+'9609': Catral
+'4407': Cauders de Conflent
+'1209': Caudiel
+'4706': Caudiers de Fenolhet
+'0805': Cava (local inactiva)
+'5107': Celrà
+'4408': Censà
+'6304': Centelles
+'4707': Centernac
+'3610': Cercs (local inactiva)
+'4504': Cerdà
+'9205': Cerdanyola
+'9404': Ceret
+'2105': Cervelló
+'8102': Cervera
+'7923': Cervera de la Marenda
+'2206': Cervera del Maestrat
+'4908': Cervià de les Garrigues (local inactiva)
+'5108': Cervià de Ter (local inactiva)
+'3904': Chella
+'8408': Chelva
+'8409': Chera
+'5303': Cheste
+'5304': Chiva
+'1210': Chóvar
+'8410': Chulilla
+'7102': Cinctorres
+'1105': Cirat
+'0515': Cistella (local inactiva)
+'6003': Ciutadella (local inactiva)
+'7924': Clairà
+'8502': Clariana de Cardener (local inactiva)
+'4409': Clerà
+'0204': Coblleidastur
+'4214': Cocentaina
+'4410': Codalet
+'9102': Cofrentes
+'0516': Colera (local inactiva)
+'0806': Coll de Nargó (local inactiva)
+'2106': Collbató
+'1712': Colldejou (local inactiva)
+'6305': Collsuspina (local inactiva)
+'2007': Colomers (local inactiva)
+'4411': Conat
+'6403': Conca de Dalt (local inactiva)
+'4303': Conesa (local inactiva)
+'5809': Confrides
+'5515': Consell (local inactiva)
+'8603': Constantí
+'1511': Copons (local inactiva)
+'8705': Corbera d'Ebre (local inactiva)
+'7503': Corbera de la Ribera
+'7925': Corbera de les Cabanes
+'2107': Corbera de Llobregat
+'7926': Corbera del Castell
+'8217': Corbins (local inactiva)
+'2008': Corçà (local inactiva)
+'4412': Cornellà de Conflent
+'7927': Cornellà de la Ribera
+'2108': Cornellà de Llobregat
+'7928': Cornellà del Bèrcol
+'6703': Cornellà del Terri (local inactiva)
+'7205': Cornudella de Montsant
+'1106': Cortes de Arenoso
+'9103': Cortes de Pallás
+'9406': Cortsaví
+'5516': Costitx (local inactiva)
+'9407': Costoja
+'7418': Cotes
+'7929': Cotlliure
+'9610': Cox
+'8604': Creixell
+'6704': Crespià (local inactiva)
+'5908': Cretes (local inactiva)
+'2401': Crevillent
+'4802': Cubelles
+'6214': Cubells (local inactiva)
+'0605': Culla
+'7504': Cullera (local inactiva)
+'2308': Cunit
+'8014': Daimús
+'0517': Darnius (local inactiva)
+'4104': Das (local inactiva)
+'9611': Daya Nueva
+'9612': Daya Vieja
+'5517': Deià (local inactiva)
+'1908': Deltebre
+'5711': Dénia
+'9613': Dolores
+'8411': Domeño
+'0904': Dorres
+'5305': Dos Aguas
+'5610': Dosrius
+'1713': Duesaigües (local inactiva)
+'0905': Èguet
+'0906': Eina
+'4601': Eivissa
+'7908': El Barcarès
+'1503': El Bruc (local inactiva)
+'6302': El Brull (local inactiva)
+'0306': El Camp de Mirra (local inactiva)
+'5403': El Campell (local inactiva)
+'0105': El Campello
+'1104': El Castillo de Vilamalefa
+'8602': El Catllar
+'4909': El Cogul (local inactiva)
+'0520': El Far d'Empordà (local inactiva)
+'9502': El Fondó de les Neus
+'9503': El Fondó dels Frares
+'4507': El Genovés
+'7210': El Lloar (local inactiva)
+'5612': El Masnou
+'7213': El Masroig (local inactiva)
+'0409': El Milà (local inactiva)
+'7214': El Molar (local inactiva)
+'2311': El Montmell (local inactiva)
+'8605': El Morell
+'6611': El Palau d'Anglesola
+'9026': El Palomar
+'2117': El Papiol
+'1910': El Perelló
+'9412': El Pertús
+'8709': El Pinell de Brai (local inactiva)
+'9507': El Pinós
+'0413': El Pla de Santa Maria (local inactiva)
+'0712': El Pla del Penedès (local inactiva)
+'6612': El Poal (local inactiva)
+'0414': El Pont d'Armentera (local inactiva)
+'0814': El Pont de Bar (local inactiva)
+'7318': El Pont de Montanyana (local inactiva)
+'1002': El Pont de Suert (local inactiva)
+'1623': El Pont de Vilomara i Rocafort
+'0541': El Port de la Selva (local inactiva)
+'2118': El Prat
+'5234': El Puig
+'5721': El Ràfol d'Almúnia
+'9030': El Ràfol de Salem
+'8025': El Real de Gandia
+'0419': El Rourell (local inactiva)
+'7975': El Soler
+'4920': El Soleràs (local inactiva)
+'9418': El Tec
+'1225': El Toro
+'5410': El Torricó (local inactiva)
+'2314': El Vendrell
+'5731': El Verger
+'8420': El Villar del Arzobispo
+'4923': El Vilosell (local inactiva)
+'7996': El Voló
+'1301': Elda
+'7930': Elna (local inactiva)
+'8202': Els Alamús (local inactiva)
+'4001': Els Angles
+'9403': Els Banys d'Arles
+'0407': Els Garidells (local inactiva)
+'7209': Els Guiamets (local inactiva)
+'1512': Els Hostalets de Pierola
+'4425': Els Masos
+'4917': Els Omellons (local inactiva)
+'8811': Els Omells de Na Gaià (local inactiva)
+'8607': Els Pallaresos
+'8112': Els Plans de Sió (local inactiva)
+'5720': Els Poblets de la Marina
+'1522': Els Prats de Rei (local inactiva)
+'4922': Els Torms (local inactiva)
+'2402': Elx
+'5216': Emperador
+'1403': Encamp (local inactiva)
+'3905': Énguera
+'0907': Enveig
+'0908': Er
+'8903': Es Bòrdes (local inactiva)
+'6002': Es Castell (local inactiva)
+'6006': Es Mercadal (local inactiva)
+'6007': Es Migjorn Gran (local inactiva)
+'4413': Escaró
+'5518': Escorca (local inactiva)
+'6909': Eslida
+'1107': Espadilla
+'2109': Esparreguera
+'6306': Espinelves - Viladrau
+'4414': Espirà de Conflent
+'7931': Espirà de l'Aglí
+'2110': Esplugues de Llobregat
+'0519': Espolla (local inactiva)
+'6705': Esponellà (local inactiva)
+'5519': Esporles (local inactiva)
+'6504': Espot (local inactiva)
+'7932': Estagell
+'5520': Estallencs (local inactiva)
+'0807': Estamariu (local inactiva)
+'8103': Estaràs (local inactiva)
+'0909': Estavar
+'6506': Esterri de Cardós (local inactiva)
+'3708': Estivella
+'4415': Estoer
+'7309': Estopanyà (local inactiva)
+'4505': Estubeny
+'9902': Europa
+'4416': Eus
+'4215': Fageca
+'5909': Faió (local inactiva)
+'7206': Falset
+'4216': Famorca
+'1108': Fanzara
+'6507': Farrera (local inactiva)
+'3709': Faura
+'7505': Favara
+'5910': Favara de Matarranya (local inactiva)
+'5521': Felanitx (local inactiva)
+'4709': Felhuns
+'4710': Fenolhet
+'6004': Ferreries (local inactiva)
+'9323': Figaró-Montmany (local inactiva)
+'3612': Fígols (local inactiva)
+'0808': Fígols i Alinyà (local inactiva)
+'0521': Figueres
+'0406': Figuerola del Camp (local inactiva)
+'0205': Figueroles
+'4417': Fillols
+'5810': Finestrat
+'4418': Finestret
+'5109': Flaçà (local inactiva)
+'7603': Flix
+'8309': Fogars de la Selva (local inactiva)
+'9311': Fogars de Montclús (local inactiva)
+'5217': Foios
+'2010': Foixà (local inactiva)
+'6307': Folgueroles
+'6605': Fondarella (local inactiva)
+'5911': Fondespatla (local inactiva)
+'1613': Fonollosa
+'4002': Font-rabiosa
+'0910': Font-romeu
+'0705': Font-rubí (local inactiva)
+'4105': Fontanals de Cerdanya (local inactiva)
+'9018': Fontanars dels Alforins
+'2011': Fontanilles (local inactiva)
+'6706': Fontcoberta (local inactiva)
+'4419': Fontpedrosa
+'6215': Foradada (local inactiva)
+'2012': Forallac (local inactiva)
+'7103': Forcall
+'4305': Forès (local inactiva)
+'4602': Formentera (local inactiva)
+'9614': Formentera de Segura
+'4003': Formiguera
+'5522': Fornalutx (local inactiva)
+'5110': Fornells de la Selva
+'5912': Fórnols de Matarranya (local inactiva)
+'7933': Forques
+'7506': Fortaleny
+'0522': Fortià (local inactiva)
+'4711': Fossa
+'1801': Fraga (local inactiva)
+'6103': Freginals (local inactiva)
+'1110': Fuentes de Ayódar
+'4420': Fullà
+'4912': Fulleda (local inactiva)
+'1614': Gaià (local inactiva)
+'4217': Gaianes
+'1211': Gaibiel
+'9206': Gallifa (local inactiva)
+'8707': Gandesa
+'8016': Gandia
+'7604': Garcia (local inactiva)
+'0523': Garrigàs (local inactiva)
+'2013': Garrigoles (local inactiva)
+'5712': Gata de Gorgos
+'3806': Gátova
+'2111': Gavà
+'7420': Gavarda
+'6404': Gavet de la Conca (local inactiva)
+'1212': Geldo
+'0706': Gelida
+'8412': Gestalgar
+'7310': Gia (local inactiva)
+'3710': Gilet
+'8218': Gimenells i el Pla de la Font (l. inactiva)
+'7605': Ginestar (local inactiva)
+'5111': Girona
+'3613': Gironella (local inactiva)
+'3614': Gisclareny (local inactiva)
+'4421': Glorianes
+'6105': Godall
+'5218': Godella
+'5306': Godelleta
+'6606': Golmés
+'7804': Gombrèn (local inactiva)
+'4218': Gorga
+'3615': Gósol (local inactiva)
+'9314': Granera (local inactiva)
 '9315': Granollers
+'8104': Granyanella (local inactiva)
+'4914': Granyena de les Garrigues (local inactiva)
+'8105': Granyena de Segarra (local inactiva)
+'7208': Gratallops (local inactiva)
+'5811': Guadalest
+'9019': Guadasséquies
+'7421': Guadassuar
 '9316': Gualba
+'2014': Gualta (local inactiva)
+'2403': Guardamar
+'3616': Guardiola de Berguedà (local inactiva)
+'7311': Güel (local inactiva)
+'4107': Guils de Cerdanya (local inactiva)
+'8808': Guimerà (local inactiva)
+'8106': Guissona
+'8504': Guixers (local inactiva)
+'6308': Gurb
+'7104': Herbés
+'1213': Higueras
+'8413': Higueruelas
+'8708': Horta de Sant Joan (local inactiva)
+'8310': Hostalric
+'0309': Ibi
+'1513': Igualada
+'7934': Illa
+'5523': Inca (local inactiva)
+'6405': Isona i Conca Dellà
+'4108': Isòvol (local inactiva)
+'6607': Ivars d'Urgell
+'6216': Ivars de Noguera (local inactiva)
+'8107': Ivorra (local inactiva)
+'9616': Jacarilla
+'2015': Jafre (local inactiva)
+'9104': Jalance
+'9105': Jarafuel
+'1214': Jérica
+'4422': Jóc
+'1514': Jorba
+'0809': Josa i Tuixén (local inactiva)
+'5112': Juià (local inactiva)
+'4423': Jújols
+'4915': Juncosa (local inactiva)
+'4916': Juneda
+'4901': L'Albagès (local inactiva)
+'9401': L'Albera
+'4902': L'Albi (local inactiva)
+'1701': L'Albiol (local inactiva)
+'0201': L'Alcora
+'7403': L'Alcúdia de Carlet
+'4501': L'Alcúdia de Crespins
+'6902': L'Alcúdia de Veo
+'1901': L'Aldea
+'1702': L'Aleixar (local inactiva)
+'5801': L'Alfàs del Pi
+'9501': L'Alguenya
+'4206': L'Alqueria d'Asnar
+'8005': L'Alqueria de la Comtessa
+'8006': L'Alquerieta de Guardamar
+'1904': L'Ametlla de Mar
+'9302': L'Ametlla del Vallès
+'1905': L'Ampolla (local inactiva)
+'2302': L'Arboç
+'1706': L'Argentera (local inactiva)
+'0503': L'Armentera (local inactiva)
+'5702': L'Atzúvia
+'3805': L'Eliana
+'7419': L'Énova
+'0518': L'Escala
+'4910': L'Espluga Calba (local inactiva)
+'4304': L'Espluga de Francolí
+'3611': L'Espunyola (local inactiva)
+'4708': L'Esquerda
+'6339': L'Esquirol (local inactiva)
+'9802': L'Estany
+'2131': L'Hospitalet
+'9023': L'Olleria
+'4221': L'Orxa
+'6208': La Baronia de Rialb (local inactiva)
+'7909': La Bastida
+'2004': La Bisbal d'Empordà
+'7202': La Bisbal de Falset (local inactiva)
+'2305': La Bisbal del Penedès
+'0903': La Cabanassa
+'8622': La Canonja
+'5906': La Canyada de Beric (local inactiva)
+'0307': La Canyada de Biar
+'8308': La Cellera de Ter (local inactiva)
+'5907': La Codonyera (local inactiva)
+'8503': La Coma i la Pedra (local inactiva)
+'8706': La Fatarella
+'1714': La Febró (local inactiva)
+'7207': La Figuera (local inactiva)
+'4911': La Floresta (local inactiva)
+'0308': La Foia de Castalla (local inactiva)
+'8015': La Font d'en Carròs
+'4506': La Font de la Figuera
+'5913': La Freixneda (local inactiva)
+'1109': La Fuente la Reina
+'8807': La Fuliola (local inactiva)
+'6104': La Galera
+'9313': La Garriga
+'5914': La Ginebrosa (local inactiva)
+'0707': La Granada (local inactiva)
+'4913': La Granadella (local inactiva)
+'8219': La Granja d'Escarp (local inactiva)
+'4508': La Granja de la Costera
+'9615': La Granja de Rocamora
+'6508': La Guingueta d'Àneu (local inactiva)
+'0911': La Guingueta d'Ix
+'2207': La Jana
+'0525': La Jonquera
+'1515': La Llacuna (local inactiva)
 '9317': La Llagosta
+'4004': La Llaguna
+'6910': La Llosa
+'4511': La Llosa de Ranes
+'8415': La Losa del Obispo
+'0408': La Masó (local inactiva)
+'1405': La Massana (local inactiva)
+'7105': La Mata
+'9408': La Menera
+'8507': La Molsosa (local inactiva)
+'7215': La Morera de Montsant (local inactiva)
+'3619': La Nou de Berguedà (local inactiva)
+'8606': La Nou de Gaià (local inactiva)
+'5812': La Nucia
+'7609': La Palma d'Ebre (local inactiva)
+'2116': La Palma de Cervelló
+'2022': La Pera (local inactiva)
+'2209': La Pobla de Benifassà
+'4918': La Pobla de Cérvoles (local inactiva)
+'1521': La Pobla de Claramunt
+'5232': La Pobla de Farnals
+'3621': La Pobla de Lillet (local inactiva)
+'8609': La Pobla de Mafumet (local inactiva)
+'8710': La Pobla de Massaluca (local inactiva)
+'8610': La Pobla de Montornès
+'7317': La Pobla de Roda (local inactiva)
+'6407': La Pobla de Segur
+'3811': La Pobla de Vallbona
+'9028': La Pobla del Duc
+'7427': La Pobla Llarga
+'6809': La Pobla Tornesa
+'8225': La Portella (local inactiva)
+'5921': La Portellada (local inactiva)
+'1114': La Puebla de Arenoso
+'3623': La Quar (local inactiva)
+'6108': La Ràpita
+'0417': La Riba (local inactiva)
+'8612': La Riera de Gaià (local inactiva)
+'7958': La Roca d'Albera
+'9328': La Roca del Vallès
+'9508': La Romana
+'2211': La Salzadella
+'0606': La Sarratella
+'8616': La Secuita
+'0553': La Selva de Mar (local inactiva)
+'1724': La Selva del Camp
+'6111': La Sénia
+'6224': La Sentiu de Sió (local inactiva)
+'6811': La Serra d'en Galceran
+'0816': La Seu d'Urgell
+'5923': La Sorollera (local inactiva)
+'2028': La Tallada d'Empordà (local inactiva)
+'7111': La Todolella
+'0924': La Tor de Querol
+'7984': La Torre d'Elna
+'0608': La Torre d'En Besora
+'6413': La Torre de Cabdella (local inactiva)
+'1530': La Torre de Claramunt (local inactiva)
+'7219': La Torre de Fontaubella (local inactiva)
+'4724': La Torre de França
+'7613': La Torre de l'Espanyol (local inactiva)
+'0109': La Torre de lbes Maçanes
+'5924': La Torre de Vilella (local inactiva)
+'5925': La Torre del Comte (local inactiva)
+'6812': La Torre dels Domenges
+'0557': La Vajol (local inactiva)
+'6814': La Vall d'Alba
+'5727': La Vall d'Alcalà
+'5728': La Vall d'Ebo
+'5020': La Vall d'en Bas (local inactiva)
+'6917': La Vall d'Uixó (local inactiva)
+'1226': La Vall de Almonacid
+'5021': La Vall de Bianya (local inactiva)
+'1001': La Vall de Boí (local inactiva)
+'5729': La Vall de Gallinera
+'5730': La Vall de Laguar (local inactiva)
+'7325': La Vall de Lierp (local inactiva)
+'8806': La Vall del Corb
+'5927': La Vall del Tormo (local inactiva)
+'0819': La Vansa i Fórnols (local inactiva)
+'5818': La Vila Joiosa
+'6919': La Vilavella
+'7222': La Vilella Alta (local inactiva)
+'7223': La Vilella Baixa (local inactiva)
+'8421': La Yesa
+'4712': Lansac
+'7312': Lasquarri (local inactiva)
+'8906': Les (local inactiva)
+'8401': Les Alcublas
+'6905': Les Alqueries
+'6206': Les Avellanes i Santa Linya (local inactiva)
+'4905': Les Borges Blanques
+'1707': Les Borges del Camp
+'0702': Les Cabanyes (local inactiva)
+'7921': Les Cases de Pena
+'9405': Les Cluses
+'6807': Les Coves de Vinromà
+'1404': Les Escaldes i Engordany (local inactiva)
+'9312': Les Franqueses del Vallès
+'7806': Les Llosses (local inactiva)
+'6313': Les Masies de Roda (local inactiva)
+'6314': Les Masies de Voltregà (El Voltreganès)
+'8111': Les Oluges (local inactiva)
+'7316': Les Paüls (local inactiva)
+'4309': Les Piles (local inactiva)
+'5009': Les Planes d'Hostoles (local inactiva)
+'5010': Les Preses (local inactiva)
+'0817': Les Valls d'Aguilar (local inactiva)
+'0818': Les Valls de Valira (local inactiva)
+'6608': Linyola
+'0526': Lladó (local inactiva)
+'6509': Lladorre (local inactiva)
+'8505': Lladurs (local inactiva)
+'5113': Llagostera
+'5114': Llambilles
+'7805': Llanars (local inactiva)
+'0527': Llançà
+'4509': Llanera de Ranes
+'7313': Llanguarres (local inactiva)
+'8220': Llardecans (local inactiva)
+'7507': Llaurí
+'7935': Llauró
+'6510': Llavorsí (local inactiva)
+'5915': Lledó d'Algars (local inactiva)
+'8221': Lleida
+'0528': Llers (local inactiva)
+'4109': Lles de Cerdanya (local inactiva)
+'5713': Llíber
 '9318': Lliçà d'Amunt
 '9319': Lliçà de Vall
+'6406': Llimiana (local inactiva)
 '9320': Llinars del Vallès
+'3807': Llíria
+'4110': Llívia(local inactiva)
+'0912': Lló
+'8506': Llobera (local inactiva)
+'4510': Llocnou d'en Fenollet
+'5219': Llocnou de la Corona
+'8017': Llocnou de Sant Jeroni
+'7422': Llombai
+'4306': Llorac (local inactiva)
+'2309': Llorenç del Penedès
+'8311': Lloret de Mar
+'5524': Lloret de Vistalegre (local inactiva)
+'5525': Lloseta (local inactiva)
+'5526': Llubí (local inactiva)
+'6310': Lluçanès (local inactiva)
+'0206': Llucena
+'5527': Llucmajor
+'7936': Llupià
+'9020': Llutxent
+'4728': Lo Viviér
+'8414': Loriguilla
+'9617': Los Montesinos
+'1111': Ludiente
+'8312': Maçanet de la Selva
+'5307': Macastre
+'5115': Madremanya (local inactiva)
+'5916': Maella (local inactiva)
+'5005': Maià de Montcal (local inactiva)
+'8222': Maials (local inactiva)
+'8809': Maldà (local inactiva)
+'5611': Malgrat de Mar
+'6311': Malla (local inactiva)
+'5528': Manacor
+'5529': Mancor de la Vall (local inactiva)
+'5220': Manises
+'6312': Manlleu
+'1615': Manresa
+'7423': Manuel
+'6005': Maó
+'7211': Marçà (local inactiva)
+'7212': Margalef (local inactiva)
+'1616': Marganell (local inactiva)
+'5530': Maria de la Salut (local inactiva)
+'3808': Marines
+'4424': Marquixanes
+'5531': Marratxí (local inactiva)
+'2112': Martorell
 '9321': Martorelles
-'9322': Mollet del Vallès
-'9324': Montmeló
-'9325': Montornés del Vallès
-'9326': Montseny
-'9327': Parets del Vallès
-'9328': La Roca del Vallès
-'9329': Sant Antoni de Vilamajor
-'9330': Sant Celoni
-'9331': Sant Esteve de Palautordera
-'9332': Sant Feliu de Codines
-'9333': Sant Fost de Campsentelles
-'9334': Sant Pere de Vilamajor
-'9336': Santa Eulàlia de Ronçana
-'9337': Santa Maria de Martorelles
-'9338': Santa Maria de Palautordera
-'9339': Tagamanent
-'9340': Vallgorguina
-'9341': Vallromanes
-'9343': Vilanova del Vallès
+'6106': Mas de Barberans
+'0530': Masarac (local inactiva)
+'6107': Masdenverge (local inactiva)
+'2310': Masllorenç (local inactiva)
+'1715': Maspujols (local inactiva)
+'1516': Masquefa
+'7424': Massalavés
+'8223': Massalcoreig (local inactiva)
+'5221': Massalfassar
+'5917': Massalió (local inactiva)
+'5222': Massamagrell
+'5223': Massanassa
+'8313': Massanes (local inactiva)
+'8108': Massoteres (local inactiva)
+'9207': Matadepera
+'4005': Matamala
+'5613': Mataró
+'1215': Matet
+'4713': Maurí
+'0708': Mediona (local inactiva)
+'5224': Meliana
+'6217': Menàrguens (local inactiva)
+'4426': Mentet
+'1802': Mequinensa (local inactiva)
+'4111': Meranges (local inactiva)
+'5006': Mieres (local inactiva)
+'3906': Millares
+'7937': Millars
+'4219': Millena
+'6609': Miralcamp (local inactiva)
+'8018': Miramar
+'7606': Miravet
+'5225': Mislata
 '9801': Moià
-'9802': L'Estany
-'9803': Santa Maria d'Oló
-'9804': Castellterçol
-'9901': Amèrica
-'9902': Europa
+'4512': Moixent
+'4427': Molig
+'2113': Molins de Rei
+'6610': Mollerussa
+'0531': Mollet de Peralada (local inactiva)
+'9322': Mollet del Vallès
+'7807': Molló (local inactiva)
+'6911': Moncofa
+'7314': Monesma i Queixigar (local inactiva)
+'9702': Monforte del Cid
+'1618': Monistrol de Calders (local inactiva)
+'1619': Monistrol de Montserrat
+'9504': Monòver
+'0410': Mont-ral (local inactiva)
+'2016': Mont-ras (local inactiva)
+'5918': Mont-roig de Tastavins (local inactiva)
+'1716': Mont-roig del Camp
+'5007': Montagut (local inactiva)
+'4714': Montalbà del Castell
+'1112': Montán
+'1113': Montanejos
+'7315': Montanui (local inactiva)
+'9021': Montaverner
+'4307': Montblanc
+'9409': Montboló
+'1717': Montbrió del Camp
+'5226': Montcada de l'Horta
+'9208': Montcada i Reixac
+'3617': Montclar (local inactiva)
+'4112': Montellà i Martinet (local inactiva)
+'4513': Montesa
+'7938': Montescot
+'6315': Montesquiu (local inactiva)
+'7939': Montesquiu d'Albera
+'9410': Montferrer
+'0810': Montferrer i Castellbò (local inactiva)
+'0411': Montferri (local inactiva)
+'6218': Montgai (local inactiva)
+'5614': Montgat
+'9022': Montixelvo
+'0913': Montlluís
+'3618': Montmajor (local inactiva)
+'1517': Montmaneu (local inactiva)
+'9324': Montmeló
+'7940': Montner
+'8224': Montoliu de Lleida (local inactiva)
+'8109': Montoliu de Segarra (local inactiva)
+'7941': Montoriol
+'8110': Montornès de Segarra (local inactiva)
+'9325': Montornès del Vallès
+'7425': Montroi
+'9326': Montseny
+'7426': Montserrat
+'5532': Montuïri (local inactiva)
+'7607': Móra d'Ebre
+'7608': Móra la Nova
+'7106': Morella
+'9411': Morellàs i les Illes
+'4428': Mosset
+'6316': Muntanyola
+'1620': Mura
+'5714': Murla
+'5533': Muro (local inactiva)
+'4220': Muro del Comtat
+'5227': Museros
+'0106': Mutxamel
+'8810': Nalec (local inactiva)
+'3809': Nàquera
+'0914': Naüja
+'8907': Naut Aran (local inactiva)
+'1216': Navajas
+'1621': Navarcles
+'3907': Navarrés
+'1622': Navàs
+'0532': Navata (local inactiva)
+'8508': Navès (local inactiva)
+'7942': Nefiac
 '9903': No Adscrits Catalunya
-'9904': No Adscrits País Valencià
 '9905': No Adscrits Illes
+'9904': No Adscrits País Valencià
+'4429': Noedes
+'5919': Nonas (local inactiva)
+'9505': Novelda
+'4514': Novetlè
+'6912': Nules
+'0412': Nulles (local inactiva)
+'4430': Nyer
+'8509': Odèn (local inactiva)
+'1518': Òdena
+'7808': Ogassa (local inactiva)
+'0709': Olèrdola
+'0710': Olesa de Bonesvalls
+'2114': Olesa de Montserrat
+'4431': Oleta
+'0811': Oliana (local inactiva)
+'6219': Oliola (local inactiva)
+'8510': Olius (local inactiva)
+'8019': Oliva (local inactiva)
+'4803': Olivella
+'3810': Olocau de Carraixet
+'7107': Olocau del Rey
+'6317': Olost (local inactiva)
+'5008': Olot
+'3620': Olvan (local inactiva)
+'7943': Oms
+'6913': Onda
+'5715': Ondara
+'0310': Onil (local inactiva)
+'9024': Ontinyent (local inactiva)
+'7944': Òpol i Perellós
+'5716': Orba
+'4432': Orbanyà
+'1406': Ordino (local inactiva)
+'0533': Ordis (local inactiva)
+'4433': Orellà
+'0812': Organyà
+'9618': Orihuela
+'6318': Orís (local inactiva)
+'6319': Oristà (local inactiva)
+'6808': Orpesa
+'1519': Orpí (local inactiva)
+'5615': Òrrius
+'7945': Ortafà
+'5813': Orxeta
+'6220': Os de Balaguer (local inactiva)
+'8314': Osor (local inactiva)
+'0915': Osseja
+'8812': Ossó de Sió (local inactiva)
+'9025': Otos
+'7946': Paçà
+'0711': Pacs del Penedès (local inactiva)
+'5228': Paiporta
+'5616': Palafolls
+'2017': Palafrugell
+'2018': Palamós
+'7108': Palanques
+'0916': Palau de Cerdanya
+'0534': Palau de Santa Eulàlia (local inactiva)
+'7947': Palau del Vidre
+'2019': Palau-sator (local inactiva)
+'0535': Palau-saverdera (local inactiva)
+'9209': Palau-Solità i Plegamans
+'2115': Pallejà
+'5534': Palma
+'8020': Palma de Gandia
+'8021': Palmera
+'6707': Palol de Revardit (local inactiva)
+'2020': Pals
+'5717': Parcent
+'7809': Pardines (local inactiva)
+'7948': Parestortes
+'9327': Parets del Vallès
+'2021': Parlavà (local inactiva)
+'4308': Passanant (local inactiva)
+'5229': Paterna
+'0536': Pau (local inactiva)
+'1909': Paüls (Aldover-Paüls)
+'1217': Pavías
+'8416': Pedralba
+'5718': Pedreguer
+'0537': Pedret i Marzà (local inactiva)
+'5719': Pego (local inactiva)
+'5920': Pena-roja (local inactiva)
+'0311': Penàguila
+'6221': Penelles (local inactiva)
+'2208': Peníscola
+'6320': Perafita (local inactiva)
+'8608': Perafort i Puigdelfí
+'0538': Peralada (local inactiva)
+'5406': Peralta i Calassanç (local inactiva)
+'0813': Peramola (local inactiva)
+'7949': Perpinyà
+'4715': Pesilhà
+'7950': Pesillà de la Ribera
+'5535': Petra (local inactiva)
+'9506': Petrer
+'3711': Petrés
+'4434': Pi de Conflent
+'7951': Pià
+'5230': Picanya (local inactiva)
+'5231': Picassent
+'1520': Piera
+'9619': Pilar de la Horadada
+'8022': Piles
+'1218': Pina de Montalgrao
+'5617': Pineda de Mar
+'8511': Pinell de Solsonès (local inactiva)
+'9027': Pinet
+'8512': Pinós (local inactiva)
+'4310': Pira (local inactiva)
+'0917': Planès
+'4222': Planes
+'4716': Planeses
+'7810': Planoles (local inactiva)
+'7216': Poboleda (local inactiva)
+'9210': Polinyà
+'7508': Polinyà de Xúquer
+'5537': Pollença
+'7952': Pollestres
+'5814': Polop
+'0539': Pont de Molins (local inactiva)
+'7953': Pontellà
+'4313': Pontils (local inactiva)
+'0713': Pontons (local inactiva)
+'0540': Pontós (local inactiva)
+'6222': Ponts
+'6708': Porqueres (local inactiva)
+'7217': Porrera (local inactiva)
+'5538': Porreres (local inactiva)
+'0918': Porta
+'0542': Portbou (local inactiva)
+'0919': Portè
+'7109': Portell de Morella
+'7954': Portvendres
+'8023': Potries
+'4435': Prada (local inactiva)
+'7218': Pradell de la Teixeta (local inactiva)
+'1718': Prades (local inactiva)
+'8711': Prat de Comte (local inactiva)
+'1719': Pratdip (local inactiva)
+'7021': Prats de Lluçanès
+'6321': Prats de Lluçanès - Osona (local inactiva)
+'9413': Prats de Molló
+'4717': Prats de Sornià
+'4113': Prats i Sansor (local inactiva)
+'8813': Preixana (local inactiva)
+'5618': Premià de Dalt
+'5619': Premià de Mar
+'4114': Prullans (local inactiva)
+'7955': Prunet i Bellpuig
+'4718': Prunhahas
+'5233': Puçol
+'7705': Puebla de San Miguel
+'3622': Puig-Reig (Baix Berguedà)
+'4006': Puigbalador
+'4115': Puigcerdà
+'0714': Puigdàlber (local inactiva)
+'4919': Puiggròs (local inactiva)
+'0415': Puigpelat (local inactiva)
+'5539': Puigpunyent (local inactiva)
+'8814': Puigverd d'Agramunt (local inactiva)
+'8226': Puigverd de Lleida (local inactiva)
+'1523': Pujalt (local inactiva)
+'5116': Quart
+'3712': Quart de les Valls
+'5235': Quart de Poblet
+'3713': Quartell
+'9029': Quatretonda
+'4223': Quatretondeta
+'7956': Queixàs
+'7811': Queralbs (local inactiva)
+'0416': Querol (local inactiva)
+'3908': Quesa
+'4719': Rabolhet
+'0543': Rabós (local inactiva)
+'9620': Rafal
+'5236': Rafelbunyol
+'8024': Rafelcòfer
+'7428': Rafelguaraf
+'5922': Ràfels (local inactiva)
+'1624': Rajadell
+'4007': Ral
+'4436': Ralleu
+'4720': Rasigueres
+'7610': Rasquera (local inactiva)
+'7429': Real de Montroi
+'9621': Redován
+'2023': Regencós (local inactiva)
+'9414': Reiners
+'5815': Relleu
+'9211': Rellinars
+'8611': Renau (local inactiva)
+'1720': Reus
+'4437': Rià i Sirac
+'6511': Rialp (local inactiva)
+'7611': Riba-roja d'Ebre (local inactiva)
+'3812': Riba-roja de Túria
+'7614': Ribera d'Ebre (local inactiva)
+'8113': Ribera d'Ondara (local inactiva)
+'0815': Ribera d'Urgellet (local inactiva)
+'6914': Ribesalbes
+'7957': Ribesaltes
+'8315': Riells i Viabrea
+'4438': Rigardà
+'8513': Riner (local inactiva)
+'7509': Riola
+'7813': Ripoll
+'9212': Ripollet
+'4116': Riu de Cerdanya (local inactiva)
+'8316': Riudarenes (local inactiva)
+'5011': Riudaura (local inactiva)
+'1721': Riudecanyes (local inactiva)
+'1722': Riudecols
+'8317': Riudellots de la Selva (local inactiva)
+'1723': Riudoms
+'0544': Riumors (local inactiva)
+'5237': Rocafort
+'4311': Rocafort de Queralt (local inactiva)
+'8613': Roda de Berà
+'6322': Roda de Ter i el Cabrerès
+'4439': Rodés
+'0418': Rodonyà (local inactiva)
+'4515': Roglà i Corberà
+'9622': Rojales
+'1911': Roquetes
+'0545': Roses
+'2210': Rossell
+'8227': Rosselló
+'8026': Ròtova
+'9213': Rubí
+'1524': Rubió (local inactiva)
+'9031': Rugat
+'2024': Rupià (local inactiva)
+'6323': Rupit-Pruit (local inactiva)
+'5536': Sa Pobla (local inactiva)
+'9214': Sabadell
+'1219': Sacañet
+'3624': Sagàs (local inactiva)
+'5722': Sagra
+'3714': Sagunt
+'1803': Saidí (local inactiva)
+'6408': Salàs de Pallars (local inactiva)
+'3625': Saldes (local inactiva)
+'7959': Salelles
+'9032': Salem
+'5012': Sales de Llierca (local inactiva)
+'1302': Salinas
+'0529': Salines-Bassegoda
+'0920': Sallagosa
+'1625': Sallent
+'7430': Sallent de Xàtiva
+'8614': Salomó (local inactiva)
+'8615': Salou
+'7960': Salses
+'5117': Salt
+'9623': San Fulgencio
+'9624': San Isidro de Albatera
+'9625': San Miguel de Salinas
+'8114': Sanaüja (local inactiva)
+'5723': Sanet i els Negrals
+'2502': Sant Adrià de Besòs
+'6324': Sant Agustí de Lluçanès (local inactiva)
+'2119': Sant Andreu de la Barca
+'5620': Sant Andreu de Llavaneres (Les 3 Viles)
+'7961': Sant Andreu de Sureda
+'5118': Sant Andreu Salou (local inactiva)
+'5013': Sant Aniol de Finestres (local inactiva)
+'3813': Sant Antoni de Benagéber
+'4603': Sant Antoni de Portmany (local inactiva)
+'9329': Sant Antoni de Vilamajor
+'6325': Sant Bartomeu del Grau (local inactiva)
+'2120': Sant Boi de Llobregat
+'6326': Sant Boi de Lluçanès (local inactiva)
+'7962': Sant Cebrià de Rosselló
+'5621': Sant Cebrià de Vallalta
+'9330': Sant Celoni
+'2121': Sant Climent de Llobregat
+'0546': Sant Climent Sescebes (local inactiva)
+'9215': Sant Cugat del Vallès
+'0715': Sant Cugat Sesgarrigues
+'6409': Sant Esteve de la Sarga (local inactiva)
+'5407': Sant Esteve de Llitera (local inactiva)
+'9331': Sant Esteve de Palautordera
+'7963': Sant Esteve del Monestir
+'2122': Sant Esteve Sesrovires
+'7964': Sant Feliu d'Amunt
+'7965': Sant Feliu d'Avall
+'8318': Sant Feliu de Buixalleu (local inactiva)
+'9332': Sant Feliu de Codines
+'2025': Sant Feliu de Guíxols
+'2123': Sant Feliu de Llobregat
+'5014': Sant Feliu de Pallerols (local inactiva)
+'1626': Sant Feliu Sasserra
+'5015': Sant Ferriol (local inactiva)
+'9333': Sant Fost de Campsentelles
+'1627': Sant Fruitós de Bages
+'7966': Sant Genís de Fontanes
+'5119': Sant Gregori
+'8115': Sant Guim de Freixenet (local inactiva)
+'8116': Sant Guim de la Plana (local inactiva)
+'8319': Sant Hilari Sacalm
+'7967': Sant Hipòlit de la Salanca
+'6327': Sant Hipòlit de Voltregà (local inactiva)
+'5622': Sant Iscle de Vallalta
+'6109': Sant Jaume d'Enveja
+'3626': Sant Jaume de Frontanyà (local inactiva)
+'5016': Sant Jaume de Llierca (local inactiva)
+'2312': Sant Jaume dels Domenys
+'5541': Sant Joan (local inactiva)
+'0107': Sant Joan d'Alacant
+'7431': Sant Joan de l'Énova
+'4604': Sant Joan de Labritja (local inactiva)
+'7814': Sant Joan de les Abadesses
+'5120': Sant Joan de Mollet (local inactiva)
+'6810': Sant Joan de Moró
+'9415': Sant Joan de Pladecorts
+'1628': Sant Joan de Vilatorrada
+'2124': Sant Joan Despí
+'7968': Sant Joan la Cella
+'5017': Sant Joan les Fonts (local inactiva)
+'2212': Sant Jordi del Maestrat
+'5121': Sant Jordi Desvalls (local inactiva)
+'4605': Sant Josep de sa Talaia
+'3627': Sant Julià de Cerdanyola (local inactiva)
+'8320': Sant Julià de Llor i Bonmatí (inactiva)
+'1407': Sant Julià de Lòria (local inactiva)
+'5122': Sant Julià de Ramis
+'6328': Sant Julià de Vilatorta
+'2125': Sant Just Desvern
+'0716': Sant Llorenç d'Hortons (local inactiva)
+'9416': Sant Llorenç de Cerdans
+'0547': Sant Llorenç de la Muga (local inactiva)
+'7969': Sant Llorenç de la Salanca
+'8514': Sant Llorenç de Morunys (local inactiva)
+'5542': Sant Llorenç des Cardassar (local inactiva)
+'9216': Sant Llorenç Savall
+'6008': Sant Lluís (local inactiva)
+'7970': Sant Marçal
+'6329': Sant Martí d'Albars (local inactiva)
+'6330': Sant Martí de Centelles (local inactiva)
+'4721': Sant Martí de Fenolhet
+'5123': Sant Martí de Llémena (local inactiva)
+'8815': Sant Martí de Riucorb (local inactiva)
+'1525': Sant Martí de Tous
+'0717': Sant Martí Sarroca (local inactiva)
+'1526': Sant Martí Sesgueioles (local inactiva)
+'5124': Sant Martí Vell (local inactiva)
+'1629': Sant Mateu de Bages
+'2213': Sant Mateu del Maestrat
+'6709': Sant Miquel de Campmajor (local inactiva)
+'0548': Sant Miquel de Fluvià (local inactiva)
+'7971': Sant Miquel de Llotes
+'0549': Sant Mori (local inactiva)
+'7972': Sant Nazari
+'4722': Sant Pau de Fenolhet
+'7815': Sant Pau de Segúries (local inactiva)
+'4804': Sant Pere de Ribes
+'0718': Sant Pere de Riudebitlles
+'6331': Sant Pere de Torelló
+'9334': Sant Pere de Vilamajor
+'0921': Sant Pere dels Forcats
+'0550': Sant Pere Pescador (local inactiva)
+'1527': Sant Pere Sallavinera (local inactiva)
+'5623': Sant Pol de Mar
+'0719': Sant Quintí de Mediona
+'9217': Sant Quirze del Vallès
+'9335': Sant Quirze Safaja (local inactiva)
+'2214': Sant Rafael del Riu
+'8117': Sant Ramon (local inactiva)
+'0720': Sant Sadurní d'Anoia
+'6333': Sant Sadurní d'Osormort (local inactiva)
+'1630': Sant Salvador de Guardiola
+'1631': Sant Vicenç de Castellet
+'5624': Sant Vicenç de Montalt (local inactiva)
+'6334': Sant Vicenç de Torelló (local inactiva)
+'2126': Sant Vicenç dels Horts
+'0108': Sant Vicent del Raspeig
+'6110': Santa Bàrbara
+'6335': Santa Cecília de Voltregà (local inactiva)
+'2127': Santa Coloma de Cervelló
+'8321': Santa Coloma de Farners
+'2503': Santa Coloma de Gramenet
+'4312': Santa Coloma de Queralt (local inactiva)
+'7973': Santa Coloma de Tuïr
+'2026': Santa Cristina d'Aro
+'5543': Santa Eugènia (local inactiva)
+'6336': Santa Eugènia de Berga
+'6337': Santa Eulàlia de Riuprimer (local inactiva)
+'9336': Santa Eulàlia de Ronçana
+'4606': Santa Eulària del Riu (local inactiva)
+'0721': Santa Fe del Penedès (local inactiva)
+'0922': Santa Llocaia
+'0551': Santa Llogaia d'Àlguema (local inactiva)
+'2215': Santa Magdalena de Polpís
+'5544': Santa Margalida (local inactiva)
+'1528': Santa Margarida de Montbui
+'0722': Santa Margarida i els Monjos
+'9803': Santa Maria d'Oló
+'6338': Santa Maria de Besora (local inactiva)
+'9337': Santa Maria de Martorelles
+'3628': Santa Maria de Merlès (local inactiva)
+'1529': Santa Maria de Miralles (local inactiva)
+'9338': Santa Maria de Palautordera
+'5545': Santa Maria del Camí
+'7974': Santa Maria la Mar
+'2313': Santa Oliva
+'5018': Santa Pau (local inactiva)
+'9218': Santa Perpètua de Mogoda
+'2404': Santa Pola
+'5625': Santa Susanna
+'5546': Santanyí
+'1633': Santpedor
+'5408': Sanui (local inactiva)
+'4440': Saorra
+'4314': Sarral (local inactiva)
+'5125': Sarrià de Ter
+'6410': Sarroca de Bellera (local inactiva)
+'8228': Sarroca de Lleida (local inactiva)
+'7319': Saünc (local inactiva)
+'0552': Saus (local inactiva)
+'4441': Sautó
+'4315': Savallà del Comtat (local inactiva)
+'1303': Sax
+'5238': Sedaví
+'3715': Segart
+'1220': Segorbe
+'5816': Sella
+'5547': Selva (local inactiva)
+'9033': Sempere
+'4316': Senan (local inactiva)
+'5548': Sencelles (local inactiva)
+'5724': Senija
+'6411': Senterada (local inactiva)
+'9219': Sentmenat
+'7432': Senyera
+'4442': Serdinyà
+'6710': Serinyà (local inactiva)
+'8229': Seròs
+'3814': Serra
+'2027': Serra de Daró (local inactiva)
+'9417': Serrallonga
+'5540': Ses Salines de Santanyí (local inactiva)
+'7320': Sessué (local inactiva)
+'7816': Setcases (local inactiva)
+'6340': Seva (local inactiva)
+'6613': Sidamon (local inactiva)
+'5308': Siete Aguas
+'5239': Silla
+'8322': Sils (local inactiva)
+'8027': Simat de la Valldigna
+'5549': Sineu (local inactiva)
+'4805': Sitges
+'0554': Siurana (local inactiva)
+'4443': Soanyes
+'6341': Sobremunt (local inactiva)
+'4106': Solana de Cerdanya (local inactiva)
+'4317': Solivella (local inactiva)
+'7510': Sollana
+'5550': Sóller (local inactiva)
+'8515': Solsona
+'5551': Son Servera (local inactiva)
+'1221': Soneja
+'7321': Sopeira (local inactiva)
+'6342': Sora (local inactiva)
+'6512': Soriguera (local inactiva)
+'7110': Sorita
+'4723': Sornià
+'6513': Sort
+'8230': Soses (local inactiva)
+'8417': Sot de Chera
+'1222': Sot de Ferrer
+'0723': Subirats
+'8231': Sudanell (local inactiva)
+'7511': Sueca
+'6915': Sueras
+'7433': Sumacàrcer
+'8232': Sunyer (local inactiva)
+'7976': Sureda
+'1634': Súria
+'8323': Susqueda (local inactiva)
+'9339': Tagamanent-Figaró-Montmany
+'1635': Talamanca (local inactiva)
+'6412': Talarn (local inactiva)
+'8118': Talavera (local inactiva)
+'6916': Tales
+'7977': Talteüll
+'5409': Tamarit de Llitera (local inactiva)
+'6343': Taradell
+'5817': Tàrbena
+'4444': Tarerac
+'0923': Targasona
+'8617': Tarragona
+'8816': Tàrrega
+'4921': Tarrés (local inactiva)
+'8119': Tarroja de Segarra (local inactiva)
+'4445': Taurinyà
+'5240': Tavernes Blanques
+'8028': Tavernes de la Valldigna
+'6344': Tavèrnoles (local inactiva)
+'6345': Tavertet (local inactiva)
+'5626': Teià
+'7978': Tellet
+'1223': Teresa
+'9106': Teresa de Cofrentes
+'6225': Térmens
+'0555': Terrades (local inactiva)
+'9220': Terrassa
+'9034': Terrateig
+'7979': Terrats
+'7980': Tesà
+'5725': Teulada
+'7981': Teulís
+'5627': Tiana
+'0312': Tibi
+'0607': Tírig
+'6514': Tírvia (local inactiva)
+'8418': Titaguas
+'6226': Tiurana (local inactiva)
+'1912': Tivenys
+'7612': Tivissa
+'4446': Toès
+'1115': Toga
+'7322': Tolba (local inactiva)
+'4224': Tollos
+'7982': Toluges
+'6346': Tona
+'7323': Tor-la-ribera (local inactiva)
+'8120': Torà-Segarra (local inactiva)
+'1224': Torás
+'5628': Tordera
+'7983': Torderes
+'6347': Torelló
+'7434': Torís
+'5726': Tormos
+'8817': Tornabous (local inactiva)
+'1116': Torralba del Pinar
+'8233': Torre-serona (local inactiva)
+'7706': Torrebaja
+'8234': Torrebesses (local inactiva)
+'6813': Torreblanca
+'1117': Torrechiva
+'5926': Torredarques (local inactiva)
+'8618': Torredembarra
+'8235': Torrefarrera
+'8121': Torrefeta i Florejacs (local inactiva)
+'6614': Torregrossa (local inactiva)
+'6227': Torrelameu
+'0724': Torrelavit (local inactiva)
+'4516': Torrella
+'0725': Torrelles de Foix
+'7985': Torrelles de la Salanca
+'2128': Torrelles de Llobregat
+'5241': Torrent (local inactiva)
+'2029': Torrent d'Empordà (local inactiva)
+'1804': Torrent de Cinca (local inactiva)
+'8236': Torres de Segre (local inactiva)
+'7324': Torres del Bisbe i Jusseu (local inactiva)
+'3716': Torres Torres
+'9626': Torrevieja
+'0556': Torroella de Fluvià (local inactiva)
+'2030': Torroella de Montgrí
+'7220': Torroja del Priorat (local inactiva)
+'5019': Tortellà (local inactiva)
+'1913': Tortosa
+'7817': Toses (local inactiva)
+'8324': Tossa de Mar
+'7435': Tous
+'2216': Traiguera
+'6414': Tremp
+'7986': Tresserra
+'4725': Trevillac
+'4726': Trilhà
+'7987': Trullars
+'8419': Tuéjar
+'7988': Tuïr
+'2031': Ullà (local inactiva)
+'9221': Ullastrell
+'2032': Ullastret (local inactiva)
+'6112': Ulldecona
+'7221': Ulldemolins (local inactiva)
+'2033': Ultramort (local inactiva)
+'0925': Ur
+'4117': Urús (local inactiva)
+'0207': Useres
+'9222': Vacarisses
+'5242': València
+'7803': Vall de Camprodon
+'6515': Vall de Cardós (local inactiva)
+'7812': Vall de Ribes
+'5928': Vall-de-roures (local inactiva)
+'2034': Vall-llobrega
+'4517': Vallada
+'7707': Vallanca
+'1118': Vallat
+'1531': Vallbona d'Anoia
+'8818': Vallbona de les Monges (local inactiva)
+'0926': Vallcebollera
+'3629': Vallcebre (local inactiva)
+'4318': Vallclara (local inactiva)
+'5411': Valldellou (local inactiva)
+'5552': Valldemossa (local inactiva)
+'4518': Vallès
+'4447': Vallestàvia
+'6228': Vallfogona de Balaguer (local inactiva)
+'7818': Vallfogona de Ripollès (local inactiva)
+'4319': Vallfogona de Riucorb (local inactiva)
+'9340': Vallgorguina-Vilalba Saserra
+'7112': Vallibona
+'2129': Vallirana
+'5929': Valljunquera (local inactiva)
+'4448': Vallmanya
+'0420': Vallmoll (local inactiva)
+'9341': Vallromanes
+'0421': Valls
+'6505': Valls d'Àneu (Local Inactiva)
+'1725': Vandellòs i l'Hospitalet de l'Infant
+'1532': Veciana (local inactiva)
+'0558': Ventalló
+'8819': Verdú
+'2035': Verges (local inactiva)
+'4449': Vernet
+'8619': Vespella de Gaià (local inactiva)
+'7326': Viacamp i Lliterà (local inactiva)
+'6348': Vic
+'6349': Vidrà (local inactiva)
+'8325': Vidreres
+'8908': Vielha e Mijaran
+'6918': Vila-real (local inactiva)
+'0422': Vila-rodona (local inactiva)
+'0559': Vila-sacra (local inactiva)
+'6615': Vila-sana (local inactiva)
+'8620': Vila-seca
+'0423': Vilabella (local inactiva)
+'0560': Vilabertran (local inactiva)
+'5126': Vilablareix
+'3630': Vilada (local inactiva)
+'0561': Viladamat (local inactiva)
+'5127': Viladasens (local inactiva)
+'2130': Viladecans
+'9223': Viladecavalls
+'6711': Vilademuls (local inactiva)
+'6350': Viladrau (local inactiva)
+'6815': Vilafamés
+'0562': Vilafant
+'5553': Vilafranca de Bonany (local inactiva)
+'4450': Vilafranca de Conflent
+'0609': Vilafranca del Maestrat
+'0726': Vilafranca del Penedès
+'8820': Vilagrassa (local inactiva)
+'0563': Vilajuïga
+'8712': Vilalba dels Arcs (local inactiva)
+'9342': Vilalba Sasserra (local inactiva)
+'1003': Vilaller
+'8029': Vilallonga de la Safor
+'7989': Vilallonga de la Salanca
+'7819': Vilallonga de Ter (local inactiva)
+'8621': Vilallonga del Camp
+'7990': Vilallonga dels Monts
+'0564': Vilamacolum (local inactiva)
+'0565': Vilamalla (local inactiva)
+'0566': Vilamaniscle (local inactiva)
+'3815': Vilamarxant
+'8909': Vilamòs (local inactiva)
+'7991': Vilamulaca
+'0567': Vilanant (local inactiva)
+'6816': Vilanova d'Alcolea
+'1726': Vilanova d'Escornalbou (local inactiva)
+'7327': Vilanova d'Éssera (local inactiva)
+'6616': Vilanova de Bellpuig (local inactiva)
+'6229': Vilanova de l'Aguda (local inactiva)
+'8237': Vilanova de la Barca
+'7992': Vilanova de la Ribera
+'6230': Vilanova de Meià (local inactiva)
+'4320': Vilanova de Prades (local inactiva)
+'7993': Vilanova de Raó
+'6351': Vilanova de Sau (local inactiva)
+'8238': Vilanova de Segrià (local inactiva)
+'1533': Vilanova del Camí
+'9343': Vilanova del Vallès
+'4806': Vilanova i la Geltrú
+'1727': Vilaplana (local inactiva)
+'0610': Vilar de Canes
+'5629': Vilassar de Dalt
+'5630': Vilassar de Mar
+'0568': Vilaür (local inactiva)
+'4321': Vilaverd (local inactiva)
+'1805': Vilella de Cinca (local inactiva)
+'1119': Villahermosa del Río
+'1120': Villamalur
+'1121': Villanueva de Viver
+'1304': Villena
+'7113': Villores
+'8326': Vilobí d'Onyar (local inactiva)
+'0727': Vilobí del Penedès (local inactiva)
+'2036': Vilopriu (local inactiva)
+'4322': Vimbodí (local inactiva)
+'4924': Vinaixa (local inactiva)
+'5243': Vinalesa
+'2217': Vinaròs
+'4451': Vinçà
+'7994': Vingrau
+'1728': Vinyols i els Arcs
+'4727': Virà
+'0208': Vistabella del Maestrat
+'1227': Viver
+'3631': Viver i Serrateix (local inactiva)
+'7995': Vivers
+'5732': Xàbia
+'5733': Xaló
+'4519': Xàtiva
+'8030': Xeraco
+'8031': Xeresa
+'2218': Xert
+'1914': Xerta
+'6920': Xilxes
+'5244': Xirivella
+'0110': Xixona
+'0209': Xodos
+'5309': Yátova
+'9107': Zarra
+'1122': Zucaina
