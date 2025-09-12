@@ -9,6 +9,7 @@ module Decidim
     #
     # form - The form with the data.
     def initialize(form, user)
+      super
       @form = form
       @user = user
     end
@@ -53,16 +54,16 @@ module Decidim
     end
 
     def destroy_user_group_memberships
-      Decidim::UserGroupMembership.where(user: user).destroy_all
+      Decidim::UserGroupMembership.where(user:).destroy_all
     end
 
     def destroy_follows
       Decidim::Follow.where(followable: user).destroy_all
-      Decidim::Follow.where(user: user).destroy_all
+      Decidim::Follow.where(user:).destroy_all
     end
 
     def destroy_participatory_space_private_user
-      Decidim::ParticipatorySpacePrivateUser.where(user: user).destroy_all
+      Decidim::ParticipatorySpacePrivateUser.where(user:).destroy_all
     end
 
     def delegate_destroy_to_participatory_spaces

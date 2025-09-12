@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/PerceivedComplexity
 # This decorator adds logic to handle when to show the endorsements button for.
 module Decidim::Cells::EndorsementButtonsCellDecorator
   def self.decorate
@@ -52,3 +54,5 @@ module Decidim::Cells::EndorsementButtonsCellDecorator
 end
 
 ::Decidim::Cells::EndorsementButtonsCellDecorator.decorate
+# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/PerceivedComplexity

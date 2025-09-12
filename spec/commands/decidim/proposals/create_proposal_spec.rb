@@ -8,7 +8,7 @@ module Decidim
       let(:form_klass) { ProposalForm }
       let(:component) { create(:proposal_component) }
       let(:organization) { component.organization }
-      let(:user) { create :user, :admin, :confirmed, organization: organization }
+      let(:user) { create :user, :admin, :confirmed, organization: }
       let(:form) do
         form_klass.from_params(
           form_params
@@ -20,10 +20,10 @@ module Decidim
         )
       end
 
-      let(:author) { create(:user, organization: organization) }
+      let(:author) { create(:user, organization:) }
 
       let(:user_group) do
-        create(:user_group, :verified, organization: organization, users: [author])
+        create(:user_group, :verified, organization:, users: [author])
       end
 
       describe "call" do

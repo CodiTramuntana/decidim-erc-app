@@ -5,9 +5,9 @@ require "rails_helper"
 module Decidim
   describe AmendmentSerializer do
     let!(:component) { create(:proposal_component) }
-    let!(:amendable) { create(:proposal, component: component) }
-    let!(:emendation) { create(:proposal, :unpublished, component: component) }
-    let!(:amendment) { create(:amendment, amendable: amendable, emendation: emendation) }
+    let!(:amendable) { create(:proposal, component:) }
+    let!(:emendation) { create(:proposal, :unpublished, component:) }
+    let!(:amendment) { create(:amendment, amendable:, emendation:) }
 
     describe "#serialize" do
       subject { described_class.new(amendment).serialize }

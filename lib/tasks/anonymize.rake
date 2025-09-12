@@ -19,7 +19,7 @@ namespace :anonymize do
         avatar: nil
       )
 
-      Decidim::Authorization.where(user: user).find_each do |authorization|
+      Decidim::Authorization.where(user:).find_each do |authorization|
         authorization.update_columns(unique_id: authorization.id)
       end
 

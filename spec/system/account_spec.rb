@@ -3,7 +3,7 @@
 require "rails_helper"
 
 describe "Account", type: :system do
-  let(:user) { create(:user, :confirmed, password: password, password_confirmation: password) }
+  let(:user) { create(:user, :confirmed, password:, password_confirmation: password) }
   let(:password) { "dqCFgjfDbC7dPbrv" }
   let(:organization) { user.organization }
 

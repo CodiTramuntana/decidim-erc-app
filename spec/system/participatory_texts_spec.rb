@@ -8,25 +8,25 @@ describe "Participatory texts", type: :system do
 
   include_context "with a component"
   let(:manifest_name) { "proposals" }
-  let(:current_user) { create(:user, :confirmed, admin: true, organization: organization) }
+  let(:current_user) { create(:user, :confirmed, admin: true, organization:) }
   let!(:scopes) do
-    create_list(:scope, 5, organization: organization)
+    create_list(:scope, 5, organization:)
   end
   let!(:active_step_id) { component.participatory_space.active_step.id }
 
   context "when listing proposals in a participatory process as participatory texts" do
     context "when admin has published a participatory text" do
-      let!(:participatory_text) { create :participatory_text, component: component }
-      let!(:proposals) { create_list(:proposal, 3, :published, component: component) }
+      let!(:participatory_text) { create :participatory_text, component: }
+      let!(:proposals) { create_list(:proposal, 3, :published, component:) }
       let!(:component) do
         create(:proposal_component,
                :with_participatory_texts_enabled,
-               manifest: manifest,
+               manifest:,
                participatory_space: participatory_process)
       end
-      let!(:emendation) { create(:proposal, :published, component: component, scope: scopes.first) }
-      let!(:amendment) { create :amendment, amendable: proposals.first, emendation: emendation }
-      let!(:other_emendation) { create(:proposal, component: component, scope: scopes.second) }
+      let!(:emendation) { create(:proposal, :published, component:, scope: scopes.first) }
+      let!(:amendment) { create :amendment, amendable: proposals.first, emendation: }
+      let!(:other_emendation) { create(:proposal, component:, scope: scopes.second) }
       let!(:other_amendment) { create(:amendment, amendable: proposals.first, emendation: other_emendation) }
 
       before do

@@ -6,15 +6,15 @@ module Decidim
   module Proposals
     describe ProposalSerializer do
       let!(:component) { create(:proposal_component) }
-      let!(:amendable) { create(:proposal, component: component) }
-      let!(:emendation) { create(:proposal, :unpublished, component: component) }
-      let!(:amendment) { create(:amendment, :draft, amendable: amendable, emendation: emendation) }
+      let!(:amendable) { create(:proposal, component:) }
+      let!(:emendation) { create(:proposal, :unpublished, component:) }
+      let!(:amendment) { create(:amendment, :draft, amendable:, emendation:) }
 
       describe "#serialize" do
         subject { described_class.new(proposal).serialize }
 
         context "when the proposal is official" do
-          let(:amendable) { create(:proposal, :official, component: component) }
+          let(:amendable) { create(:proposal, :official, component:) }
           let(:proposal) { amendable }
 
           it { is_expected.to include(nickname: nil) }

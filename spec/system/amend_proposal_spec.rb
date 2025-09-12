@@ -4,18 +4,18 @@ require "rails_helper"
 
 describe "Amend Proposal", :versioning, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
-  let(:user) { create(:user, :confirmed, admin: admin, organization: organization) }
+  let(:user) { create(:user, :confirmed, admin:, organization:) }
   let(:admin) { false }
 
-  let!(:component) { create(:proposal_component, organization: organization) }
+  let!(:component) { create(:proposal_component, organization:) }
   let!(:active_step_id) { component.participatory_space.active_step.id }
 
-  let!(:proposal) { create(:proposal, component: component) }
+  let!(:proposal) { create(:proposal, component:) }
   let(:proposal_path) { Decidim::ResourceLocatorPresenter.new(proposal).path }
 
-  let!(:emendation_same_scope) { create(:proposal, body: body, scope: user.scope, component: component) }
+  let!(:emendation_same_scope) { create(:proposal, body:, scope: user.scope, component:) }
   let!(:amendment_same_scope) { create(:amendment, amendable: proposal, emendation: emendation_same_scope) }
-  let!(:emendation_other_scope) { create(:proposal, component: component) }
+  let!(:emendation_other_scope) { create(:proposal, component:) }
   let!(:amendment_other_scope) { create(:amendment, amendable: proposal, emendation: emendation_other_scope) }
 
   before do
@@ -105,8 +105,8 @@ describe "Amend Proposal", :versioning, type: :system do
     end
 
     context "when amendment REACTION is enabled" do
-      let!(:emendation) { create(:proposal, title: { en: "Amended Long enough title" }, component: component) }
-      let!(:amendment) { create :amendment, amendable: proposal, emendation: emendation }
+      let!(:emendation) { create(:proposal, title: { en: "Amended Long enough title" }, component:) }
+      let!(:amendment) { create :amendment, amendable: proposal, emendation: }
       let(:emendation_path) { Decidim::ResourceLocatorPresenter.new(emendation).path }
 
       before do

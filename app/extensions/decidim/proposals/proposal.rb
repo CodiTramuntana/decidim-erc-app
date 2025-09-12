@@ -61,7 +61,7 @@ module AmendableExtension
   module InstanceMethods
     # Returns the emendations of an amendable that are visible to the user
     # based on the component's amendments settings.
-    
+
     def visible_emendations_for(user)
       published_emendations = emendations.published
       return published_emendations unless component.settings.amendments_enabled

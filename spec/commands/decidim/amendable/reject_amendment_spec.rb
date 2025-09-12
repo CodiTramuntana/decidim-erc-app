@@ -6,9 +6,9 @@ module Decidim
   module Amendable
     describe Reject do
       let!(:component) { create(:proposal_component) }
-      let!(:amendable) { create(:proposal, component: component) }
-      let!(:emendation) { create(:proposal, component: component) }
-      let!(:amendment) { create :amendment, amendable: amendable, emendation: emendation }
+      let!(:amendable) { create(:proposal, component:) }
+      let!(:emendation) { create(:proposal, component:) }
+      let!(:amendment) { create :amendment, amendable:, emendation: }
       let(:command) { described_class.new(form) }
 
       let(:form) { Decidim::Amendable::RejectForm.from_params(form_params).with_context(form_context) }
@@ -30,8 +30,8 @@ module Decidim
 
       include_examples "reject amendment" do
         it "changes the emendation state" do
-          not_answered = Decidim::Proposals::ProposalState.where(component: component, token: "not_answered").pick(:id)
-          rejected = Decidim::Proposals::ProposalState.where(component: component, token: "rejected").pick(:id)
+          not_answered = Decidim::Proposals::ProposalState.where(component:, token: "not_answered").pick(:id)
+          rejected = Decidim::Proposals::ProposalState.where(component:, token: "rejected").pick(:id)
           expect { command.call }.to change { emendation.reload[:decidim_proposals_proposal_state_id] }.from(not_answered).to(rejected)
         end
       end

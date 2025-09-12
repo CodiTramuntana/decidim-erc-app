@@ -5,20 +5,20 @@ require "rails_helper"
 module Decidim
   describe InviteUser do
     let(:organization) { create(:organization) }
-    let!(:admin) { create(:user, :confirmed, :admin, organization: organization) }
-    let!(:scope) { create(:scope, organization: organization, code: "1") }
+    let!(:admin) { create(:user, :confirmed, :admin, organization:) }
+    let!(:scope) { create(:scope, organization:, code: "1") }
     let(:form) do
       Decidim::InviteUserForm.from_params(
         name: "Old man",
         email: "oldman@email.com",
-        organization: organization,
+        organization:,
         role: "admin",
         invited_by: admin,
         invitation_instructions: "invite_admin"
       )
     end
     let!(:command) { described_class.new(form) }
-    let(:invited_user) { User.where(organization: organization).last }
+    let(:invited_user) { User.where(organization:).last }
 
     context "when a user does not exist for the given email" do
       it "creates it with scope" do

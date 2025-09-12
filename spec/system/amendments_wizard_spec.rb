@@ -78,7 +78,7 @@ describe "Amendment Wizard" do
         expect(page).to have_css("a", text: "Modify")
       end
 
-      context "when the Publish button is clicked", versioning: true do
+      context "when the Publish button is clicked", :versioning do
         before do
           click_on "Publish"
         end

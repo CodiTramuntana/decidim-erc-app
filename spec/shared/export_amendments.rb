@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 shared_examples "export amendments" do
-  let!(:amendment) { create_list(:amendment, 3, :draft, amendable: amendable, emendation: emendation) }
+  let!(:amendment) { create_list(:amendment, 3, :draft, amendable:, emendation:) }
 
   it "exports all" do
     find(".exports-amendments").click

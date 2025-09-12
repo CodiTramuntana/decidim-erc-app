@@ -6,9 +6,9 @@ require "rails_helper"
 describe "Admin manages amendments", :serves_geocoding_autocomplete, :serves_map, type: :system do
   let(:manifest_name) { "proposals" }
   let!(:component) { create(:proposal_component) }
-  let!(:amendable) { create(:proposal, component: component) }
-  let!(:emendation) { create(:proposal, :unpublished, component: component) }
-  let!(:amendment) { create(:amendment, :draft, amendable: amendable, emendation: emendation) }
+  let!(:amendable) { create(:proposal, component:) }
+  let!(:emendation) { create(:proposal, :unpublished, component:) }
+  let!(:amendment) { create(:amendment, :draft, amendable:, emendation:) }
 
   include_context "when managing a component as an admin"
 

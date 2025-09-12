@@ -4,10 +4,10 @@ require "rails_helper"
 
 describe "Endorse Amendment", :versioning, type: :system do
   let!(:organization) { create(:organization, default_locale: "en") }
-  let!(:user) { create(:user, :confirmed, organization: organization) }
-  let!(:user_group) { create(:user_group, :confirmed, :verified, organization: organization) }
-  let!(:component) { create(:proposal_component, organization: organization) }
-  let!(:proposal) { create(:proposal, component: component) }
+  let!(:user) { create(:user, :confirmed, organization:) }
+  let!(:user_group) { create(:user_group, :confirmed, :verified, organization:) }
+  let!(:component) { create(:proposal_component, organization:) }
+  let!(:proposal) { create(:proposal, component:) }
 
   let(:active_step_id) { component.participatory_space.active_step.id }
   let(:proposal_path) { Decidim::ResourceLocatorPresenter.new(proposal).path }
@@ -23,11 +23,11 @@ describe "Endorse Amendment", :versioning, type: :system do
     end
 
     context "and IS a manager of user group" do
-      let!(:manager_membership) { create(:user_group_membership, user: user, user_group: user_group, role: :admin) }
+      let!(:manager_membership) { create(:user_group_membership, user:, user_group:, role: :admin) }
 
       context "and visits an amendment of the same scope" do
-        let!(:emendation) { create(:proposal, scope: user.scope, component: component) }
-        let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
+        let!(:emendation) { create(:proposal, scope: user.scope, component:) }
+        let!(:amendment) { create(:amendment, amendable: proposal, emendation:) }
         let(:user_groups_enabled) { true }
 
         before do
@@ -54,8 +54,8 @@ describe "Endorse Amendment", :versioning, type: :system do
       end
 
       context "and visits an amendment of a different scope" do
-        let!(:emendation) { create(:proposal, component: component) }
-        let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
+        let!(:emendation) { create(:proposal, component:) }
+        let!(:amendment) { create(:amendment, amendable: proposal, emendation:) }
 
         before do
           visit emendation_path
@@ -97,11 +97,11 @@ describe "Endorse Amendment", :versioning, type: :system do
     end
 
     context "and is NOT a manager of user group" do
-      let!(:member_membership) { create(:user_group_membership, user: user, user_group: user_group, role: :member) }
+      let!(:member_membership) { create(:user_group_membership, user:, user_group:, role: :member) }
 
       context "and visits an amendment of the same scope" do
-        let!(:emendation) { create(:proposal, scope: user.scope, component: component) }
-        let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
+        let!(:emendation) { create(:proposal, scope: user.scope, component:) }
+        let!(:amendment) { create(:amendment, amendable: proposal, emendation:) }
 
         before do
           visit emendation_path
@@ -117,8 +117,8 @@ describe "Endorse Amendment", :versioning, type: :system do
       end
 
       context "and visits an amendment of a different scope" do
-        let!(:emendation) { create(:proposal, component: component) }
-        let!(:amendment) { create(:amendment, amendable: proposal, emendation: emendation) }
+        let!(:emendation) { create(:proposal, component:) }
+        let!(:amendment) { create(:amendment, amendable: proposal, emendation:) }
 
         before do
           visit emendation_path
